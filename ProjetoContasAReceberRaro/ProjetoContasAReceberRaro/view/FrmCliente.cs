@@ -23,6 +23,7 @@ namespace ProjetoContasAReceberRaro.view
         {
             ClassCrudCliente crud = new ClassCrudCliente();
             dtgCliente.DataSource = crud.CarregaGridCliente();
+            dtgCliente.Sort(dtgCliente.Columns[0], ListSortDirection.Ascending);
         }
 
         private void lblInseir_Click(object sender, EventArgs e)
@@ -39,6 +40,7 @@ namespace ProjetoContasAReceberRaro.view
                 ClassCrudCliente crud = new ClassCrudCliente();
                 crud.DeletarCliente(id);
                 dtgCliente.DataSource = crud.CarregaGridCliente();
+                dtgCliente.Sort(dtgCliente.Columns[0], ListSortDirection.Ascending);
             }
             else
             {
@@ -68,6 +70,7 @@ namespace ProjetoContasAReceberRaro.view
         {
             ClassCrudCliente crud = new ClassCrudCliente();
             dtgCliente.DataSource = crud.CarregaGridCliente();
+            dtgCliente.Sort(dtgCliente.Columns[0], ListSortDirection.Ascending);
         }
     }
 }
