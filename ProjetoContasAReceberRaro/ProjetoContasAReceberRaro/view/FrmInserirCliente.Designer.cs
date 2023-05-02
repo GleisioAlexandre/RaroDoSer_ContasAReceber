@@ -51,7 +51,8 @@
             this.label1 = new System.Windows.Forms.Label();
             this.btn_novo = new System.Windows.Forms.Button();
             this.btnCadatrar = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnPesquisar = new System.Windows.Forms.Button();
+            this.btnEditar = new System.Windows.Forms.Button();
             this.gpbDadosPessoais.SuspendLayout();
             this.gpbEndereco.SuspendLayout();
             this.SuspendLayout();
@@ -294,7 +295,7 @@
             // 
             this.btnCadatrar.Enabled = false;
             this.btnCadatrar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCadatrar.Location = new System.Drawing.Point(233, 411);
+            this.btnCadatrar.Location = new System.Drawing.Point(159, 411);
             this.btnCadatrar.Name = "btnCadatrar";
             this.btnCadatrar.Size = new System.Drawing.Size(111, 33);
             this.btnCadatrar.TabIndex = 8;
@@ -302,23 +303,34 @@
             this.btnCadatrar.UseVisualStyleBackColor = true;
             this.btnCadatrar.Click += new System.EventHandler(this.btnCadatrar_Click);
             // 
-            // button1
+            // btnPesquisar
             // 
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(454, 411);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(111, 33);
-            this.button1.TabIndex = 9;
-            this.button1.Text = "Cancelar";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.btnPesquisar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnPesquisar.Location = new System.Drawing.Point(306, 411);
+            this.btnPesquisar.Name = "btnPesquisar";
+            this.btnPesquisar.Size = new System.Drawing.Size(111, 33);
+            this.btnPesquisar.TabIndex = 10;
+            this.btnPesquisar.Text = "Pesquisar";
+            this.btnPesquisar.UseVisualStyleBackColor = true;
+            this.btnPesquisar.Click += new System.EventHandler(this.btnPesquisar_Click);
+            // 
+            // btnEditar
+            // 
+            this.btnEditar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEditar.Location = new System.Drawing.Point(453, 411);
+            this.btnEditar.Name = "btnEditar";
+            this.btnEditar.Size = new System.Drawing.Size(111, 33);
+            this.btnEditar.TabIndex = 11;
+            this.btnEditar.Text = "Editar";
+            this.btnEditar.UseVisualStyleBackColor = true;
             // 
             // FrmInserirCliente
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(579, 456);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.btnEditar);
+            this.Controls.Add(this.btnPesquisar);
             this.Controls.Add(this.btnCadatrar);
             this.Controls.Add(this.btn_novo);
             this.Controls.Add(this.gpbEndereco);
@@ -363,6 +375,7 @@
         private System.Windows.Forms.Button btn_novo;
         private System.Windows.Forms.Button btnCadatrar;
         private System.Windows.Forms.ComboBox cbxCidade;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnPesquisar;
+        private System.Windows.Forms.Button btnEditar;
     }
 }

@@ -100,23 +100,23 @@ namespace ProjetoContasAReceberRaro.controller
                 conexao.Close();
             }
         }
-        public void AtualizaCadCliente(int id, string nome, string cpf, string cnpj, string cep, string logradouro, int numero, string complemento, string bairro /*int id_cidade, int id_estado*/)
+        public void AtualizaCadCliente(int id, string nome, string cpf, string cnpj, string cep, string logradouro, int numero, string complemento, string bairro, int id_cidade, int id_estado)
         {
             try
             {
                 conexao.Open();
-                FbCommand comando = new FbCommand("update tb_cliente c set nome_cliente = @nome, cpf_cliente = @cpf, cnpj_cliente = @cnpj, cep_cliente = @cep, logradouro_cliente = @logradouro, numero_cliente = @numero, complemento_cliente = @complemento, bairro_cliente = @bairro, id_cidade_cliente = 18, id_estado_cliente = 18 where id_cliente = @id", conexao);
+                FbCommand comando = new FbCommand("update tb_cliente c set nome_cliente = @nome, cpf_cliente = @cpf, cnpj_cliente = @cnpj, cep_cliente = @cep, logradouro_cliente = @logradouro, numero_cliente = @numero, complemento_cliente = @complemento, bairro_cliente = @bairro, id_cidade_cliente = @idcidade, id_estado_cliente = @estado where id_cliente = @id", conexao);
                 comando.Parameters.AddWithValue("@id", id);
-                comando.Parameters.AddWithValue("nome", nome);
+                comando.Parameters.AddWithValue("@nome", nome);
                 comando.Parameters.AddWithValue("@cpf", cpf);
                 comando.Parameters.AddWithValue("@cnpj", cnpj);
                 comando.Parameters.AddWithValue("@cep", cep);
                 comando.Parameters.AddWithValue("@logradouro", logradouro);
-                comando.Parameters.AddWithValue("numero", numero);
+                comando.Parameters.AddWithValue("@numero", numero);
                 comando.Parameters.AddWithValue("@complemento", complemento);
-                comando.Parameters.AddWithValue("bairro", bairro);
-                //comando.Parameters.AddWithValue("id_cidade", id_cidade);
-                //comando.Parameters.AddWithValue("id_estado", id_estado);
+                comando.Parameters.AddWithValue("@bairro", bairro);
+                comando.Parameters.AddWithValue("@id_cidade", id_cidade);
+                comando.Parameters.AddWithValue("@id_estado", id_estado);
                 comando.ExecuteNonQuery();
                 conexao.Close();
             }
@@ -128,6 +128,12 @@ namespace ProjetoContasAReceberRaro.controller
             {
                 conexao.Close();
             }
-        } 
+        }
+        public FbDataReader PesquisaCliente(string dados)
+        {
+            conexao.Open();
+            FbCommand comando = new FbCommand("select c.nome_cliente from tb_cliente where c.nome_cliente");
+            return null;
+        }
     }
 }

@@ -48,23 +48,6 @@ namespace ProjetoContasAReceberRaro.view
             }
         }
 
-        private void dtgCliente_CellClick(object sender, DataGridViewCellEventArgs e)
-        {
-            
-        }
-
-        private void dtgCliente_CellEndEdit(object sender, DataGridViewCellEventArgs e)
-        {
-            int linhaIndex = e.RowIndex;
-            DataGridViewRow row = dtgCliente.Rows[linhaIndex];
-            int codigo = int.Parse(row.Cells["codigo"].Value.ToString());
-            ClassCrudCliente crud = new ClassCrudCliente();
-             if (row.Cells["codigo"].Value != null)
-             {
-                crud.AtualizaCadCliente(codigo, row.Cells["nome"].Value.ToString(), row.Cells["cpf"].Value.ToString(), row.Cells["cnpj"].Value.ToString(), row.Cells["cep"].Value.ToString(), row.Cells["logradouro"].Value.ToString(), int.Parse(row.Cells["numero"].Value.ToString()), row.Cells["complemento"].Value.ToString(), row.Cells["bairro"].Value.ToString());
-             }
-
-        }
 
         private void lblAtualizar_Click(object sender, EventArgs e)
         {

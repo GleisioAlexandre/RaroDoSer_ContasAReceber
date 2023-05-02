@@ -28,14 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dtgCliente = new System.Windows.Forms.DataGridView();
-            this.StatusStrip = new System.Windows.Forms.StatusStrip();
-            this.lblInseir = new System.Windows.Forms.ToolStripStatusLabel();
-            this.lblAtualizar = new System.Windows.Forms.ToolStripStatusLabel();
-            this.lblDeletar = new System.Windows.Forms.ToolStripStatusLabel();
             this.codigo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nome = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cpf = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -47,6 +43,10 @@
             this.bairro = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cidade = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.estado = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.StatusStrip = new System.Windows.Forms.StatusStrip();
+            this.lblInseir = new System.Windows.Forms.ToolStripStatusLabel();
+            this.lblAtualizar = new System.Windows.Forms.ToolStripStatusLabel();
+            this.lblDeletar = new System.Windows.Forms.ToolStripStatusLabel();
             ((System.ComponentModel.ISupportInitialize)(this.dtgCliente)).BeginInit();
             this.StatusStrip.SuspendLayout();
             this.SuspendLayout();
@@ -77,8 +77,80 @@
             this.dtgCliente.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dtgCliente.Size = new System.Drawing.Size(1245, 571);
             this.dtgCliente.TabIndex = 0;
-            this.dtgCliente.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgCliente_CellClick);
-            this.dtgCliente.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgCliente_CellEndEdit);
+            // 
+            // codigo
+            // 
+            this.codigo.DataPropertyName = "id_cliente";
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.codigo.DefaultCellStyle = dataGridViewCellStyle1;
+            this.codigo.HeaderText = "Código";
+            this.codigo.Name = "codigo";
+            // 
+            // nome
+            // 
+            this.nome.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.nome.DataPropertyName = "nome_cliente";
+            this.nome.HeaderText = "Nome / Rasão Social";
+            this.nome.Name = "nome";
+            // 
+            // cpf
+            // 
+            this.cpf.DataPropertyName = "cpf_cliente";
+            this.cpf.HeaderText = "CPF";
+            this.cpf.Name = "cpf";
+            // 
+            // cnpj
+            // 
+            this.cnpj.DataPropertyName = "cnpj_cliente";
+            this.cnpj.HeaderText = "CNPJ";
+            this.cnpj.Name = "cnpj";
+            // 
+            // cep
+            // 
+            this.cep.DataPropertyName = "cep_cliente";
+            this.cep.HeaderText = "CEP";
+            this.cep.Name = "cep";
+            // 
+            // logradouro
+            // 
+            this.logradouro.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.logradouro.DataPropertyName = "logradouro_cliente";
+            this.logradouro.HeaderText = "Logradouro";
+            this.logradouro.Name = "logradouro";
+            // 
+            // numero
+            // 
+            this.numero.DataPropertyName = "numero_cliente";
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.numero.DefaultCellStyle = dataGridViewCellStyle2;
+            this.numero.HeaderText = "Numero";
+            this.numero.Name = "numero";
+            // 
+            // complemento
+            // 
+            this.complemento.DataPropertyName = "complemento_cliente";
+            this.complemento.HeaderText = "Complemento";
+            this.complemento.Name = "complemento";
+            // 
+            // bairro
+            // 
+            this.bairro.DataPropertyName = "bairro_cliente";
+            this.bairro.HeaderText = "Bairro";
+            this.bairro.Name = "bairro";
+            // 
+            // cidade
+            // 
+            this.cidade.DataPropertyName = "column1";
+            this.cidade.HeaderText = "Cidade";
+            this.cidade.Name = "cidade";
+            // 
+            // estado
+            // 
+            this.estado.DataPropertyName = "column2";
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.estado.DefaultCellStyle = dataGridViewCellStyle3;
+            this.estado.HeaderText = "Estado";
+            this.estado.Name = "estado";
             // 
             // StatusStrip
             // 
@@ -130,80 +202,6 @@
             this.lblDeletar.Size = new System.Drawing.Size(57, 21);
             this.lblDeletar.Text = "Deletar";
             this.lblDeletar.Click += new System.EventHandler(this.lblDeletar_Click);
-            // 
-            // codigo
-            // 
-            this.codigo.DataPropertyName = "id_cliente";
-            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.codigo.DefaultCellStyle = dataGridViewCellStyle7;
-            this.codigo.HeaderText = "Código";
-            this.codigo.Name = "codigo";
-            // 
-            // nome
-            // 
-            this.nome.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.nome.DataPropertyName = "nome_cliente";
-            this.nome.HeaderText = "Nome / Rasão Social";
-            this.nome.Name = "nome";
-            // 
-            // cpf
-            // 
-            this.cpf.DataPropertyName = "cpf_cliente";
-            this.cpf.HeaderText = "CPF";
-            this.cpf.Name = "cpf";
-            // 
-            // cnpj
-            // 
-            this.cnpj.DataPropertyName = "cnpj_cliente";
-            this.cnpj.HeaderText = "CNPJ";
-            this.cnpj.Name = "cnpj";
-            // 
-            // cep
-            // 
-            this.cep.DataPropertyName = "cep_cliente";
-            this.cep.HeaderText = "CEP";
-            this.cep.Name = "cep";
-            // 
-            // logradouro
-            // 
-            this.logradouro.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.logradouro.DataPropertyName = "logradouro_cliente";
-            this.logradouro.HeaderText = "Logradouro";
-            this.logradouro.Name = "logradouro";
-            // 
-            // numero
-            // 
-            this.numero.DataPropertyName = "numero_cliente";
-            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.numero.DefaultCellStyle = dataGridViewCellStyle8;
-            this.numero.HeaderText = "Numero";
-            this.numero.Name = "numero";
-            // 
-            // complemento
-            // 
-            this.complemento.DataPropertyName = "complemento_cliente";
-            this.complemento.HeaderText = "Complemento";
-            this.complemento.Name = "complemento";
-            // 
-            // bairro
-            // 
-            this.bairro.DataPropertyName = "bairro_cliente";
-            this.bairro.HeaderText = "Bairro";
-            this.bairro.Name = "bairro";
-            // 
-            // cidade
-            // 
-            this.cidade.DataPropertyName = "column1";
-            this.cidade.HeaderText = "Cidade";
-            this.cidade.Name = "cidade";
-            // 
-            // estado
-            // 
-            this.estado.DataPropertyName = "column2";
-            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.estado.DefaultCellStyle = dataGridViewCellStyle9;
-            this.estado.HeaderText = "Estado";
-            this.estado.Name = "estado";
             // 
             // FrmCliente
             // 
