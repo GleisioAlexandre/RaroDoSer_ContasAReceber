@@ -131,11 +131,21 @@ namespace ProjetoContasAReceberRaro.controller
                 conexao.Close();
             }
         }
-        public FbDataReader PesquisaCliente(string dados)
+        public String PesquisaCliente(string dados)
         {
+            string nome = null;
             conexao.Open();
-            FbCommand comando = new FbCommand("select c.nome_cliente from tb_cliente where c.nome_cliente");
-            return null;
+            FbCommand comando = new FbCommand("select nome_cliente from tb_cliente where nome_cliente like (@nome)", conexao);
+            comando.Parameters.AddWithValue("@nome%", dados);
+            FbDataReader leitor = comando.ExecuteReader();
+            if (leitor.HasRows)
+            {
+                leitor.Read();
+                nome = leitor["nome_cliente"].ToString();
+            }
+            leitor.Close();
+            conexao.Close();
+            return nome;
         }
     }
 }

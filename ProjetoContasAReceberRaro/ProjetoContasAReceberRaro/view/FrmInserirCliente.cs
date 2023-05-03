@@ -118,7 +118,9 @@ namespace ProjetoContasAReceberRaro.view
 
         private void btnPesquisar_Click(object sender, EventArgs e)
         {
-
+            ClassCrudCliente crud = new ClassCrudCliente();
+           
+            txtNome.Text = crud.PesquisaCliente(txtNome.Text);
         }
     }
 }
