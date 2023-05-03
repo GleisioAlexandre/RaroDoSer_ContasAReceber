@@ -94,6 +94,7 @@
     <EmbeddedResource Include="view\FrmInserirCliente.resx">
       <DependentUpon>FrmInserirCliente.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include="BD\RARO.FDB" />
     <None Include="packages.config" />
     <None Include="Properties\DataSources\FirebirdSql.Data.Client.Native.Handle.BlobHandle.datasource" />
     <None Include="Properties\DataSources\FirebirdSql.Data.Client.Native.Handle.DatabaseHandle.datasource" />
@@ -169,9 +170,7 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="BD\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <WCFMetadata Include="Connected Services\" />
   </ItemGroup>

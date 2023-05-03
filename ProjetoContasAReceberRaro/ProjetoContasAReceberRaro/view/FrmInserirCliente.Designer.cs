@@ -247,6 +247,7 @@
             this.txtLogradouro.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtLogradouro.Location = new System.Drawing.Point(151, 42);
             this.txtLogradouro.Name = "txtLogradouro";
+            this.txtLogradouro.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.txtLogradouro.Size = new System.Drawing.Size(397, 26);
             this.txtLogradouro.TabIndex = 4;
             // 

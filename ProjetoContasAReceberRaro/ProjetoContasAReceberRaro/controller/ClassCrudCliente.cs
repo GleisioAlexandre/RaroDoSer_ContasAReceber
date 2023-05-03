@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Data;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -10,7 +11,8 @@ namespace ProjetoContasAReceberRaro.controller
 {
     class ClassCrudCliente
     {
-        FbConnection conexao = new FbConnection("User=SYSDBA;Password=masterkey;Database=D:/bd/RARO.FDB;DataSource=localhost;Port=3050");
+        FbConnection conexao = new FbConnection("User=SYSDBA;Password=masterkey;Database=D:/C#/ProjetoRaroDoSer/ProjetoContasAReceberRaro/ProjetoContasAReceberRaro/BD/RARO.FDB;DataSource=localhost;Port=3050");
+       
         public DataTable CarregaGridCliente()
         {
             conexao.Open();
