@@ -1,4 +1,5 @@
 ﻿using FirebirdSql.Data.FirebirdClient;
+using ProjetoContasAReceberRaro.model;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -102,7 +103,7 @@ namespace ProjetoContasAReceberRaro.controller
                 conexao.Close();
             }
         }
-        public void AtualizaCadCliente(int id, string nome, string cpf, string cnpj, string cep, string logradouro, int numero, string complemento, string bairro, int id_cidade, int id_estado)
+        public void EditarCadCliente(int id, string nome, string cpf, string cnpj, string cep, string logradouro, int numero, string complemento, string bairro, int id_cidade, int id_estado)
         {
             try
             {
@@ -131,24 +132,31 @@ namespace ProjetoContasAReceberRaro.controller
                 conexao.Close();
             }
         }
-        public String PesquisaCliente(string dados)
+        public ClassCliente PesquisaClientePF(string dados)
         {
-            string nome = null;
             conexao.Open();
-            FbCommand comando = new FbCommand(@" select nome_cliente  from tb_cliente where nome_cliente like @nome or cpf_cliente = @cpf", conexao);
-            comando.Parameters.AddWithValue("@nome", dados+"%");
+            FbCommand comando = new FbCommand("select id_cliente, nome_cliente, cpf_cliente, cep_cliente, logradouro_cliente, numero_cliente, complemento_cliente, bairro_cliente, id_cidade_cliente, id_estado_cliente  from tb_cliente where nome_cliente like @nome or cpf_cliente = @cpf", conexao);
+            comando.Parameters.AddWithValue("@nome", dados + "%");
             comando.Parameters.AddWithValue("@cpf", dados);
             FbDataReader leitor = comando.ExecuteReader();
-            if (leitor.HasRows)
+            ClassCliente cliente = new ClassCliente();
+            while (leitor.Read())
             {
-                leitor.Read();
-                nome = leitor["nome_cliente"].ToString();
+                cliente.Codigo = Convert.ToInt32(leitor[0]);
+                cliente.Nome = leitor[1].ToString();
+                cliente.Cpf = leitor[2].ToString();
+                cliente.Cep = leitor[3].ToString();
+                cliente.Logradouro = leitor[4].ToString();
+                cliente.Numero = Convert.ToInt32(leitor[5].ToString());
+                cliente.Complemento = leitor[6].ToString();
+                cliente.Bairro = leitor[7].ToString();
+                cliente.Id_cidade = Convert.ToInt32(leitor[8]);
+                cliente.Id_estado = Convert.ToInt32(leitor[9]);
             }
             leitor.Close();
             conexao.Close();
-            Console.WriteLine(nome);
-            return nome;
-           
+            return cliente;
         }
     }
 }
+

@@ -53,6 +53,7 @@
             this.btnCadatrar = new System.Windows.Forms.Button();
             this.btnPesquisar = new System.Windows.Forms.Button();
             this.btnEditar = new System.Windows.Forms.Button();
+            this.lblCodigo = new System.Windows.Forms.Label();
             this.gpbDadosPessoais.SuspendLayout();
             this.gpbEndereco.SuspendLayout();
             this.SuspendLayout();
@@ -109,6 +110,7 @@
             // 
             // gpbDadosPessoais
             // 
+            this.gpbDadosPessoais.Controls.Add(this.lblCodigo);
             this.gpbDadosPessoais.Controls.Add(this.txtPessoa);
             this.gpbDadosPessoais.Controls.Add(this.cbxPessoa);
             this.gpbDadosPessoais.Controls.Add(this.lblDescricao);
@@ -247,7 +249,6 @@
             this.txtLogradouro.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtLogradouro.Location = new System.Drawing.Point(151, 42);
             this.txtLogradouro.Name = "txtLogradouro";
-            this.txtLogradouro.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.txtLogradouro.Size = new System.Drawing.Size(397, 26);
             this.txtLogradouro.TabIndex = 4;
             // 
@@ -324,6 +325,17 @@
             this.btnEditar.TabIndex = 11;
             this.btnEditar.Text = "Editar";
             this.btnEditar.UseVisualStyleBackColor = true;
+            this.btnEditar.Click += new System.EventHandler(this.btnEditar_Click);
+            // 
+            // lblCodigo
+            // 
+            this.lblCodigo.AutoSize = true;
+            this.lblCodigo.Location = new System.Drawing.Point(249, 15);
+            this.lblCodigo.Name = "lblCodigo";
+            this.lblCodigo.Size = new System.Drawing.Size(13, 13);
+            this.lblCodigo.TabIndex = 12;
+            this.lblCodigo.Text = "0";
+            this.lblCodigo.Visible = false;
             // 
             // FrmInserirCliente
             // 
@@ -378,5 +390,6 @@
         private System.Windows.Forms.ComboBox cbxCidade;
         private System.Windows.Forms.Button btnPesquisar;
         private System.Windows.Forms.Button btnEditar;
+        private System.Windows.Forms.Label lblCodigo;
     }
 }
