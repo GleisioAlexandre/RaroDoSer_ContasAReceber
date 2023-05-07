@@ -12,7 +12,7 @@ namespace ProjetoContasAReceberRaro.controller
 {
     class ClassCrudCliente
     {
-        FbConnection conexao = new FbConnection("User=SYSDBA;Password=masterkey;Database=C:/Users/Gleisio/Documents/C#/RaroDoSer_ContasAReceber/ProjetoContasAReceberRaro/ProjetoContasAReceberRaro/BD/RARO.FDB;DataSource=localhost;Port=3050");
+        FbConnection conexao = new FbConnection("User=SYSDBA;Password=masterkey;Database=D:/C#/ProjetoRaroDoSer/ProjetoContasAReceberRaro/ProjetoContasAReceberRaro/BD/RARO.FDB;DataSource=localhost;Port=3050");
        
         public DataTable CarregaGridCliente()
         {

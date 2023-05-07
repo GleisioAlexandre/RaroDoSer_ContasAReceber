@@ -55,7 +55,7 @@
   <ItemGroup>
     <Compile Include="controller\ClassBuscaCep.cs" />
     <Compile Include="controller\ClassCrudCliente.cs" />
-    <Compile Include="model\ClassCliente.cs" />
+    <Compile Include="controller\ClassCliente.cs" />
     <Compile Include="model\Endereco.cs" />
     <Compile Include="view\FrmCliente.cs">
       <SubType>Form</SubType>

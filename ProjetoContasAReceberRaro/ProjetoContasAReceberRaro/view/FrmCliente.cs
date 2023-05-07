@@ -21,21 +21,33 @@ namespace ProjetoContasAReceberRaro.view
 
         private void FrmCliente_Load(object sender, EventArgs e)
         {
-            ClassCrudCliente crud = new ClassCrudCliente();
-            dtgCliente.DataSource = crud.CarregaGridCliente();
-            dtgCliente.Sort(dtgCliente.Columns[0], ListSortDirection.Ascending);
+            AtualizaGrid();
         }
 
         private void lblInseir_Click(object sender, EventArgs e)
         {
-            FrmInserirCliente inserirCliente = new FrmInserirCliente();
-            inserirCliente.ShowDialog();
+            FormInserirCliente();
         }
 
         private void lblDeletar_Click(object sender, EventArgs e)
         {
+            DeletarCliente();
+        }
+
+        private void lblAtualizar_Click(object sender, EventArgs e)
+        {
+            AtualizaGrid();
+        }
+        private void AtualizaGrid()
+        {
+            ClassCrudCliente crud = new ClassCrudCliente();
+            dtgCliente.DataSource = crud.CarregaGridCliente();
+            dtgCliente.Sort(dtgCliente.Columns[0], ListSortDirection.Ascending);
+        }
+        private void DeletarCliente()
+        {
             int id = int.Parse(dtgCliente.CurrentRow.Cells["codigo"].Value.ToString());
-           if (DialogResult.Yes == MessageBox.Show("Tem certeza que deseja remover o registro ?", "Alerta", MessageBoxButtons.YesNo, MessageBoxIcon.Information))
+            if (DialogResult.Yes == MessageBox.Show("Tem certeza que deseja remover o registro ?", "Alerta", MessageBoxButtons.YesNo, MessageBoxIcon.Information))
             {
                 ClassCrudCliente crud = new ClassCrudCliente();
                 crud.DeletarCliente(id);
@@ -47,13 +59,11 @@ namespace ProjetoContasAReceberRaro.view
                 MessageBox.Show("Operação canelada pelo usuários !", "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
         }
-
-
-        private void lblAtualizar_Click(object sender, EventArgs e)
+        private void FormInserirCliente()
         {
-            ClassCrudCliente crud = new ClassCrudCliente();
-            dtgCliente.DataSource = crud.CarregaGridCliente();
-            dtgCliente.Sort(dtgCliente.Columns[0], ListSortDirection.Ascending);
+            FrmInserirCliente inserirCliente = new FrmInserirCliente();
+            inserirCliente.ShowDialog();
         }
+       
     }
 }
