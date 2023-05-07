@@ -41,16 +41,16 @@ namespace ProjetoContasAReceberRaro.view
                 txtPessoa.Size = new Size(121, 26);
             }
         }
-
         private void btn_novo_Click(object sender, EventArgs e)
         {
             gpbDadosPessoais.Enabled = true;
             gpbEndereco.Enabled = true;
             btnCadatrar.Enabled = true;
+            btnPesquisar.Enabled = true;
+            btnEditar.Enabled = true;
             btn_novo.Enabled = false;
             txtNome.Focus();
         }
-
         private void btnCadatrar_Click(object sender, EventArgs e)
         {
             string cpf, cnpj;
@@ -86,15 +86,12 @@ namespace ProjetoContasAReceberRaro.view
                 {
                     this.Close();
                 }
-                
-               
             }
             catch (Exception ex)
             {
                 MessageBox.Show("Erro ao Cadastrar o cliente !\n" + ex, "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
-
         private void txtCep_Validated(object sender, EventArgs e)
         {
             ClassBuscaCep buscaCep = new ClassBuscaCep();
@@ -108,38 +105,59 @@ namespace ProjetoContasAReceberRaro.view
                 cbxCidade.SelectedItem = endereco.Localidade;
                 cbxEstado.SelectedItem = endereco.Uf;
             }
-            
         }
-
-
         private void btnPesquisar_Click(object sender, EventArgs e)
         {
-           if (cbxPessoa.Checked == true)
+            if (cbxPessoa.Checked == true)
             {
-                txtPessoa.Select(0, 0);
-                txtPessoa.Select();
-                ClassCrudCliente crud = new ClassCrudCliente();
-                ClassCliente cliente = new ClassCliente();
-                cliente = crud.PesquisaClinetePJ(txtPessoa.Text);
-                lblCodigo.Text = cliente.Codigo.ToString();
-                txtNome.Text = cliente.Nome;
-                txtPessoa.Text = cliente.Cnpj;
-                txtCep.Text = cliente.Cep;
-                txtLogradouro.Text = cliente.Logradouro;
-                txtNumero.Text = cliente.Numero.ToString();
-                txtComplemento.Text = cliente.Complemento;
-                txtBairro.Text = cliente.Bairro;
-                cbxCidade.SelectedIndex = cliente.Id_cidade - 1;
-                cbxEstado.SelectedIndex = cliente.Id_estado - 1;
-            
+                try
+                {
+                    string pJ = null;
+
+                    if (txtNome.Text == "")
+                    {
+                        pJ = txtPessoa.Text;
+                    }
+                    else
+                    {
+                        pJ = txtNome.Text;
+                    }
+                    ClassCrudCliente crud = new ClassCrudCliente();
+                    ClassCliente cliente = new ClassCliente();
+                    cliente = crud.PesquisaClinetePJ(pJ);
+
+                    lblCodigo.Text = cliente.Codigo.ToString();
+                    txtNome.Text = cliente.Nome;
+                    txtPessoa.Text = cliente.Cnpj;
+                    txtCep.Text = cliente.Cep;
+                    txtLogradouro.Text = cliente.Logradouro;
+                    txtNumero.Text = cliente.Numero.ToString();
+                    txtComplemento.Text = cliente.Complemento;
+                    txtBairro.Text = cliente.Bairro;
+                    cbxCidade.SelectedIndex = cliente.Id_cidade - 1;
+                    cbxEstado.SelectedIndex = cliente.Id_estado - 1;
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Erro ao buscar as informações do cliente, ou dados inexistentes!\n" + ex, "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
             }
             else
             {
-                ClassCrudCliente crud = new ClassCrudCliente();
-                ClassCliente cliente = new ClassCliente();
-                cliente = crud.PesquisaClientePF(txtNome.Text);
                 try
                 {
+                    string pf = null;
+                    if (txtNome.Text == "")
+                    {
+                        pf = txtPessoa.Text;
+                    }
+                    else
+                    {
+                        pf = txtNome.Text;
+                    }
+                    ClassCrudCliente crud = new ClassCrudCliente();
+                    ClassCliente cliente = new ClassCliente();
+                    cliente = crud.PesquisaClientePF(pf);
                     txtNome.Focus();
                     lblCodigo.Text = cliente.Codigo.ToString();
                     txtNome.Text = cliente.Nome;
@@ -151,8 +169,6 @@ namespace ProjetoContasAReceberRaro.view
                     txtBairro.Text = cliente.Bairro;
                     cbxCidade.SelectedIndex = cliente.Id_cidade - 1;
                     cbxEstado.SelectedIndex = cliente.Id_estado - 1;
-                   
-                    
                 }
                 catch (Exception ex)
                 {
@@ -161,11 +177,31 @@ namespace ProjetoContasAReceberRaro.view
             }
            
         }
-
         private void btnEditar_Click(object sender, EventArgs e)
         {
-          /*ClassCrudCliente crud = new ClassCrudCliente();
-          crud.EditarCadCliente(Convert.ToInt32(lblCodigo.Text), txtNome.Text, txtpe);*/
+            string pf = null;
+            string pj = null;
+            try
+            {
+                ClassCrudCliente crud = new ClassCrudCliente();
+                if (txtPessoa.Text.Length == 18)
+                {
+                    pj = txtPessoa.Text;
+                    pf = null;
+                }
+                else if (txtPessoa.Text.Length == 14)
+                {
+                    pf = txtPessoa.Text;
+                    pj = null;
+                }
+                crud.EditarCadCliente(Convert.ToInt32(lblCodigo.Text), txtNome.Text, pj, pf, txtCep.Text, txtLogradouro.Text, Convert.ToInt32(txtNumero.Text), txtComplemento.Text, txtBairro.Text, cbxCidade.SelectedIndex + 1, cbxEstado.SelectedIndex + 1);
+                MessageBox.Show("Cliente atualizado com sucesso!", "Sucesso!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                this.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Erro ao atualizar o registro do cliente!" + ex, "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
     }
 }

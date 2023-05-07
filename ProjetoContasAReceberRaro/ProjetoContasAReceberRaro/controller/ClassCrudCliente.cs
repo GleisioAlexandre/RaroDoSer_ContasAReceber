@@ -103,14 +103,15 @@ namespace ProjetoContasAReceberRaro.controller
                 conexao.Close();
             }
         }
-        public void EditarCadClientePf(int id, string nome, string cpf, string cep, string logradouro, int numero, string complemento, string bairro, int id_cidade, int id_estado)
+        public void EditarCadCliente(int id, string nome, string cnpj, string cpf, string cep, string logradouro, int numero, string complemento, string bairro, int id_cidade, int id_estado)
         {
             try
             {
                 conexao.Open();
-                FbCommand comando = new FbCommand("update tb_cliente c set nome_cliente = @nome, cpf_cliente = @cpf, cep_cliente = @cep, logradouro_cliente = @logradouro, numero_cliente = @numero, complemento_cliente = @complemento, bairro_cliente = @bairro, id_cidade_cliente = @idcidade, id_estado_cliente = @estado where id_cliente = @id", conexao);
+                FbCommand comando = new FbCommand("update tb_cliente c set nome_cliente = @nome, cnpj_cliente = @cnpj, cpf_cliente = @cpf, cep_cliente = @cep, logradouro_cliente = @logradouro, numero_cliente = @numero, complemento_cliente = @complemento, bairro_cliente = @bairro, id_cidade_cliente = @id_cidade, id_estado_cliente = @id_estado where id_cliente = @id", conexao);
                 comando.Parameters.AddWithValue("@id", id);
                 comando.Parameters.AddWithValue("@nome", nome);
+                comando.Parameters.AddWithValue("@cnpj", cnpj);
                 comando.Parameters.AddWithValue("@cpf", cpf);
                 comando.Parameters.AddWithValue("@cep", cep);
                 comando.Parameters.AddWithValue("@logradouro", logradouro);
