@@ -12,7 +12,7 @@ namespace ProjetoContasAReceberRaro.controller
 {
     class ClassCrudCliente
     {
-        FbConnection conexao = new FbConnection("User=SYSDBA;Password=masterkey;Database=D:/C#/ProjetoRaroDoSer/ProjetoContasAReceberRaro/ProjetoContasAReceberRaro/BD/RARO.FDB;DataSource=localhost;Port=3050");
+        FbConnection conexao = new FbConnection("User=SYSDBA;Password=masterkey;Database=C:/Users/Gleisio/Documents/C#/RaroDoSer_ContasAReceber/ProjetoContasAReceberRaro/ProjetoContasAReceberRaro/BD/RARO.FDB;DataSource=localhost;Port=3050");
        
         public DataTable CarregaGridCliente()
         {
@@ -103,16 +103,15 @@ namespace ProjetoContasAReceberRaro.controller
                 conexao.Close();
             }
         }
-        public void EditarCadCliente(int id, string nome, string cpf, string cnpj, string cep, string logradouro, int numero, string complemento, string bairro, int id_cidade, int id_estado)
+        public void EditarCadClientePf(int id, string nome, string cpf, string cep, string logradouro, int numero, string complemento, string bairro, int id_cidade, int id_estado)
         {
             try
             {
                 conexao.Open();
-                FbCommand comando = new FbCommand("update tb_cliente c set nome_cliente = @nome, cpf_cliente = @cpf, cnpj_cliente = @cnpj, cep_cliente = @cep, logradouro_cliente = @logradouro, numero_cliente = @numero, complemento_cliente = @complemento, bairro_cliente = @bairro, id_cidade_cliente = @idcidade, id_estado_cliente = @estado where id_cliente = @id", conexao);
+                FbCommand comando = new FbCommand("update tb_cliente c set nome_cliente = @nome, cpf_cliente = @cpf, cep_cliente = @cep, logradouro_cliente = @logradouro, numero_cliente = @numero, complemento_cliente = @complemento, bairro_cliente = @bairro, id_cidade_cliente = @idcidade, id_estado_cliente = @estado where id_cliente = @id", conexao);
                 comando.Parameters.AddWithValue("@id", id);
                 comando.Parameters.AddWithValue("@nome", nome);
                 comando.Parameters.AddWithValue("@cpf", cpf);
-                comando.Parameters.AddWithValue("@cnpj", cnpj);
                 comando.Parameters.AddWithValue("@cep", cep);
                 comando.Parameters.AddWithValue("@logradouro", logradouro);
                 comando.Parameters.AddWithValue("@numero", numero);
@@ -155,6 +154,29 @@ namespace ProjetoContasAReceberRaro.controller
             }
             leitor.Close();
             conexao.Close();
+            return cliente;
+        }
+        public ClassCliente PesquisaClinetePJ(string dados)
+        {
+            conexao.Open();
+            FbCommand comando = new FbCommand("select id_cliente, nome_cliente, cnpj_cliente, cep_cliente, logradouro_cliente, numero_cliente, complemento_cliente, bairro_cliente, id_cidade_cliente, id_estado_cliente  from tb_cliente where nome_cliente like @nome or cnpj_cliente = @cnpj", conexao);
+            comando.Parameters.AddWithValue("@nome", dados + "%");
+            comando.Parameters.AddWithValue("@cnpj", dados);
+            FbDataReader leitor = comando.ExecuteReader();
+            ClassCliente cliente = new ClassCliente();
+            while (leitor.Read())
+            {
+                cliente.Codigo = Convert.ToInt32(leitor[0]);
+                cliente.Nome = leitor[1].ToString();
+                cliente.Cnpj = leitor[2].ToString();
+                cliente.Cep = leitor[3].ToString();
+                cliente.Logradouro = leitor[4].ToString();
+                cliente.Numero = Convert.ToInt32(leitor[5].ToString());
+                cliente.Complemento = leitor[6].ToString();
+                cliente.Bairro = leitor[7].ToString();
+                cliente.Id_cidade = Convert.ToInt32(leitor[8]);
+                cliente.Id_estado = Convert.ToInt32(leitor[9]);
+            }
             return cliente;
         }
     }

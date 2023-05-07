@@ -34,6 +34,7 @@
             this.txtPessoa = new System.Windows.Forms.MaskedTextBox();
             this.cbxPessoa = new System.Windows.Forms.CheckBox();
             this.gpbDadosPessoais = new System.Windows.Forms.GroupBox();
+            this.lblCodigo = new System.Windows.Forms.Label();
             this.gpbEndereco = new System.Windows.Forms.GroupBox();
             this.cbxCidade = new System.Windows.Forms.ComboBox();
             this.cbxEstado = new System.Windows.Forms.ComboBox();
@@ -53,7 +54,6 @@
             this.btnCadatrar = new System.Windows.Forms.Button();
             this.btnPesquisar = new System.Windows.Forms.Button();
             this.btnEditar = new System.Windows.Forms.Button();
-            this.lblCodigo = new System.Windows.Forms.Label();
             this.gpbDadosPessoais.SuspendLayout();
             this.gpbEndereco.SuspendLayout();
             this.SuspendLayout();
@@ -123,6 +123,16 @@
             this.gpbDadosPessoais.TabIndex = 5;
             this.gpbDadosPessoais.TabStop = false;
             this.gpbDadosPessoais.Text = "Dados Pessoais";
+            // 
+            // lblCodigo
+            // 
+            this.lblCodigo.AutoSize = true;
+            this.lblCodigo.Location = new System.Drawing.Point(249, 15);
+            this.lblCodigo.Name = "lblCodigo";
+            this.lblCodigo.Size = new System.Drawing.Size(13, 13);
+            this.lblCodigo.TabIndex = 12;
+            this.lblCodigo.Text = "0";
+            this.lblCodigo.Visible = false;
             // 
             // gpbEndereco
             // 
@@ -326,16 +336,6 @@
             this.btnEditar.Text = "Editar";
             this.btnEditar.UseVisualStyleBackColor = true;
             this.btnEditar.Click += new System.EventHandler(this.btnEditar_Click);
-            // 
-            // lblCodigo
-            // 
-            this.lblCodigo.AutoSize = true;
-            this.lblCodigo.Location = new System.Drawing.Point(249, 15);
-            this.lblCodigo.Name = "lblCodigo";
-            this.lblCodigo.Size = new System.Drawing.Size(13, 13);
-            this.lblCodigo.TabIndex = 12;
-            this.lblCodigo.Text = "0";
-            this.lblCodigo.Visible = false;
             // 
             // FrmInserirCliente
             // 

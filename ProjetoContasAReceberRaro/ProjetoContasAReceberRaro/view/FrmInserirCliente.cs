@@ -114,14 +114,16 @@ namespace ProjetoContasAReceberRaro.view
 
         private void btnPesquisar_Click(object sender, EventArgs e)
         {
-            ClassCrudCliente crud = new ClassCrudCliente();
-            ClassCliente cliente = new ClassCliente();
-            cliente =  crud.PesquisaClientePF(txtNome.Text);
-            try
+           if (cbxPessoa.Checked == true)
             {
+                txtPessoa.Select(0, 0);
+                txtPessoa.Select();
+                ClassCrudCliente crud = new ClassCrudCliente();
+                ClassCliente cliente = new ClassCliente();
+                cliente = crud.PesquisaClinetePJ(txtPessoa.Text);
                 lblCodigo.Text = cliente.Codigo.ToString();
                 txtNome.Text = cliente.Nome;
-                txtPessoa.Text = cliente.Cpf;
+                txtPessoa.Text = cliente.Cnpj;
                 txtCep.Text = cliente.Cep;
                 txtLogradouro.Text = cliente.Logradouro;
                 txtNumero.Text = cliente.Numero.ToString();
@@ -129,18 +131,41 @@ namespace ProjetoContasAReceberRaro.view
                 txtBairro.Text = cliente.Bairro;
                 cbxCidade.SelectedIndex = cliente.Id_cidade - 1;
                 cbxEstado.SelectedIndex = cliente.Id_estado - 1;
+            
             }
-            catch (Exception ex)
+            else
             {
-                MessageBox.Show("Erro ao buscar as informações do cliente, ou dados inexistentes!\n" + ex, "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                ClassCrudCliente crud = new ClassCrudCliente();
+                ClassCliente cliente = new ClassCliente();
+                cliente = crud.PesquisaClientePF(txtNome.Text);
+                try
+                {
+                    txtNome.Focus();
+                    lblCodigo.Text = cliente.Codigo.ToString();
+                    txtNome.Text = cliente.Nome;
+                    txtPessoa.Text = cliente.Cpf;
+                    txtCep.Text = cliente.Cep;
+                    txtLogradouro.Text = cliente.Logradouro;
+                    txtNumero.Text = cliente.Numero.ToString();
+                    txtComplemento.Text = cliente.Complemento;
+                    txtBairro.Text = cliente.Bairro;
+                    cbxCidade.SelectedIndex = cliente.Id_cidade - 1;
+                    cbxEstado.SelectedIndex = cliente.Id_estado - 1;
+                   
+                    
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Erro ao buscar as informações do cliente, ou dados inexistentes!\n" + ex, "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
             }
            
         }
 
         private void btnEditar_Click(object sender, EventArgs e)
         {
-           ClassCrudCliente crud = new ClassCrudCliente();
-            crud.EditarCadCliente(Convert.ToInt32(lblCodigo.Text), txtNome.Text, );
+          /*ClassCrudCliente crud = new ClassCrudCliente();
+          crud.EditarCadCliente(Convert.ToInt32(lblCodigo.Text), txtNome.Text, txtpe);*/
         }
     }
 }
