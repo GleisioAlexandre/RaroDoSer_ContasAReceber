@@ -29,6 +29,7 @@ namespace ProjetoContasAReceberRaro.view
         private void btn_novo_Click(object sender, EventArgs e)
         {
             BtnNovo();
+           
         }
         private void btnCadatrar_Click(object sender, EventArgs e)
         {
