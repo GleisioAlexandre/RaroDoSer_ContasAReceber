@@ -30,15 +30,6 @@ namespace ProjetoContasAReceberRaro.view
             
         }
 
-        private void lblDeletar_Click(object sender, EventArgs e)
-        {
-            DeletarCliente();
-        }
-
-        private void lblAtualizar_Click(object sender, EventArgs e)
-        {
-            AtualizaGrid();
-        }
         public void AtualizaGrid()
         {
             ClassCrudCliente crud = new ClassCrudCliente();
@@ -62,7 +53,7 @@ namespace ProjetoContasAReceberRaro.view
         }
         private void FormInserirCliente()
         {
-            FrmInserirCliente inserirCliente = new FrmInserirCliente();
+            FrmInserirCliente inserirCliente = new FrmInserirCliente(this);
             inserirCliente.ShowDialog();
         }
        

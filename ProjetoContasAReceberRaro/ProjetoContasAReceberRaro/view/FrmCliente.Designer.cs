@@ -28,14 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dtgCliente = new System.Windows.Forms.DataGridView();
-            this.StatusStrip = new System.Windows.Forms.StatusStrip();
-            this.lblInseir = new System.Windows.Forms.ToolStripStatusLabel();
-            this.lblAtualizar = new System.Windows.Forms.ToolStripStatusLabel();
-            this.lblDeletar = new System.Windows.Forms.ToolStripStatusLabel();
             this.codigo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nome = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cpf = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -47,6 +43,8 @@
             this.bairro = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cidade = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.estado = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.StatusStrip = new System.Windows.Forms.StatusStrip();
+            this.lblInseir = new System.Windows.Forms.ToolStripStatusLabel();
             ((System.ComponentModel.ISupportInitialize)(this.dtgCliente)).BeginInit();
             this.StatusStrip.SuspendLayout();
             this.SuspendLayout();
@@ -79,62 +77,11 @@
             this.dtgCliente.Size = new System.Drawing.Size(1245, 571);
             this.dtgCliente.TabIndex = 0;
             // 
-            // StatusStrip
-            // 
-            this.StatusStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.lblInseir,
-            this.lblAtualizar,
-            this.lblDeletar});
-            this.StatusStrip.Location = new System.Drawing.Point(0, 574);
-            this.StatusStrip.Name = "StatusStrip";
-            this.StatusStrip.Size = new System.Drawing.Size(1243, 26);
-            this.StatusStrip.TabIndex = 1;
-            this.StatusStrip.Text = "statusStrip1";
-            // 
-            // lblInseir
-            // 
-            this.lblInseir.BorderSides = ((System.Windows.Forms.ToolStripStatusLabelBorderSides)((((System.Windows.Forms.ToolStripStatusLabelBorderSides.Left | System.Windows.Forms.ToolStripStatusLabelBorderSides.Top) 
-            | System.Windows.Forms.ToolStripStatusLabelBorderSides.Right) 
-            | System.Windows.Forms.ToolStripStatusLabelBorderSides.Bottom)));
-            this.lblInseir.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
-            this.lblInseir.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
-            this.lblInseir.Margin = new System.Windows.Forms.Padding(10, 3, 0, 2);
-            this.lblInseir.Name = "lblInseir";
-            this.lblInseir.Size = new System.Drawing.Size(51, 21);
-            this.lblInseir.Text = "Inserir";
-            this.lblInseir.Click += new System.EventHandler(this.lblInseir_Click);
-            // 
-            // lblAtualizar
-            // 
-            this.lblAtualizar.BorderSides = ((System.Windows.Forms.ToolStripStatusLabelBorderSides)((((System.Windows.Forms.ToolStripStatusLabelBorderSides.Left | System.Windows.Forms.ToolStripStatusLabelBorderSides.Top) 
-            | System.Windows.Forms.ToolStripStatusLabelBorderSides.Right) 
-            | System.Windows.Forms.ToolStripStatusLabelBorderSides.Bottom)));
-            this.lblAtualizar.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
-            this.lblAtualizar.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
-            this.lblAtualizar.Margin = new System.Windows.Forms.Padding(10, 3, 0, 2);
-            this.lblAtualizar.Name = "lblAtualizar";
-            this.lblAtualizar.Size = new System.Drawing.Size(67, 21);
-            this.lblAtualizar.Text = "Atualizar";
-            this.lblAtualizar.Click += new System.EventHandler(this.lblAtualizar_Click);
-            // 
-            // lblDeletar
-            // 
-            this.lblDeletar.BorderSides = ((System.Windows.Forms.ToolStripStatusLabelBorderSides)((((System.Windows.Forms.ToolStripStatusLabelBorderSides.Left | System.Windows.Forms.ToolStripStatusLabelBorderSides.Top) 
-            | System.Windows.Forms.ToolStripStatusLabelBorderSides.Right) 
-            | System.Windows.Forms.ToolStripStatusLabelBorderSides.Bottom)));
-            this.lblDeletar.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
-            this.lblDeletar.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDeletar.Margin = new System.Windows.Forms.Padding(10, 3, 0, 2);
-            this.lblDeletar.Name = "lblDeletar";
-            this.lblDeletar.Size = new System.Drawing.Size(57, 21);
-            this.lblDeletar.Text = "Deletar";
-            this.lblDeletar.Click += new System.EventHandler(this.lblDeletar_Click);
-            // 
             // codigo
             // 
             this.codigo.DataPropertyName = "id_cliente";
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.codigo.DefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.codigo.DefaultCellStyle = dataGridViewCellStyle4;
             this.codigo.HeaderText = "Código";
             this.codigo.Name = "codigo";
             this.codigo.ReadOnly = true;
@@ -179,8 +126,8 @@
             // numero
             // 
             this.numero.DataPropertyName = "numero_cliente";
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.numero.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.numero.DefaultCellStyle = dataGridViewCellStyle5;
             this.numero.HeaderText = "Numero";
             this.numero.Name = "numero";
             this.numero.ReadOnly = true;
@@ -209,11 +156,34 @@
             // estado
             // 
             this.estado.DataPropertyName = "column2";
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.estado.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.estado.DefaultCellStyle = dataGridViewCellStyle6;
             this.estado.HeaderText = "Estado";
             this.estado.Name = "estado";
             this.estado.ReadOnly = true;
+            // 
+            // StatusStrip
+            // 
+            this.StatusStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.lblInseir});
+            this.StatusStrip.Location = new System.Drawing.Point(0, 574);
+            this.StatusStrip.Name = "StatusStrip";
+            this.StatusStrip.Size = new System.Drawing.Size(1243, 26);
+            this.StatusStrip.TabIndex = 1;
+            this.StatusStrip.Text = "statusStrip1";
+            // 
+            // lblInseir
+            // 
+            this.lblInseir.BorderSides = ((System.Windows.Forms.ToolStripStatusLabelBorderSides)((((System.Windows.Forms.ToolStripStatusLabelBorderSides.Left | System.Windows.Forms.ToolStripStatusLabelBorderSides.Top) 
+            | System.Windows.Forms.ToolStripStatusLabelBorderSides.Right) 
+            | System.Windows.Forms.ToolStripStatusLabelBorderSides.Bottom)));
+            this.lblInseir.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.lblInseir.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
+            this.lblInseir.Margin = new System.Windows.Forms.Padding(10, 3, 0, 2);
+            this.lblInseir.Name = "lblInseir";
+            this.lblInseir.Size = new System.Drawing.Size(132, 21);
+            this.lblInseir.Text = "Cadastro de Cliente";
+            this.lblInseir.Click += new System.EventHandler(this.lblInseir_Click);
             // 
             // FrmCliente
             // 
@@ -238,8 +208,6 @@
         private System.Windows.Forms.DataGridView dtgCliente;
         private System.Windows.Forms.StatusStrip StatusStrip;
         private System.Windows.Forms.ToolStripStatusLabel lblInseir;
-        private System.Windows.Forms.ToolStripStatusLabel lblAtualizar;
-        private System.Windows.Forms.ToolStripStatusLabel lblDeletar;
         private System.Windows.Forms.DataGridViewTextBoxColumn codigo;
         private System.Windows.Forms.DataGridViewTextBoxColumn nome;
         private System.Windows.Forms.DataGridViewTextBoxColumn cpf;

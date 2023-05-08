@@ -50,10 +50,11 @@
             this.label2 = new System.Windows.Forms.Label();
             this.txtCep = new System.Windows.Forms.MaskedTextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.btn_novo = new System.Windows.Forms.Button();
-            this.btnCadatrar = new System.Windows.Forms.Button();
             this.btnPesquisar = new System.Windows.Forms.Button();
             this.btnEditar = new System.Windows.Forms.Button();
+            this.btnCadatrar = new System.Windows.Forms.Button();
+            this.btn_novo = new System.Windows.Forms.Button();
+            this.btnDeletar = new System.Windows.Forms.Button();
             this.gpbDadosPessoais.SuspendLayout();
             this.gpbEndereco.SuspendLayout();
             this.SuspendLayout();
@@ -292,36 +293,13 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "CEP";
             // 
-            // btn_novo
-            // 
-            this.btn_novo.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_novo.Location = new System.Drawing.Point(12, 411);
-            this.btn_novo.Name = "btn_novo";
-            this.btn_novo.Size = new System.Drawing.Size(111, 33);
-            this.btn_novo.TabIndex = 7;
-            this.btn_novo.Text = "Novo";
-            this.btn_novo.UseVisualStyleBackColor = true;
-            this.btn_novo.Click += new System.EventHandler(this.btn_novo_Click);
-            // 
-            // btnCadatrar
-            // 
-            this.btnCadatrar.Enabled = false;
-            this.btnCadatrar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCadatrar.Location = new System.Drawing.Point(159, 411);
-            this.btnCadatrar.Name = "btnCadatrar";
-            this.btnCadatrar.Size = new System.Drawing.Size(111, 33);
-            this.btnCadatrar.TabIndex = 8;
-            this.btnCadatrar.Text = "Cadastrar";
-            this.btnCadatrar.UseVisualStyleBackColor = true;
-            this.btnCadatrar.Click += new System.EventHandler(this.btnCadatrar_Click);
-            // 
             // btnPesquisar
             // 
             this.btnPesquisar.Enabled = false;
-            this.btnPesquisar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnPesquisar.Location = new System.Drawing.Point(306, 411);
+            this.btnPesquisar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnPesquisar.Location = new System.Drawing.Point(238, 411);
             this.btnPesquisar.Name = "btnPesquisar";
-            this.btnPesquisar.Size = new System.Drawing.Size(111, 33);
+            this.btnPesquisar.Size = new System.Drawing.Size(93, 33);
             this.btnPesquisar.TabIndex = 10;
             this.btnPesquisar.Text = "Pesquisar";
             this.btnPesquisar.UseVisualStyleBackColor = true;
@@ -330,20 +308,56 @@
             // btnEditar
             // 
             this.btnEditar.Enabled = false;
-            this.btnEditar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEditar.Location = new System.Drawing.Point(453, 411);
+            this.btnEditar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEditar.Location = new System.Drawing.Point(351, 411);
             this.btnEditar.Name = "btnEditar";
-            this.btnEditar.Size = new System.Drawing.Size(111, 33);
+            this.btnEditar.Size = new System.Drawing.Size(93, 33);
             this.btnEditar.TabIndex = 11;
             this.btnEditar.Text = "Editar";
             this.btnEditar.UseVisualStyleBackColor = true;
             this.btnEditar.Click += new System.EventHandler(this.btnEditar_Click);
+            // 
+            // btnCadatrar
+            // 
+            this.btnCadatrar.Enabled = false;
+            this.btnCadatrar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCadatrar.Location = new System.Drawing.Point(125, 411);
+            this.btnCadatrar.Name = "btnCadatrar";
+            this.btnCadatrar.Size = new System.Drawing.Size(93, 33);
+            this.btnCadatrar.TabIndex = 8;
+            this.btnCadatrar.Text = "Cadastrar";
+            this.btnCadatrar.UseVisualStyleBackColor = true;
+            this.btnCadatrar.Click += new System.EventHandler(this.btnCadatrar_Click);
+            // 
+            // btn_novo
+            // 
+            this.btn_novo.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_novo.Location = new System.Drawing.Point(12, 411);
+            this.btn_novo.Name = "btn_novo";
+            this.btn_novo.Size = new System.Drawing.Size(93, 33);
+            this.btn_novo.TabIndex = 7;
+            this.btn_novo.Text = "Novo";
+            this.btn_novo.UseVisualStyleBackColor = true;
+            this.btn_novo.Click += new System.EventHandler(this.btn_novo_Click);
+            // 
+            // btnDeletar
+            // 
+            this.btnDeletar.Enabled = false;
+            this.btnDeletar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDeletar.Location = new System.Drawing.Point(464, 411);
+            this.btnDeletar.Name = "btnDeletar";
+            this.btnDeletar.Size = new System.Drawing.Size(93, 33);
+            this.btnDeletar.TabIndex = 12;
+            this.btnDeletar.Text = "Deletar";
+            this.btnDeletar.UseVisualStyleBackColor = true;
+            this.btnDeletar.Click += new System.EventHandler(this.btnDeletar_Click);
             // 
             // FrmInserirCliente
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(579, 456);
+            this.Controls.Add(this.btnDeletar);
             this.Controls.Add(this.btnEditar);
             this.Controls.Add(this.btnPesquisar);
             this.Controls.Add(this.btnCadatrar);
@@ -356,6 +370,7 @@
             this.Name = "FrmInserirCliente";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Cadastro de Cliente";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FrmInserirCliente_FormClosing);
             this.Load += new System.EventHandler(this.FrmInserirCliente_Load);
             this.gpbDadosPessoais.ResumeLayout(false);
             this.gpbDadosPessoais.PerformLayout();
@@ -387,11 +402,12 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.MaskedTextBox txtCep;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button btn_novo;
-        private System.Windows.Forms.Button btnCadatrar;
         private System.Windows.Forms.ComboBox cbxCidade;
         private System.Windows.Forms.Button btnPesquisar;
         private System.Windows.Forms.Button btnEditar;
         private System.Windows.Forms.Label lblCodigo;
+        private System.Windows.Forms.Button btnCadatrar;
+        private System.Windows.Forms.Button btn_novo;
+        private System.Windows.Forms.Button btnDeletar;
     }
 }

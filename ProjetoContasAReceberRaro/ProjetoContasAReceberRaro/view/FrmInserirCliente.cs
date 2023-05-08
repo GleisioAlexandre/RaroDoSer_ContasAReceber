@@ -14,9 +14,11 @@ namespace ProjetoContasAReceberRaro.view
 {
     public partial class FrmInserirCliente : Form
     {
-        public FrmInserirCliente()
+        private FrmCliente cliente;
+        public FrmInserirCliente(FrmCliente cliente)
         {
             InitializeComponent();
+            this.cliente = cliente;
         }
         private void FrmInserirCliente_Load(object sender, EventArgs e)
         {
@@ -46,6 +48,14 @@ namespace ProjetoContasAReceberRaro.view
         private void btnEditar_Click(object sender, EventArgs e)
         {
             EditarCliente();
+        }
+        private void btnDeletar_Click(object sender, EventArgs e)
+        {
+            DeletarCliente();
+        }
+        private void FrmInserirCliente_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            cliente.AtualizaGrid();
         }
         //Metodo usado para carregar as cidades e estados dos comboxs
         private void CarregaEstadoECidade()
@@ -194,6 +204,25 @@ namespace ProjetoContasAReceberRaro.view
                 MessageBox.Show("Erro ao atualizar o registro do cliente!" + ex, "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+        //Metodo Usado para remover registros do banco
+        private void DeletarCliente()
+        {
+            ClassCrudCliente crud = new ClassCrudCliente();
+            try
+            {
+                if (DialogResult.Yes == MessageBox.Show("Tem certeza que deseja excluir o registro ?", "Alerta", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation))
+                {
+                    crud.DeletarCliente(Convert.ToInt32(lblCodigo.Text));
+                    MessageBox.Show("Registro removido com sucesso !", "Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    this.Close();
+                }
+                
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Erro ao tentar remover o registro !/n" + ex, "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
         //Metodo usado para buscar o endereço do cliente apartir do cep
         private void ConsultaCep()
         {
@@ -217,6 +246,7 @@ namespace ProjetoContasAReceberRaro.view
             btnCadatrar.Enabled = true;
             btnPesquisar.Enabled = true;
             btnEditar.Enabled = true;
+            btnDeletar.Enabled = true;
             btn_novo.Enabled = false;
             txtNome.Focus();
         }
@@ -238,5 +268,7 @@ namespace ProjetoContasAReceberRaro.view
                 txtPessoa.Size = new Size(121, 26);
             }
         }
+
+        
     }
 }
