@@ -54,6 +54,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="controller\ClassBuscaCep.cs" />
+    <Compile Include="controller\ClassCrudContasAReceber.cs" />
     <Compile Include="controller\ClassCrudCliente.cs" />
     <Compile Include="controller\ClassCliente.cs" />
     <Compile Include="model\Endereco.cs" />
@@ -62,6 +63,12 @@
     </Compile>
     <Compile Include="view\FrmCliente.Designer.cs">
       <DependentUpon>FrmCliente.cs</DependentUpon>
+    </Compile>
+    <Compile Include="view\FrmContasAReceber.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="view\FrmContasAReceber.Designer.cs">
+      <DependentUpon>FrmContasAReceber.cs</DependentUpon>
     </Compile>
     <Compile Include="view\FrmHome.cs">
       <SubType>Form</SubType>
@@ -79,6 +86,9 @@
     </Compile>
     <EmbeddedResource Include="view\FrmCliente.resx">
       <DependentUpon>FrmCliente.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="view\FrmContasAReceber.resx">
+      <DependentUpon>FrmContasAReceber.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="view\FrmHome.resx">
       <DependentUpon>FrmHome.cs</DependentUpon>

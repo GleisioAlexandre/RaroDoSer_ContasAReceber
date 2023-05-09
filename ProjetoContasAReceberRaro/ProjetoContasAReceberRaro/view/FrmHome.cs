@@ -22,7 +22,12 @@ namespace ProjetoContasAReceberRaro
 
         }
 
-        private void clientesToolStripMenuItem_Click(object sender, EventArgs e)
+        private void FrmHome_Load(object sender, EventArgs e)
+        {
+            lblData.Text = DateTime.Now.ToString("dd/MM/yyyy");
+        }
+
+        private void btnCliente_Click(object sender, EventArgs e)
         {
             view.FrmCliente cliente = new view.FrmCliente();
             cliente.MdiParent = this;
@@ -30,9 +35,12 @@ namespace ProjetoContasAReceberRaro
             cliente.Show();
         }
 
-        private void FrmHome_Load(object sender, EventArgs e)
+        private void btnContasAReceber_Click(object sender, EventArgs e)
         {
-            lblData.Text = DateTime.Now.ToString("dd/MM/yyyy");
+            view.FrmContasAReceber contareceber = new view.FrmContasAReceber();
+            contareceber.MdiParent = this;
+            contareceber.WindowState = FormWindowState.Maximized;
+            contareceber.Show();
         }
     }
 }
