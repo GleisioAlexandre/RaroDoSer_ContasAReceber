@@ -58,6 +58,12 @@
     <Compile Include="controller\ClassCrudCliente.cs" />
     <Compile Include="controller\ClassCliente.cs" />
     <Compile Include="model\Endereco.cs" />
+    <Compile Include="view\FrmCadastroContasAReceber.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="view\FrmCadastroContasAReceber.Designer.cs">
+      <DependentUpon>FrmCadastroContasAReceber.cs</DependentUpon>
+    </Compile>
     <Compile Include="view\FrmCliente.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -84,6 +90,9 @@
     <Compile Include="view\FrmInserirCliente.Designer.cs">
       <DependentUpon>FrmInserirCliente.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="view\FrmCadastroContasAReceber.resx">
+      <DependentUpon>FrmCadastroContasAReceber.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="view\FrmCliente.resx">
       <DependentUpon>FrmCliente.cs</DependentUpon>
     </EmbeddedResource>

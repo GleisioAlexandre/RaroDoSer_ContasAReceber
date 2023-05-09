@@ -22,6 +22,11 @@ namespace ProjetoContasAReceberRaro.view
         {
             CarregaGridContas();
         }
+        private void lblInserir_Click(object sender, EventArgs e)
+        {
+            view.FrmCadastroContasAReceber CadContas = new FrmCadastroContasAReceber();
+            CadContas.ShowDialog();
+        }
         //Metodo usado para carregar as contas a receberem
         public void CarregaGridContas()
         {
@@ -35,5 +40,7 @@ namespace ProjetoContasAReceberRaro.view
                 MessageBox.Show("Erro ao carregar o banco de dados!\n" + ex, "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
+        
     }
 }

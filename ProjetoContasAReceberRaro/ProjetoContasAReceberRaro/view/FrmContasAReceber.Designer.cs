@@ -38,7 +38,10 @@
             this.venciemnto = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.pagamento = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.situacao = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.statusStrip1 = new System.Windows.Forms.StatusStrip();
+            this.lblInserir = new System.Windows.Forms.ToolStripStatusLabel();
             ((System.ComponentModel.ISupportInitialize)(this.dtgContasAReceber)).BeginInit();
+            this.statusStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // dtgContasAReceber
@@ -63,7 +66,7 @@
             this.dtgContasAReceber.Location = new System.Drawing.Point(-1, 0);
             this.dtgContasAReceber.Name = "dtgContasAReceber";
             this.dtgContasAReceber.ReadOnly = true;
-            this.dtgContasAReceber.Size = new System.Drawing.Size(802, 449);
+            this.dtgContasAReceber.Size = new System.Drawing.Size(943, 425);
             this.dtgContasAReceber.TabIndex = 0;
             // 
             // codigo
@@ -129,18 +132,42 @@
             this.situacao.Name = "situacao";
             this.situacao.ReadOnly = true;
             // 
+            // statusStrip1
+            // 
+            this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.lblInserir});
+            this.statusStrip1.Location = new System.Drawing.Point(0, 426);
+            this.statusStrip1.Name = "statusStrip1";
+            this.statusStrip1.Size = new System.Drawing.Size(941, 24);
+            this.statusStrip1.TabIndex = 1;
+            this.statusStrip1.Text = "statusStrip1";
+            // 
+            // lblInserir
+            // 
+            this.lblInserir.BorderSides = ((System.Windows.Forms.ToolStripStatusLabelBorderSides)((((System.Windows.Forms.ToolStripStatusLabelBorderSides.Left | System.Windows.Forms.ToolStripStatusLabelBorderSides.Top) 
+            | System.Windows.Forms.ToolStripStatusLabelBorderSides.Right) 
+            | System.Windows.Forms.ToolStripStatusLabelBorderSides.Bottom)));
+            this.lblInserir.Name = "lblInserir";
+            this.lblInserir.Size = new System.Drawing.Size(43, 19);
+            this.lblInserir.Text = "Inserir";
+            this.lblInserir.Click += new System.EventHandler(this.lblInserir_Click);
+            // 
             // FrmContasAReceber
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(941, 450);
+            this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.dtgContasAReceber);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "FrmContasAReceber";
             this.Text = "Contas a Receber";
             this.Load += new System.EventHandler(this.FrmContasAReceber_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dtgContasAReceber)).EndInit();
+            this.statusStrip1.ResumeLayout(false);
+            this.statusStrip1.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -156,5 +183,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn venciemnto;
         private System.Windows.Forms.DataGridViewTextBoxColumn pagamento;
         private System.Windows.Forms.DataGridViewTextBoxColumn situacao;
+        private System.Windows.Forms.StatusStrip statusStrip1;
+        private System.Windows.Forms.ToolStripStatusLabel lblInserir;
     }
 }
