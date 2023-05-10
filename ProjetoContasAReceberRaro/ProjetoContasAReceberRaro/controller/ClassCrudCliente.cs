@@ -178,6 +178,22 @@ namespace ProjetoContasAReceberRaro.controller
                 cliente.Id_cidade = Convert.ToInt32(leitor[8]);
                 cliente.Id_estado = Convert.ToInt32(leitor[9]);
             }
+            conexao.Close();
+            return cliente;
+        }
+        public ClassCliente PesquisaCliente(string dados)
+        {
+            conexao.Open();
+            FbCommand comando = new FbCommand("select id_cliente, nome_cliente from tb_cliente where nome_cliente like (@nome)", conexao);
+            comando.Parameters.AddWithValue("@nome", dados + "%");
+            FbDataReader leitor = comando.ExecuteReader();
+            ClassCliente cliente = new ClassCliente();
+            while (leitor.Read())
+            {
+                cliente.Codigo = Convert.ToInt32(leitor[0].ToString());
+                cliente.Nome = leitor[1].ToString();
+            }
+            conexao.Close();
             return cliente;
         }
     }

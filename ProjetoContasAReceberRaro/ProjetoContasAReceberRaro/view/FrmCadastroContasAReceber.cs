@@ -1,4 +1,6 @@
-﻿using System;
+﻿using ProjetoContasAReceberRaro.controller;
+using ProjetoContasAReceberRaro.model;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -15,6 +17,17 @@ namespace ProjetoContasAReceberRaro.view
         public FrmCadastroContasAReceber()
         {
             InitializeComponent();
+        }
+
+        private void btnPesquisar_Click(object sender, EventArgs e)
+        {
+            ClassCrudCliente crud = new ClassCrudCliente();
+            ClassCliente cliente = new ClassCliente();
+            cliente = crud.PesquisaCliente(txtCliente.Text);
+
+            lblCodigo.Text = cliente.Codigo.ToString();
+            txtCliente.Text = cliente.Nome;
+
         }
     }
 }
