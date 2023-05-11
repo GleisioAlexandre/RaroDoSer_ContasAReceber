@@ -28,45 +28,48 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.gpbCliente = new System.Windows.Forms.GroupBox();
             this.lblCodigo = new System.Windows.Forms.Label();
             this.txtCliente = new System.Windows.Forms.TextBox();
             this.btnPesquisar = new System.Windows.Forms.Button();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.dataEntrada = new System.Windows.Forms.DateTimePicker();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.dataVencimento = new System.Windows.Forms.DateTimePicker();
-            this.label3 = new System.Windows.Forms.Label();
-            this.dataPagamento = new System.Windows.Forms.DateTimePicker();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.txtDocumento = new System.Windows.Forms.TextBox();
-            this.cbxClasse = new System.Windows.Forms.ComboBox();
+            this.gpbDivida = new System.Windows.Forms.GroupBox();
+            this.txtValor = new System.Windows.Forms.TextBox();
             this.cbxSituacao = new System.Windows.Forms.ComboBox();
             this.label7 = new System.Windows.Forms.Label();
+            this.cbxClasse = new System.Windows.Forms.ComboBox();
+            this.txtDocumento = new System.Windows.Forms.TextBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.dataPagamento = new System.Windows.Forms.DateTimePicker();
+            this.label2 = new System.Windows.Forms.Label();
+            this.dataVencimento = new System.Windows.Forms.DateTimePicker();
+            this.label1 = new System.Windows.Forms.Label();
+            this.dataEntrada = new System.Windows.Forms.DateTimePicker();
             this.btnCadastrar = new System.Windows.Forms.Button();
-            this.txtValor = new System.Windows.Forms.TextBox();
-            this.groupBox1.SuspendLayout();
-            this.groupBox2.SuspendLayout();
+            this.button1 = new System.Windows.Forms.Button();
+            this.btnPesquisarDivida = new System.Windows.Forms.Button();
+            this.gpbCliente.SuspendLayout();
+            this.gpbDivida.SuspendLayout();
             this.SuspendLayout();
             // 
-            // groupBox1
+            // gpbCliente
             // 
-            this.groupBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.gpbCliente.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.groupBox1.Controls.Add(this.lblCodigo);
-            this.groupBox1.Controls.Add(this.txtCliente);
-            this.groupBox1.Controls.Add(this.btnPesquisar);
-            this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox1.Location = new System.Drawing.Point(12, 49);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(518, 112);
-            this.groupBox1.TabIndex = 0;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Cliente";
+            this.gpbCliente.Controls.Add(this.lblCodigo);
+            this.gpbCliente.Controls.Add(this.txtCliente);
+            this.gpbCliente.Controls.Add(this.btnPesquisar);
+            this.gpbCliente.Enabled = false;
+            this.gpbCliente.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gpbCliente.Location = new System.Drawing.Point(12, 49);
+            this.gpbCliente.Name = "gpbCliente";
+            this.gpbCliente.Size = new System.Drawing.Size(518, 112);
+            this.gpbCliente.TabIndex = 0;
+            this.gpbCliente.TabStop = false;
+            this.gpbCliente.Text = "Cliente";
             // 
             // lblCodigo
             // 
@@ -77,6 +80,7 @@
             this.lblCodigo.Size = new System.Drawing.Size(15, 16);
             this.lblCodigo.TabIndex = 2;
             this.lblCodigo.Text = "0";
+            this.lblCodigo.Visible = false;
             // 
             // txtCliente
             // 
@@ -96,69 +100,103 @@
             this.btnPesquisar.UseVisualStyleBackColor = true;
             this.btnPesquisar.Click += new System.EventHandler(this.btnPesquisar_Click);
             // 
-            // groupBox2
+            // gpbDivida
             // 
-            this.groupBox2.Controls.Add(this.txtValor);
-            this.groupBox2.Controls.Add(this.cbxSituacao);
-            this.groupBox2.Controls.Add(this.label7);
-            this.groupBox2.Controls.Add(this.cbxClasse);
-            this.groupBox2.Controls.Add(this.txtDocumento);
-            this.groupBox2.Controls.Add(this.label6);
-            this.groupBox2.Controls.Add(this.label5);
-            this.groupBox2.Controls.Add(this.label4);
-            this.groupBox2.Controls.Add(this.label3);
-            this.groupBox2.Controls.Add(this.dataPagamento);
-            this.groupBox2.Controls.Add(this.label2);
-            this.groupBox2.Controls.Add(this.dataVencimento);
-            this.groupBox2.Controls.Add(this.label1);
-            this.groupBox2.Controls.Add(this.dataEntrada);
-            this.groupBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox2.Location = new System.Drawing.Point(12, 192);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(518, 259);
-            this.groupBox2.TabIndex = 1;
-            this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "Dados da Divida";
+            this.gpbDivida.Controls.Add(this.txtValor);
+            this.gpbDivida.Controls.Add(this.cbxSituacao);
+            this.gpbDivida.Controls.Add(this.label7);
+            this.gpbDivida.Controls.Add(this.cbxClasse);
+            this.gpbDivida.Controls.Add(this.txtDocumento);
+            this.gpbDivida.Controls.Add(this.label6);
+            this.gpbDivida.Controls.Add(this.label5);
+            this.gpbDivida.Controls.Add(this.label4);
+            this.gpbDivida.Controls.Add(this.label3);
+            this.gpbDivida.Controls.Add(this.dataPagamento);
+            this.gpbDivida.Controls.Add(this.label2);
+            this.gpbDivida.Controls.Add(this.dataVencimento);
+            this.gpbDivida.Controls.Add(this.label1);
+            this.gpbDivida.Controls.Add(this.dataEntrada);
+            this.gpbDivida.Enabled = false;
+            this.gpbDivida.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gpbDivida.Location = new System.Drawing.Point(12, 192);
+            this.gpbDivida.Name = "gpbDivida";
+            this.gpbDivida.Size = new System.Drawing.Size(518, 259);
+            this.gpbDivida.TabIndex = 1;
+            this.gpbDivida.TabStop = false;
+            this.gpbDivida.Text = "Dados da Divida";
             // 
-            // dataEntrada
+            // txtValor
             // 
-            this.dataEntrada.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dataEntrada.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dataEntrada.Location = new System.Drawing.Point(6, 53);
-            this.dataEntrada.Name = "dataEntrada";
-            this.dataEntrada.Size = new System.Drawing.Size(109, 22);
-            this.dataEntrada.TabIndex = 0;
-            this.dataEntrada.Value = new System.DateTime(2023, 5, 10, 0, 0, 0, 0);
+            this.txtValor.Location = new System.Drawing.Point(189, 122);
+            this.txtValor.Name = "txtValor";
+            this.txtValor.Size = new System.Drawing.Size(109, 22);
+            this.txtValor.TabIndex = 14;
             // 
-            // label1
+            // cbxSituacao
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(6, 30);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(55, 16);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "Entrada";
+            this.cbxSituacao.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbxSituacao.FormattingEnabled = true;
+            this.cbxSituacao.Location = new System.Drawing.Point(9, 180);
+            this.cbxSituacao.Name = "cbxSituacao";
+            this.cbxSituacao.Size = new System.Drawing.Size(121, 24);
+            this.cbxSituacao.TabIndex = 13;
             // 
-            // label2
+            // label7
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(186, 30);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(79, 16);
-            this.label2.TabIndex = 3;
-            this.label2.Text = "Vencimento";
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Location = new System.Drawing.Point(6, 161);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(61, 16);
+            this.label7.TabIndex = 12;
+            this.label7.Text = "Situação";
             // 
-            // dataVencimento
+            // cbxClasse
             // 
-            this.dataVencimento.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dataVencimento.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dataVencimento.Location = new System.Drawing.Point(189, 53);
-            this.dataVencimento.Name = "dataVencimento";
-            this.dataVencimento.Size = new System.Drawing.Size(109, 22);
-            this.dataVencimento.TabIndex = 2;
-            this.dataVencimento.Value = new System.DateTime(2023, 5, 10, 0, 0, 0, 0);
+            this.cbxClasse.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbxClasse.FormattingEnabled = true;
+            this.cbxClasse.Location = new System.Drawing.Point(372, 120);
+            this.cbxClasse.Name = "cbxClasse";
+            this.cbxClasse.Size = new System.Drawing.Size(121, 24);
+            this.cbxClasse.TabIndex = 11;
+            // 
+            // txtDocumento
+            // 
+            this.txtDocumento.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtDocumento.Location = new System.Drawing.Point(9, 122);
+            this.txtDocumento.Name = "txtDocumento";
+            this.txtDocumento.Size = new System.Drawing.Size(73, 22);
+            this.txtDocumento.TabIndex = 9;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(369, 103);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(50, 16);
+            this.label6.TabIndex = 8;
+            this.label6.Text = "Classe";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(186, 103);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(40, 16);
+            this.label5.TabIndex = 7;
+            this.label5.Text = "Valor";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(6, 103);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(77, 16);
+            this.label4.TabIndex = 6;
+            this.label4.Text = "Documento";
             // 
             // label3
             // 
@@ -180,75 +218,51 @@
             this.dataPagamento.TabIndex = 4;
             this.dataPagamento.Value = new System.DateTime(2023, 5, 10, 0, 0, 0, 0);
             // 
-            // label4
+            // label2
             // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(6, 103);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(77, 16);
-            this.label4.TabIndex = 6;
-            this.label4.Text = "Documento";
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(186, 30);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(79, 16);
+            this.label2.TabIndex = 3;
+            this.label2.Text = "Vencimento";
             // 
-            // label5
+            // dataVencimento
             // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(186, 103);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(40, 16);
-            this.label5.TabIndex = 7;
-            this.label5.Text = "Valor";
+            this.dataVencimento.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dataVencimento.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dataVencimento.Location = new System.Drawing.Point(189, 53);
+            this.dataVencimento.Name = "dataVencimento";
+            this.dataVencimento.Size = new System.Drawing.Size(109, 22);
+            this.dataVencimento.TabIndex = 2;
+            this.dataVencimento.Value = new System.DateTime(2023, 5, 10, 0, 0, 0, 0);
             // 
-            // label6
+            // label1
             // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(369, 103);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(50, 16);
-            this.label6.TabIndex = 8;
-            this.label6.Text = "Classe";
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(6, 30);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(55, 16);
+            this.label1.TabIndex = 1;
+            this.label1.Text = "Entrada";
             // 
-            // txtDocumento
+            // dataEntrada
             // 
-            this.txtDocumento.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtDocumento.Location = new System.Drawing.Point(9, 122);
-            this.txtDocumento.Name = "txtDocumento";
-            this.txtDocumento.Size = new System.Drawing.Size(73, 22);
-            this.txtDocumento.TabIndex = 9;
-            // 
-            // cbxClasse
-            // 
-            this.cbxClasse.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbxClasse.FormattingEnabled = true;
-            this.cbxClasse.Location = new System.Drawing.Point(372, 120);
-            this.cbxClasse.Name = "cbxClasse";
-            this.cbxClasse.Size = new System.Drawing.Size(121, 24);
-            this.cbxClasse.TabIndex = 11;
-            // 
-            // cbxSituacao
-            // 
-            this.cbxSituacao.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbxSituacao.FormattingEnabled = true;
-            this.cbxSituacao.Location = new System.Drawing.Point(9, 180);
-            this.cbxSituacao.Name = "cbxSituacao";
-            this.cbxSituacao.Size = new System.Drawing.Size(121, 24);
-            this.cbxSituacao.TabIndex = 13;
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(6, 161);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(61, 16);
-            this.label7.TabIndex = 12;
-            this.label7.Text = "Situação";
+            this.dataEntrada.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dataEntrada.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dataEntrada.Location = new System.Drawing.Point(6, 53);
+            this.dataEntrada.Name = "dataEntrada";
+            this.dataEntrada.Size = new System.Drawing.Size(109, 22);
+            this.dataEntrada.TabIndex = 0;
+            this.dataEntrada.Value = new System.DateTime(2023, 5, 10, 0, 0, 0, 0);
             // 
             // btnCadastrar
             // 
-            this.btnCadastrar.Location = new System.Drawing.Point(222, 486);
+            this.btnCadastrar.Enabled = false;
+            this.btnCadastrar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCadastrar.Location = new System.Drawing.Point(135, 486);
             this.btnCadastrar.Name = "btnCadastrar";
             this.btnCadastrar.Size = new System.Drawing.Size(75, 23);
             this.btnCadastrar.TabIndex = 2;
@@ -256,42 +270,58 @@
             this.btnCadastrar.UseVisualStyleBackColor = true;
             this.btnCadastrar.Click += new System.EventHandler(this.btnCadastrar_Click);
             // 
-            // txtValor
+            // button1
             // 
-            this.txtValor.Location = new System.Drawing.Point(189, 122);
-            this.txtValor.Name = "txtValor";
-            this.txtValor.Size = new System.Drawing.Size(109, 22);
-            this.txtValor.TabIndex = 14;
+            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.Location = new System.Drawing.Point(18, 486);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 3;
+            this.button1.Text = "Novo";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // btnPesquisarDivida
+            // 
+            this.btnPesquisarDivida.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnPesquisarDivida.Location = new System.Drawing.Point(260, 486);
+            this.btnPesquisarDivida.Name = "btnPesquisarDivida";
+            this.btnPesquisarDivida.Size = new System.Drawing.Size(75, 23);
+            this.btnPesquisarDivida.TabIndex = 4;
+            this.btnPesquisarDivida.Text = "Pesquisar";
+            this.btnPesquisarDivida.UseVisualStyleBackColor = true;
             // 
             // FrmCadastroContasAReceber
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(542, 521);
+            this.Controls.Add(this.btnPesquisarDivida);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.btnCadastrar);
-            this.Controls.Add(this.groupBox2);
-            this.Controls.Add(this.groupBox1);
+            this.Controls.Add(this.gpbDivida);
+            this.Controls.Add(this.gpbCliente);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "FrmCadastroContasAReceber";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Inserir Contas a Receber";
             this.Load += new System.EventHandler(this.FrmCadastroContasAReceber_Load);
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
-            this.groupBox2.ResumeLayout(false);
-            this.groupBox2.PerformLayout();
+            this.gpbCliente.ResumeLayout(false);
+            this.gpbCliente.PerformLayout();
+            this.gpbDivida.ResumeLayout(false);
+            this.gpbDivida.PerformLayout();
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.GroupBox gpbCliente;
         private System.Windows.Forms.TextBox txtCliente;
         private System.Windows.Forms.Button btnPesquisar;
         private System.Windows.Forms.Label lblCodigo;
-        private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.GroupBox gpbDivida;
         private System.Windows.Forms.TextBox txtDocumento;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label5;
@@ -307,5 +337,7 @@
         private System.Windows.Forms.ComboBox cbxClasse;
         private System.Windows.Forms.Button btnCadastrar;
         private System.Windows.Forms.TextBox txtValor;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnPesquisarDivida;
     }
 }

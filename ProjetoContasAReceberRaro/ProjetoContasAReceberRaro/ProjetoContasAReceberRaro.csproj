@@ -41,6 +41,8 @@
       <HintPath>..\packages\Newtonsoft.Json.13.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
     </Reference>
     <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Configuration.Install" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -54,9 +56,11 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="controller\ClassBuscaCep.cs" />
+    <Compile Include="controller\ClassConexao.cs" />
     <Compile Include="controller\ClassCrudContasAReceber.cs" />
     <Compile Include="controller\ClassCrudCliente.cs" />
     <Compile Include="controller\ClassCliente.cs" />
+    <Compile Include="controller\ClassDividaClientes.cs" />
     <Compile Include="model\Endereco.cs" />
     <Compile Include="view\FrmCadastroContasAReceber.cs">
       <SubType>Form</SubType>

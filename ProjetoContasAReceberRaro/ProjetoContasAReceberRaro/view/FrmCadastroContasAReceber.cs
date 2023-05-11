@@ -18,7 +18,6 @@ namespace ProjetoContasAReceberRaro.view
         {
             InitializeComponent();
         }
-
         private void btnPesquisar_Click(object sender, EventArgs e)
         {
             ClassCrudCliente crud = new ClassCrudCliente();
@@ -27,21 +26,17 @@ namespace ProjetoContasAReceberRaro.view
 
             lblCodigo.Text = cliente.Codigo.ToString();
             txtCliente.Text = cliente.Nome;
-
         }
-
         private void FrmCadastroContasAReceber_Load(object sender, EventArgs e)
         {
             ClassCrudContasAReceber crud = new ClassCrudContasAReceber();
             cbxClasse.DataSource  = crud.CarregaClasse();
             cbxSituacao.DataSource = crud.CarregaSituacao();
         }
-
         private void btnCadastrar_Click(object sender, EventArgs e)
         {
             IncluirDivida();
         }
-
         private void IncluirDivida()
         {
             ClassCrudContasAReceber crud = new ClassCrudContasAReceber();
@@ -54,7 +49,12 @@ namespace ProjetoContasAReceberRaro.view
             {
                 MessageBox.Show("Erro ao Inserir a informação no banco de dados! \n" + ex, "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-           
+        }
+        private void button1_Click(object sender, EventArgs e)
+        {
+            gpbCliente.Enabled = true;
+            gpbDivida.Enabled = true;
+            btnCadastrar.Enabled = true;
         }
     }
 }
