@@ -12,7 +12,7 @@ namespace ProjetoContasAReceberRaro.controller
 {
     class ClassCrudCliente
     {
-        FbConnection conexao = new FbConnection("User=SYSDBA;Password=masterkey;Database=D:/C#/ProjetoRaroDoSer/ProjetoContasAReceberRaro/ProjetoContasAReceberRaro/BD/RARO.FDB;DataSource=localhost;Port=3050");
+        FbConnection conexao = new FbConnection("User=SYSDBA;Password=masterkey;Database=C:/Users/Gleisio/Documents/C#/RaroDoSer_ContasAReceber/RaroDoSer_ContasAReceber/ProjetoContasAReceberRaro/ProjetoContasAReceberRaro/BD/RARO.FDB;DataSource=localhost;Port=3050");
        
         public DataTable CarregaGridCliente()
         {
@@ -45,7 +45,7 @@ namespace ProjetoContasAReceberRaro.controller
         {
             conexao.Open();
             List<string> cidade = new List<string>();
-            FbCommand comando = new FbCommand("select e.estado from tb_estado e", conexao);
+            FbCommand comando = new FbCommand("select estado from tb_estado", conexao);
             FbDataReader leitor = comando.ExecuteReader();
             while (leitor.Read())
             {
@@ -56,8 +56,7 @@ namespace ProjetoContasAReceberRaro.controller
         }
         public void inserirCliente(string nome, string cpf, string cnpj, string cep, string logradouro, int numero, string complemento, string bairro, int id_cidade, int id_estado)
         {
-            try
-            {
+            
                 conexao.Open();
                 FbCommand comando = new FbCommand("insert into tb_cliente  (nome_cliente, cpf_cliente, cnpj_cliente, cep_cliente, logradouro_cliente, numero_cliente, complemento_cliente, bairro_cliente, id_cidade_cliente, id_estado_cliente) " +
                     "values" +
@@ -74,15 +73,6 @@ namespace ProjetoContasAReceberRaro.controller
                 comando.Parameters.AddWithValue("@id_estado", id_estado);
                 comando.ExecuteNonQuery();
                 conexao.Close();
-            }
-            catch (Exception ex)
-            {
-                throw new Exception($"Erro ao inserir o registro ao bacno de dados!: \n {ex.Message}");
-            }
-            finally
-            {
-                conexao.Close();
-            }
         }
         public void DeletarCliente(int id)
         {
