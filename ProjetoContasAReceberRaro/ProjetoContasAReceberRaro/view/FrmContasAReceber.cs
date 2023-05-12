@@ -13,6 +13,7 @@ namespace ProjetoContasAReceberRaro.view
 {
     public partial class FrmContasAReceber : Form
     {
+        
         public FrmContasAReceber()
         {
             InitializeComponent();
@@ -41,6 +42,9 @@ namespace ProjetoContasAReceberRaro.view
             }
         }
 
-        
+        private void toolStripStatusLabel1_Click(object sender, EventArgs e)
+        {
+            CarregaGridContas();
+        }
     }
 }

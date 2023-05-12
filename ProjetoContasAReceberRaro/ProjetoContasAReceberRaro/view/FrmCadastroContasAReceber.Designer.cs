@@ -48,7 +48,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.dataEntrada = new System.Windows.Forms.DateTimePicker();
             this.btnCadastrar = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnNovo = new System.Windows.Forms.Button();
             this.btnPesquisarDivida = new System.Windows.Forms.Button();
             this.gpbCliente.SuspendLayout();
             this.gpbDivida.SuspendLayout();
@@ -270,16 +270,16 @@
             this.btnCadastrar.UseVisualStyleBackColor = true;
             this.btnCadastrar.Click += new System.EventHandler(this.btnCadastrar_Click);
             // 
-            // button1
+            // btnNovo
             // 
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(18, 486);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 3;
-            this.button1.Text = "Novo";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.btnNovo.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnNovo.Location = new System.Drawing.Point(18, 486);
+            this.btnNovo.Name = "btnNovo";
+            this.btnNovo.Size = new System.Drawing.Size(75, 23);
+            this.btnNovo.TabIndex = 3;
+            this.btnNovo.Text = "Novo";
+            this.btnNovo.UseVisualStyleBackColor = true;
+            this.btnNovo.Click += new System.EventHandler(this.btnNovo_Click);
             // 
             // btnPesquisarDivida
             // 
@@ -290,6 +290,7 @@
             this.btnPesquisarDivida.TabIndex = 4;
             this.btnPesquisarDivida.Text = "Pesquisar";
             this.btnPesquisarDivida.UseVisualStyleBackColor = true;
+            this.btnPesquisarDivida.Click += new System.EventHandler(this.btnPesquisarDivida_Click);
             // 
             // FrmCadastroContasAReceber
             // 
@@ -297,7 +298,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(542, 521);
             this.Controls.Add(this.btnPesquisarDivida);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.btnNovo);
             this.Controls.Add(this.btnCadastrar);
             this.Controls.Add(this.gpbDivida);
             this.Controls.Add(this.gpbCliente);
@@ -306,6 +307,7 @@
             this.Name = "FrmCadastroContasAReceber";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Inserir Contas a Receber";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FrmCadastroContasAReceber_FormClosing);
             this.Load += new System.EventHandler(this.FrmCadastroContasAReceber_Load);
             this.gpbCliente.ResumeLayout(false);
             this.gpbCliente.PerformLayout();
@@ -337,7 +339,7 @@
         private System.Windows.Forms.ComboBox cbxClasse;
         private System.Windows.Forms.Button btnCadastrar;
         private System.Windows.Forms.TextBox txtValor;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnNovo;
         private System.Windows.Forms.Button btnPesquisarDivida;
     }
 }
