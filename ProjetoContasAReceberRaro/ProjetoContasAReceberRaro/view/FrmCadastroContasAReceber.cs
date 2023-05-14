@@ -15,9 +15,10 @@ namespace ProjetoContasAReceberRaro.view
     public partial class FrmCadastroContasAReceber : Form
     {
         private FrmContasAReceber contasAReceber;
-        public FrmCadastroContasAReceber()
+        public FrmCadastroContasAReceber(FrmContasAReceber contasAReceber)
         {
             InitializeComponent();
+            this.contasAReceber = contasAReceber;
         }
         private void btnPesquisar_Click(object sender, EventArgs e)
         {
