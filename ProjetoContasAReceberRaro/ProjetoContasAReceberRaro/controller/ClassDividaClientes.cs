@@ -12,9 +12,9 @@ namespace ProjetoContasAReceberRaro.controller
         private string cliente;
         private string entrada;
         private double valor;
-        private int id_situacao;
+        private string situacao;
         private string documento;
-        private int id_classe;
+        private string classe;
         private string vencimento;
         private string pagamento;
 
@@ -22,15 +22,15 @@ namespace ProjetoContasAReceberRaro.controller
         {
         }
 
-        public ClassDividaClientes(int id_conta, string cliente, string entrada, double valor, int id_situacao, string documento, int id_classe, string vencimento, string pagamento)
+        public ClassDividaClientes(int id_conta, string cliente, string entrada, double valor, string situacao, string documento, string classe, string vencimento, string pagamento)
         {
             this.id_conta = id_conta;
             this.cliente = cliente;
             this.entrada = entrada;
             this.valor = valor;
-            this.id_situacao = id_situacao;
+            this.situacao = situacao;
             this.documento = documento;
-            this.id_classe = id_classe;
+            this.classe = classe;
             this.vencimento = vencimento;
             this.pagamento = pagamento;
         }
@@ -39,9 +39,9 @@ namespace ProjetoContasAReceberRaro.controller
         public string Cliente { get => cliente; set => cliente = value; }
         public string Entrada { get => entrada; set => entrada = value; }
         public double Valor { get => valor; set => valor = value; }
-        public int Id_situacao { get => id_situacao; set => id_situacao = value; }
+        public string Situacao { get => situacao; set => situacao = value; }
         public string Documento { get => documento; set => documento = value; }
-        public int Id_classe { get => id_classe; set => id_classe = value; }
+        public string Classe { get => classe; set => classe = value; }
         public string Vencimento { get => vencimento; set => vencimento = value; }
         public string Pagamento { get => pagamento; set => pagamento = value; }
     }

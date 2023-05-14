@@ -81,17 +81,26 @@ namespace ProjetoContasAReceberRaro.controller
         {
             FbConnection conexao = new FbConnection(stringConexao);
             conexao.Open();
-            FbCommand comando = new FbCommand("select cr.data_entrada, cr.valor, cr.documento, cr.data_vencimento, cr.data_pagamento,(select c.nome_cliente from tb_cliente c where cr.id_cliente = c.id_cliente)," +
+            FbCommand comando = new FbCommand("select cr.id_contasareceber, cr.data_entrada, cr.valor, cr.documento, cr.data_vencimento, cr.data_pagamento," +
+                "(select c.nome_cliente from tb_cliente c where cr.id_cliente = c.id_cliente)," +
                 "(select s.situacao from tb_situacao s where cr.id_situacao = s.id_situacao)," +
                 "(select cl.class from tb_calsse cl where cr.id_classe = cl.id_class)" +
-                "from tb_contas_a_receber cr where cr.id_cliente = @documento");
+                "from tb_contas_a_receber cr where cr.documento = @documento", conexao);
             comando.Parameters.AddWithValue("@documento", dados);
             FbDataReader leitor = comando.ExecuteReader();
             ClassDividaClientes divida = new ClassDividaClientes();
             while (leitor.Read())
             {
-                divida.Cliente = leitor[0].ToString();
-            }
+                divida.Id_conta = Convert.ToInt32(leitor[0].ToString());
+                divida.Entrada = leitor[1].ToString();
+                divida.Valor = Convert.ToDouble(leitor[2].ToString());
+                divida.Documento = leitor[3].ToString();
+                divida.Vencimento = leitor[4].ToString();
+                divida.Pagamento = leitor[5].ToString();
+                divida.Cliente = leitor[6].ToString();
+                divida.Situacao = leitor[7].ToString();
+                divida.Classe = leitor[8].ToString();
+            }conexao.Close();
             return divida;
         }
     }
