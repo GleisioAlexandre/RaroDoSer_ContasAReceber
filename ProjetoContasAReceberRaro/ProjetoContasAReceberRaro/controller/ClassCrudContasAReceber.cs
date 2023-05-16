@@ -103,5 +103,22 @@ namespace ProjetoContasAReceberRaro.controller
             }conexao.Close();
             return divida;
         }
+        public void EditarDivida(int id_contas, int cliente, string entrada, double valor, int situacao, string documento, int classe, string vencimento, string pagamento)
+        {
+            FbConnection conexao = new FbConnection(stringConexao);
+            conexao.Open();
+            FbCommand comando = new FbCommand("update tb_contas_a_receber  set id_cliente = @cliente, data_entrada = @entrada, valor = @valor, id_situacao = @situacao, documento = @documento, id_classe = @classe, data_vencimento = @vencimento, data_pagamento = @pagamento where id_contasareceber = @id_contasareceber", conexao);
+            comando.Parameters.AddWithValue("@cliente", cliente);
+            comando.Parameters.AddWithValue("@entrada", entrada);
+            comando.Parameters.AddWithValue("@valor", valor);
+            comando.Parameters.AddWithValue("@situacao", situacao);
+            comando.Parameters.AddWithValue("@documento", documento);
+            comando.Parameters.AddWithValue("@classe", classe);
+            comando.Parameters.AddWithValue("@vencimento", vencimento);
+            comando.Parameters.AddWithValue("@pagamento", pagamento);
+            comando.Parameters.AddWithValue("@id_contasareceber", id_contas);
+            comando.ExecuteNonQuery();
+            conexao.Close();
+        }
     }
 }

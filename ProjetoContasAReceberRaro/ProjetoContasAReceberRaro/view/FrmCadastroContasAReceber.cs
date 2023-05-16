@@ -109,7 +109,6 @@ namespace ProjetoContasAReceberRaro.view
                 txtCliente.Text = dividaCliente.Cliente;
                 cbxSituacao.SelectedItem = dividaCliente.Situacao;
                 cbxClasse.SelectedItem = dividaCliente.Classe ;
-
                 Console.WriteLine(dividaCliente.Situacao + "\n" + dividaCliente.Classe);
             }
             catch (Exception ex)
@@ -119,9 +118,21 @@ namespace ProjetoContasAReceberRaro.view
             
         }
 
-        private void label7_Click(object sender, EventArgs e)
+        private void btnEditar_Click(object sender, EventArgs e)
         {
+            ClassCrudContasAReceber crud = new ClassCrudContasAReceber();
+            try
+            {
+                /* crud.EditarDivida(Convert.ToInt32(lbl_id_Conta.Text), Convert.ToInt32(lblCodigo.Text), txtDataEntrada.Text, Convert.ToDouble(txtValor.Text), Convert.ToInt32(cbxSituacao.SelectedIndex + 1), txtDocumento.Text, Convert.ToInt32(cbxClasse.SelectedIndex + 1), txtDataVencimento.Text, txtDataPagamento.Text);
+                 MessageBox.Show("Cadastro Atualizado com sucesso!", "Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                 this.Close();*/
 
+                Console.WriteLine(cbxSituacao.SelectedIndex + 1);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Erro ao atualizar as informações no banco de dados! \n" + ex, "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
     }
 }

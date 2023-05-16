@@ -103,10 +103,8 @@ namespace ProjetoContasAReceberRaro.controller
         public void EditarCadCliente(int id, string nome, string cnpj, string cpf, string cep, string logradouro, int numero, string complemento, string bairro, int id_cidade, int id_estado)
         {
             FbConnection conexao = new FbConnection(stringConexao);
-            try
-            {
                 conexao.Close();
-                FbCommand comando = new FbCommand("update tb_cliente c set nome_cliente = @nome, cnpj_cliente = @cnpj, cpf_cliente = @cpf, cep_cliente = @cep, logradouro_cliente = @logradouro, numero_cliente = @numero, complemento_cliente = @complemento, bairro_cliente = @bairro, id_cidade_cliente = @id_cidade, id_estado_cliente = @id_estado where id_cliente = @id",conexao);
+                FbCommand comando = new FbCommand("update tb_cliente set nome_cliente = @nome, cnpj_cliente = @cnpj, cpf_cliente = @cpf, cep_cliente = @cep, logradouro_cliente = @logradouro, numero_cliente = @numero, complemento_cliente = @complemento, bairro_cliente = @bairro, id_cidade_cliente = @id_cidade, id_estado_cliente = @id_estado where id_cliente = @id",conexao);
                 comando.Parameters.AddWithValue("@id", id);
                 comando.Parameters.AddWithValue("@nome", nome);
                 comando.Parameters.AddWithValue("@cnpj", cnpj);
@@ -120,15 +118,8 @@ namespace ProjetoContasAReceberRaro.controller
                 comando.Parameters.AddWithValue("@id_estado", id_estado);
                 comando.ExecuteNonQuery();
                 conexao.Close();
-            }
-            catch (Exception ex)
-            {
-                throw new Exception($"Erro ao Atualizar o registro no banco de dados!\n {ex.Message }");
-            }
-            finally
-            {
-                conexao.Close();
-            }
+            
+           
         }
         public ClassCliente PesquisaClientePF(string dados)
         {

@@ -51,6 +51,7 @@
             this.btnCadastrar = new System.Windows.Forms.Button();
             this.btnNovo = new System.Windows.Forms.Button();
             this.btnPesquisarDivida = new System.Windows.Forms.Button();
+            this.btnEditar = new System.Windows.Forms.Button();
             this.gpbCliente.SuspendLayout();
             this.gpbDivida.SuspendLayout();
             this.SuspendLayout();
@@ -192,7 +193,6 @@
             this.label7.Size = new System.Drawing.Size(61, 16);
             this.label7.TabIndex = 12;
             this.label7.Text = "Situação";
-            this.label7.Click += new System.EventHandler(this.label7_Click);
             // 
             // cbxClasse
             // 
@@ -306,11 +306,22 @@
             this.btnPesquisarDivida.UseVisualStyleBackColor = true;
             this.btnPesquisarDivida.Click += new System.EventHandler(this.btnPesquisarDivida_Click);
             // 
+            // btnEditar
+            // 
+            this.btnEditar.Location = new System.Drawing.Point(360, 432);
+            this.btnEditar.Name = "btnEditar";
+            this.btnEditar.Size = new System.Drawing.Size(75, 23);
+            this.btnEditar.TabIndex = 5;
+            this.btnEditar.Text = "Editar";
+            this.btnEditar.UseVisualStyleBackColor = true;
+            this.btnEditar.Click += new System.EventHandler(this.btnEditar_Click);
+            // 
             // FrmCadastroContasAReceber
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(542, 513);
+            this.ClientSize = new System.Drawing.Size(542, 478);
+            this.Controls.Add(this.btnEditar);
             this.Controls.Add(this.btnPesquisarDivida);
             this.Controls.Add(this.btnNovo);
             this.Controls.Add(this.btnCadastrar);
@@ -356,5 +367,6 @@
         private System.Windows.Forms.MaskedTextBox txtDataVencimento;
         private System.Windows.Forms.MaskedTextBox txtDataEntrada;
         private System.Windows.Forms.MaskedTextBox txtDataPagamento;
+        private System.Windows.Forms.Button btnEditar;
     }
 }
