@@ -29,6 +29,7 @@ namespace ProjetoContasAReceberRaro.view
             ClassCrudContasAReceber crud = new ClassCrudContasAReceber();
             cbxClasse.DataSource  = crud.CarregaClasse();
             cbxSituacao.DataSource = crud.CarregaSituacao();
+            txtDataEntrada.Text = DateTime.Now.ToString("dd/MM/yyyy");
         }
         private void btnNovo_Click(object sender, EventArgs e)
         {
@@ -79,7 +80,7 @@ namespace ProjetoContasAReceberRaro.view
             ClassCrudContasAReceber crud = new ClassCrudContasAReceber();
             try
             {
-                crud.InserirDivida(Convert.ToInt32(lblCodigo.Text), txtDataEntrada.Text, Convert.ToDouble(txtValor.Text), cbxSituacao.SelectedIndex + 1, txtDocumento.Text, cbxClasse.SelectedIndex + 1, txtDataVencimento.Text, pagamento);
+                crud.InserirDivida(Convert.ToInt32(lblCodigo.Text), txtDataEntrada.Text, Convert.ToDouble(txtValor.Text), cbxSituacao.SelectedIndex + 1, txtDocumento.Text, cbxClasse.SelectedIndex + 1, txtDataVencimento.Text, txtDataPagamento.Text);
                 MessageBox.Show("Divida incluida com sucesso!", "Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 this.Close();
             }
@@ -127,21 +128,11 @@ namespace ProjetoContasAReceberRaro.view
         }
         public void EditarDivida()
         {
-            string pagamento = txtDataPagamento.Text.Replace("/", string.Empty);
-            if (pagamento.Equals("") == true)
-            {
-                pagamento = "";
-            }
-            /*else
-            {
-                pagamento = txtDataPagamento.Text;
-            }*/
-            Console.WriteLine("Pagamento: " + pagamento);
-
+           
             ClassCrudContasAReceber crud = new ClassCrudContasAReceber();
             try
             {
-                crud.EditarDivida(Convert.ToInt32(lbl_id_Conta.Text), Convert.ToInt32(lblCodigo.Text), txtDataEntrada.Text, Convert.ToDouble(txtValor.Text), (cbxSituacao.SelectedIndex + 1), txtDocumento.Text, (cbxClasse.SelectedIndex + 1), txtDataVencimento.Text, pagamento);
+                crud.EditarDivida(Convert.ToInt32(lbl_id_Conta.Text), Convert.ToInt32(lblCodigo.Text), txtDataEntrada.Text, Convert.ToDouble(txtValor.Text), (cbxSituacao.SelectedIndex + 1), txtDocumento.Text, (cbxClasse.SelectedIndex + 1), txtDataVencimento.Text, txtDataPagamento.Text);
                 MessageBox.Show("Cadastro Atualizado com sucesso!", "Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 this.Close();
             }
