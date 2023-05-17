@@ -12,10 +12,10 @@ using System.Windows.Forms;
 
 namespace ProjetoContasAReceberRaro.view
 {
-    public partial class FrmCadastroContasAReceber : Form
+    public partial class FrmIncluirContasAReceber : Form
     {
         private FrmContasAReceber contasAReceber;
-        public FrmCadastroContasAReceber(FrmContasAReceber contasAReceber)
+        public FrmIncluirContasAReceber(FrmContasAReceber contasAReceber)
         {
             InitializeComponent();
             this.contasAReceber = contasAReceber;
@@ -36,6 +36,8 @@ namespace ProjetoContasAReceberRaro.view
             gpbCliente.Enabled = true;
             gpbDivida.Enabled = true;
             btnCadastrar.Enabled = true;
+            btnPesquisarDivida.Enabled = true;
+            btnEditar.Enabled = true;
         }
         private void btnCadastrar_Click(object sender, EventArgs e)
         {
@@ -51,7 +53,10 @@ namespace ProjetoContasAReceberRaro.view
         {
             PesquisarDivida();
         }
-       
+        private void btnEditar_Click(object sender, EventArgs e)
+        {
+            EditarDivida();
+        }
         //Metodos ********************************************************************
         private string DataPagamento()
         {
@@ -95,44 +100,57 @@ namespace ProjetoContasAReceberRaro.view
         }
         private void PesquisarDivida()
         {
-           try
-            {
-                ClassCrudContasAReceber pesquisaDivida = new ClassCrudContasAReceber();
-                ClassDividaClientes dividaCliente = new ClassDividaClientes();
-                dividaCliente = pesquisaDivida.PesquisaDivida(txtDocumento.Text);
-                lbl_id_Conta.Text = dividaCliente.Id_conta.ToString();
-                txtValor.Text = dividaCliente.Valor.ToString("N2");
-                txtDocumento.Text = dividaCliente.Documento;
-                txtDataEntrada.Text = dividaCliente.Entrada;
-                txtDataVencimento.Text = dividaCliente.Vencimento;
-                txtDataPagamento.Text = dividaCliente.Pagamento;
-                txtCliente.Text = dividaCliente.Cliente;
-                cbxSituacao.SelectedItem = dividaCliente.Situacao;
-                cbxClasse.SelectedItem = dividaCliente.Classe ;
-                Console.WriteLine(dividaCliente.Situacao + "\n" + dividaCliente.Classe);
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Erro ao buscar as informações no banco de dados\n" + ex, "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-            
-        }
+             try
+              {
+                  ClassCrudContasAReceber pesquisaDivida = new ClassCrudContasAReceber();
+                  ClassDividaClientes dividaCliente = new ClassDividaClientes();
+                  dividaCliente = pesquisaDivida.PesquisaDivida(txtDocumento.Text);
+                  lblCodigo.Text = dividaCliente.Id_cliente.ToString();
+                  lbl_id_Conta.Text = dividaCliente.Id_conta.ToString();
+                  txtValor.Text = dividaCliente.Valor.ToString("N2");
+                  txtDocumento.Text = dividaCliente.Documento;
+                  txtDataEntrada.Text = dividaCliente.Entrada;
+                  txtDataVencimento.Text = dividaCliente.Vencimento;
+                  txtDataPagamento.Text = dividaCliente.Pagamento;
+                  lblCodigo.Text = dividaCliente.Id_cliente.ToString();
+                  txtCliente.Text = dividaCliente.Cliente;
+                  cbxSituacao.SelectedItem = dividaCliente.Situacao;
+                  cbxClasse.SelectedItem = dividaCliente.Classe ;
 
-        private void btnEditar_Click(object sender, EventArgs e)
+                  Console.WriteLine(dividaCliente.Situacao + "\n" + dividaCliente.Classe);
+              }
+              catch (Exception ex)
+              {
+                  MessageBox.Show("Erro ao buscar as informações no banco de dados\n" + ex, "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+              }
+
+        }
+        public void EditarDivida()
         {
+            string pagamento = txtDataPagamento.Text.Replace("/", string.Empty);
+            if (pagamento.Equals("") == true)
+            {
+                pagamento = "";
+            }
+            /*else
+            {
+                pagamento = txtDataPagamento.Text;
+            }*/
+            Console.WriteLine("Pagamento: " + pagamento);
+
             ClassCrudContasAReceber crud = new ClassCrudContasAReceber();
             try
             {
-                /* crud.EditarDivida(Convert.ToInt32(lbl_id_Conta.Text), Convert.ToInt32(lblCodigo.Text), txtDataEntrada.Text, Convert.ToDouble(txtValor.Text), Convert.ToInt32(cbxSituacao.SelectedIndex + 1), txtDocumento.Text, Convert.ToInt32(cbxClasse.SelectedIndex + 1), txtDataVencimento.Text, txtDataPagamento.Text);
-                 MessageBox.Show("Cadastro Atualizado com sucesso!", "Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                 this.Close();*/
-
-                Console.WriteLine(cbxSituacao.SelectedIndex + 1);
+                crud.EditarDivida(Convert.ToInt32(lbl_id_Conta.Text), Convert.ToInt32(lblCodigo.Text), txtDataEntrada.Text, Convert.ToDouble(txtValor.Text), (cbxSituacao.SelectedIndex + 1), txtDocumento.Text, (cbxClasse.SelectedIndex + 1), txtDataVencimento.Text, pagamento);
+                MessageBox.Show("Cadastro Atualizado com sucesso!", "Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                this.Close();
             }
             catch (Exception ex)
             {
                 MessageBox.Show("Erro ao atualizar as informações no banco de dados! \n" + ex, "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
+       
     }
 }

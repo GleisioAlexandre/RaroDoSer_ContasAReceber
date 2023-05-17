@@ -1,6 +1,6 @@
 ﻿namespace ProjetoContasAReceberRaro.view
 {
-    partial class FrmInserirCliente
+    partial class FrmIncluirCliente
     {
         /// <summary>
         /// Required designer variable.

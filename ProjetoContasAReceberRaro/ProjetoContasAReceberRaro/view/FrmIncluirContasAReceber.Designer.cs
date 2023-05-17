@@ -1,6 +1,6 @@
 ﻿namespace ProjetoContasAReceberRaro.view
 {
-    partial class FrmCadastroContasAReceber
+    partial class FrmIncluirContasAReceber
     {
         /// <summary>
         /// Required designer variable.
@@ -82,7 +82,6 @@
             this.lblCodigo.Size = new System.Drawing.Size(15, 16);
             this.lblCodigo.TabIndex = 2;
             this.lblCodigo.Text = "0";
-            this.lblCodigo.Visible = false;
             // 
             // txtCliente
             // 
@@ -297,6 +296,7 @@
             // 
             // btnPesquisarDivida
             // 
+            this.btnPesquisarDivida.Enabled = false;
             this.btnPesquisarDivida.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnPesquisarDivida.Location = new System.Drawing.Point(260, 432);
             this.btnPesquisarDivida.Name = "btnPesquisarDivida";
@@ -308,6 +308,7 @@
             // 
             // btnEditar
             // 
+            this.btnEditar.Enabled = false;
             this.btnEditar.Location = new System.Drawing.Point(360, 432);
             this.btnEditar.Name = "btnEditar";
             this.btnEditar.Size = new System.Drawing.Size(75, 23);
@@ -316,7 +317,7 @@
             this.btnEditar.UseVisualStyleBackColor = true;
             this.btnEditar.Click += new System.EventHandler(this.btnEditar_Click);
             // 
-            // FrmCadastroContasAReceber
+            // FrmIncluirContasAReceber
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -329,7 +330,7 @@
             this.Controls.Add(this.gpbCliente);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
-            this.Name = "FrmCadastroContasAReceber";
+            this.Name = "FrmIncluirContasAReceber";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Inserir Contas a Receber";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FrmCadastroContasAReceber_FormClosing);

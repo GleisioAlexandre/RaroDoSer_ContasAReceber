@@ -9,6 +9,7 @@ namespace ProjetoContasAReceberRaro.controller
     class ClassDividaClientes
     {
         private int id_conta;
+        private int id_cliente;
         private string cliente;
         private string entrada;
         private double valor;
@@ -22,9 +23,10 @@ namespace ProjetoContasAReceberRaro.controller
         {
         }
 
-        public ClassDividaClientes(int id_conta, string cliente, string entrada, double valor, string situacao, string documento, string classe, string vencimento, string pagamento)
+        public ClassDividaClientes(int id_conta, int id_cliente, string cliente, string entrada, double valor, string situacao, string documento, string classe, string vencimento, string pagamento)
         {
             this.id_conta = id_conta;
+            this.id_cliente = id_cliente;
             this.cliente = cliente;
             this.entrada = entrada;
             this.valor = valor;
@@ -36,6 +38,7 @@ namespace ProjetoContasAReceberRaro.controller
         }
 
         public int Id_conta { get => id_conta; set => id_conta = value; }
+        public int Id_cliente { get => id_cliente; set => id_cliente = value; }
         public string Cliente { get => cliente; set => cliente = value; }
         public string Entrada { get => entrada; set => entrada = value; }
         public double Valor { get => valor; set => valor = value; }

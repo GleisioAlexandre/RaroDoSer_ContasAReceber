@@ -25,7 +25,7 @@ namespace ProjetoContasAReceberRaro.view
         }
         private void lblInserir_Click(object sender, EventArgs e)
         {
-            view.FrmCadastroContasAReceber CadContas = new FrmCadastroContasAReceber(this);
+            view.FrmIncluirContasAReceber CadContas = new FrmIncluirContasAReceber(this);
             CadContas.ShowDialog();
         }
         //Metodo usado para carregar as contas a receberem

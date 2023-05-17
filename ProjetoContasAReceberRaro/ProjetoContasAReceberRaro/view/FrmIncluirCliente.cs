@@ -12,10 +12,10 @@ using System.Windows.Forms;
 
 namespace ProjetoContasAReceberRaro.view
 {
-    public partial class FrmInserirCliente : Form
+    public partial class FrmIncluirCliente : Form
     {
         private FrmCliente cliente;
-        public FrmInserirCliente(FrmCliente cliente)
+        public FrmIncluirCliente(FrmCliente cliente)
         {
             InitializeComponent();
             this.cliente = cliente;

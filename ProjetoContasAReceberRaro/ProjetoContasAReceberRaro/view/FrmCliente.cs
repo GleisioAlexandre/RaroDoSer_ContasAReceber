@@ -53,7 +53,7 @@ namespace ProjetoContasAReceberRaro.view
         }
         private void FormInserirCliente()
         {
-            FrmInserirCliente inserirCliente = new FrmInserirCliente(this);
+            FrmIncluirCliente inserirCliente = new FrmIncluirCliente(this);
             inserirCliente.ShowDialog();
         }
        

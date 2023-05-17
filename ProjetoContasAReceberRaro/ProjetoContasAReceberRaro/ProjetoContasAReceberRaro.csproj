@@ -62,11 +62,11 @@
     <Compile Include="controller\ClassCliente.cs" />
     <Compile Include="controller\ClassDividaClientes.cs" />
     <Compile Include="model\Endereco.cs" />
-    <Compile Include="view\FrmCadastroContasAReceber.cs">
+    <Compile Include="view\FrmIncluirContasAReceber.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="view\FrmCadastroContasAReceber.Designer.cs">
-      <DependentUpon>FrmCadastroContasAReceber.cs</DependentUpon>
+    <Compile Include="view\FrmIncluirContasAReceber.Designer.cs">
+      <DependentUpon>FrmIncluirContasAReceber.cs</DependentUpon>
     </Compile>
     <Compile Include="view\FrmCliente.cs">
       <SubType>Form</SubType>
@@ -88,14 +88,14 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="view\FrmInserirCliente.cs">
+    <Compile Include="view\FrmIncluirCliente.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="view\FrmInserirCliente.Designer.cs">
-      <DependentUpon>FrmInserirCliente.cs</DependentUpon>
+    <Compile Include="view\FrmIncluirCliente.Designer.cs">
+      <DependentUpon>FrmIncluirCliente.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="view\FrmCadastroContasAReceber.resx">
-      <DependentUpon>FrmCadastroContasAReceber.cs</DependentUpon>
+    <EmbeddedResource Include="view\FrmIncluirContasAReceber.resx">
+      <DependentUpon>FrmIncluirContasAReceber.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="view\FrmCliente.resx">
       <DependentUpon>FrmCliente.cs</DependentUpon>
@@ -115,8 +115,8 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="view\FrmInserirCliente.resx">
-      <DependentUpon>FrmInserirCliente.cs</DependentUpon>
+    <EmbeddedResource Include="view\FrmIncluirCliente.resx">
+      <DependentUpon>FrmIncluirCliente.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="BD\RARO.FDB" />
     <None Include="packages.config" />
