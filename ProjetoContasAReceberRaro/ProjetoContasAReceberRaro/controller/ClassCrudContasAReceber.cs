@@ -28,7 +28,7 @@ namespace ProjetoContasAReceberRaro.controller
             conexao.Close();
             return dt;
         } 
-       public List<string> CarregaClasse()
+        public List<string> CarregaClasse()
         {
             FbConnection conexao = new FbConnection(stringConexao);
             conexao.Open();
@@ -118,6 +118,15 @@ namespace ProjetoContasAReceberRaro.controller
             comando.Parameters.AddWithValue("@vencimento", vencimento);
             comando.Parameters.AddWithValue("@pagamento", pagamento);
             comando.Parameters.AddWithValue("@id_contasareceber", id_contas);
+            comando.ExecuteNonQuery();
+            conexao.Close();
+        }
+        public void DeletarDivida(int id_conta)
+        {
+            FbConnection conexao = new FbConnection(stringConexao);
+            conexao.Open();
+            FbCommand comando = new FbCommand("delete from tb_contas_a_receber where id_contasareceber = @id_conta", conexao);
+            comando.Parameters.AddWithValue("@id_conta", id_conta);
             comando.ExecuteNonQuery();
             conexao.Close();
         }

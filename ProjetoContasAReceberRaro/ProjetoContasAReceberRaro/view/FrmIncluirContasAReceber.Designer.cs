@@ -52,6 +52,7 @@
             this.btnNovo = new System.Windows.Forms.Button();
             this.btnPesquisarDivida = new System.Windows.Forms.Button();
             this.btnEditar = new System.Windows.Forms.Button();
+            this.BtnDeletar = new System.Windows.Forms.Button();
             this.gpbCliente.SuspendLayout();
             this.gpbDivida.SuspendLayout();
             this.SuspendLayout();
@@ -173,6 +174,8 @@
             this.txtValor.Size = new System.Drawing.Size(109, 22);
             this.txtValor.TabIndex = 10;
             this.txtValor.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.txtValor.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtValor_KeyPress);
+            this.txtValor.Leave += new System.EventHandler(this.txtValor_Leave);
             // 
             // cbxSituacao
             // 
@@ -276,7 +279,7 @@
             // 
             this.btnCadastrar.Enabled = false;
             this.btnCadastrar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCadastrar.Location = new System.Drawing.Point(135, 432);
+            this.btnCadastrar.Location = new System.Drawing.Point(127, 432);
             this.btnCadastrar.Name = "btnCadastrar";
             this.btnCadastrar.Size = new System.Drawing.Size(75, 23);
             this.btnCadastrar.TabIndex = 2;
@@ -299,7 +302,7 @@
             // 
             this.btnPesquisarDivida.Enabled = false;
             this.btnPesquisarDivida.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnPesquisarDivida.Location = new System.Drawing.Point(260, 432);
+            this.btnPesquisarDivida.Location = new System.Drawing.Point(236, 432);
             this.btnPesquisarDivida.Name = "btnPesquisarDivida";
             this.btnPesquisarDivida.Size = new System.Drawing.Size(75, 23);
             this.btnPesquisarDivida.TabIndex = 4;
@@ -310,7 +313,8 @@
             // btnEditar
             // 
             this.btnEditar.Enabled = false;
-            this.btnEditar.Location = new System.Drawing.Point(360, 432);
+            this.btnEditar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEditar.Location = new System.Drawing.Point(345, 432);
             this.btnEditar.Name = "btnEditar";
             this.btnEditar.Size = new System.Drawing.Size(75, 23);
             this.btnEditar.TabIndex = 5;
@@ -318,11 +322,23 @@
             this.btnEditar.UseVisualStyleBackColor = true;
             this.btnEditar.Click += new System.EventHandler(this.btnEditar_Click);
             // 
+            // BtnDeletar
+            // 
+            this.BtnDeletar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnDeletar.Location = new System.Drawing.Point(454, 432);
+            this.BtnDeletar.Name = "BtnDeletar";
+            this.BtnDeletar.Size = new System.Drawing.Size(75, 23);
+            this.BtnDeletar.TabIndex = 6;
+            this.BtnDeletar.Text = "Deletar";
+            this.BtnDeletar.UseVisualStyleBackColor = true;
+            this.BtnDeletar.Click += new System.EventHandler(this.BtnDeletar_Click);
+            // 
             // FrmIncluirContasAReceber
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(542, 478);
+            this.Controls.Add(this.BtnDeletar);
             this.Controls.Add(this.btnEditar);
             this.Controls.Add(this.btnPesquisarDivida);
             this.Controls.Add(this.btnNovo);
@@ -370,5 +386,6 @@
         private System.Windows.Forms.MaskedTextBox txtDataEntrada;
         private System.Windows.Forms.MaskedTextBox txtDataPagamento;
         private System.Windows.Forms.Button btnEditar;
+        private System.Windows.Forms.Button BtnDeletar;
     }
 }
