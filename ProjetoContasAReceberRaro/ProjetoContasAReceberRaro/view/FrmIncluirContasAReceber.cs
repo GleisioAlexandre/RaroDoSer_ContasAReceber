@@ -30,6 +30,7 @@ namespace ProjetoContasAReceberRaro.view
             cbxClasse.DataSource  = crud.CarregaClasse();
             cbxSituacao.DataSource = crud.CarregaSituacao();
             txtDataEntrada.Text = DateTime.Now.ToString("dd/MM/yyyy");
+            cbxSituacao.SelectedIndex = 1;
         }
         private void btnNovo_Click(object sender, EventArgs e)
         {
@@ -142,6 +143,12 @@ namespace ProjetoContasAReceberRaro.view
             }
         }
 
-       
+        private void cbxSituacao_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (cbxSituacao.SelectedIndex == 1)
+            {
+                txtDataPagamento.Text = "01/01/0001";
+            }
+        }
     }
 }

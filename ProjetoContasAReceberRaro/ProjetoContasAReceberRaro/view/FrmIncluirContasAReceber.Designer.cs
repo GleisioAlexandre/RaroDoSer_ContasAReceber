@@ -182,6 +182,7 @@
             this.cbxSituacao.Name = "cbxSituacao";
             this.cbxSituacao.Size = new System.Drawing.Size(121, 24);
             this.cbxSituacao.TabIndex = 13;
+            this.cbxSituacao.SelectedIndexChanged += new System.EventHandler(this.cbxSituacao_SelectedIndexChanged);
             // 
             // label7
             // 
