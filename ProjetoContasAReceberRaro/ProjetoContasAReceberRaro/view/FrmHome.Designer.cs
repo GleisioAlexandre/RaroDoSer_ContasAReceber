@@ -31,11 +31,13 @@
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.cadastroToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.btnCliente = new System.Windows.Forms.ToolStripMenuItem();
+            this.contasAReceberToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.btnContasAReceber = new System.Windows.Forms.ToolStripMenuItem();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
             this.lblData = new System.Windows.Forms.ToolStripStatusLabel();
-            this.contasAReceberToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.btnContasAReceber = new System.Windows.Forms.ToolStripMenuItem();
+            this.configuraçõesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.configuraçõesToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.statusStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -44,7 +46,8 @@
             // 
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.cadastroToolStripMenuItem,
-            this.contasAReceberToolStripMenuItem});
+            this.contasAReceberToolStripMenuItem,
+            this.configuraçõesToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(1422, 24);
@@ -62,9 +65,24 @@
             // btnCliente
             // 
             this.btnCliente.Name = "btnCliente";
-            this.btnCliente.Size = new System.Drawing.Size(180, 22);
+            this.btnCliente.Size = new System.Drawing.Size(116, 22);
             this.btnCliente.Text = "Clientes";
             this.btnCliente.Click += new System.EventHandler(this.btnCliente_Click);
+            // 
+            // contasAReceberToolStripMenuItem
+            // 
+            this.contasAReceberToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.btnContasAReceber});
+            this.contasAReceberToolStripMenuItem.Name = "contasAReceberToolStripMenuItem";
+            this.contasAReceberToolStripMenuItem.Size = new System.Drawing.Size(110, 20);
+            this.contasAReceberToolStripMenuItem.Text = "Contas a Receber";
+            // 
+            // btnContasAReceber
+            // 
+            this.btnContasAReceber.Name = "btnContasAReceber";
+            this.btnContasAReceber.Size = new System.Drawing.Size(165, 22);
+            this.btnContasAReceber.Text = "Contas a Receber";
+            this.btnContasAReceber.Click += new System.EventHandler(this.btnContasAReceber_Click);
             // 
             // statusStrip1
             // 
@@ -89,20 +107,20 @@
             this.lblData.Size = new System.Drawing.Size(65, 17);
             this.lblData.Text = "00/00/0000";
             // 
-            // contasAReceberToolStripMenuItem
+            // configuraçõesToolStripMenuItem
             // 
-            this.contasAReceberToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.btnContasAReceber});
-            this.contasAReceberToolStripMenuItem.Name = "contasAReceberToolStripMenuItem";
-            this.contasAReceberToolStripMenuItem.Size = new System.Drawing.Size(110, 20);
-            this.contasAReceberToolStripMenuItem.Text = "Contas a Receber";
+            this.configuraçõesToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.configuraçõesToolStripMenuItem1});
+            this.configuraçõesToolStripMenuItem.Name = "configuraçõesToolStripMenuItem";
+            this.configuraçõesToolStripMenuItem.Size = new System.Drawing.Size(96, 20);
+            this.configuraçõesToolStripMenuItem.Text = "Configurações";
             // 
-            // btnContasAReceber
+            // configuraçõesToolStripMenuItem1
             // 
-            this.btnContasAReceber.Name = "btnContasAReceber";
-            this.btnContasAReceber.Size = new System.Drawing.Size(180, 22);
-            this.btnContasAReceber.Text = "Contas a Receber";
-            this.btnContasAReceber.Click += new System.EventHandler(this.btnContasAReceber_Click);
+            this.configuraçõesToolStripMenuItem1.Name = "configuraçõesToolStripMenuItem1";
+            this.configuraçõesToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
+            this.configuraçõesToolStripMenuItem1.Text = "Configurações";
+            this.configuraçõesToolStripMenuItem1.Click += new System.EventHandler(this.configuraçõesToolStripMenuItem1_Click);
             // 
             // FrmHome
             // 
@@ -136,6 +154,8 @@
         private System.Windows.Forms.ToolStripStatusLabel lblData;
         private System.Windows.Forms.ToolStripMenuItem contasAReceberToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem btnContasAReceber;
+        private System.Windows.Forms.ToolStripMenuItem configuraçõesToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem configuraçõesToolStripMenuItem1;
     }
 }
 

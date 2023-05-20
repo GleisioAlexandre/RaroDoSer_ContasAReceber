@@ -20,11 +20,10 @@ namespace ProjetoContasAReceberRaro.view
             InitializeComponent();
             this.contasAReceber = contasAReceber;
         }
-
-        //Metodos ********************************************************************
+        //*****************************Metodos***************************************
+        //Metodo que ao manipular o combox Situacao altera o maskedbox pagamento para 01/01/0001
         private string DataPagamento()
         {
-          
             string pagamento = null;
 
             if (cbxSituacao.SelectedItem.Equals("ATRASADO") == true)
@@ -37,6 +36,7 @@ namespace ProjetoContasAReceberRaro.view
             }
             return pagamento;
         }
+        //Metodo usado para inserir as dividas dos clientes no banco de dados
         private void IncluirDivida()
         {
              ClassCrudContasAReceber crud = new ClassCrudContasAReceber();
@@ -52,6 +52,7 @@ namespace ProjetoContasAReceberRaro.view
             }
            
         }
+        //Metodo usado para pesquisar o cliente devedor e atribuir o valor da divida
         private void PesquisarCliente()
         {
             ClassCrudCliente crud = new ClassCrudCliente();
@@ -62,6 +63,7 @@ namespace ProjetoContasAReceberRaro.view
             txtCliente.Text = cliente.Nome;
 
         }
+        //Metodo usado para pesquisar as dividas já inseridas no banco de dados
         private void PesquisarDivida()
         {
              try
@@ -89,7 +91,8 @@ namespace ProjetoContasAReceberRaro.view
               }
 
         }
-         private void EditarDivida()
+        //Metodo usado para editar as dividas caso haja alguma inserção errada
+        private void EditarDivida()
         {
            
             ClassCrudContasAReceber crud = new ClassCrudContasAReceber();
@@ -103,7 +106,8 @@ namespace ProjetoContasAReceberRaro.view
             {
                 MessageBox.Show("Erro ao atualizar as informações no banco de dados! \n" + ex, "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-          } 
+          }
+        //Metodo usado para validar os valores do textbox valor
         private static void ValidacaoValor(object sender, KeyPressEventArgs e)
         {
             if (!char.IsDigit(e.KeyChar) && e.KeyChar != 08 && e.KeyChar != 44)
@@ -118,6 +122,7 @@ namespace ProjetoContasAReceberRaro.view
                 }
             }
         }
+        //Metodo usado para deletar as dividas dos clientes
         private void DeletarDivida()
         {
             ClassCrudContasAReceber crud = new ClassCrudContasAReceber();
@@ -137,12 +142,8 @@ namespace ProjetoContasAReceberRaro.view
                 MessageBox.Show("Erro ao tentar remover o registro do banco de dados! \n" + ex, "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
-        //********************************************************************
-        private void btnPesquisar_Click(object sender, EventArgs e)
-        {
-            PesquisarCliente();
-        }
-        private void FrmCadastroContasAReceber_Load(object sender, EventArgs e)
+        //Metodo usado para iniciar os parametros do sistema
+        private void Inicio()
         {
             ClassCrudContasAReceber crud = new ClassCrudContasAReceber();
             cbxClasse.DataSource = crud.CarregaClasse();
@@ -150,25 +151,36 @@ namespace ProjetoContasAReceberRaro.view
             txtDataEntrada.Text = DateTime.Now.ToString("dd/MM/yyyy");
             cbxSituacao.SelectedIndex = 1;
         }
-        private void btnNovo_Click(object sender, EventArgs e)
+        //Metodo usado para liberar os botões para iniciar as operações
+        private void Novo()
         {
-
             gpbCliente.Enabled = true;
             gpbDivida.Enabled = true;
             btnCadastrar.Enabled = true;
             btnPesquisarDivida.Enabled = true;
             btnEditar.Enabled = true;
         }
+        //****************************************************************************
+        private void btnPesquisar_Click(object sender, EventArgs e)
+        {
+            PesquisarCliente();
+        }
+        private void FrmCadastroContasAReceber_Load(object sender, EventArgs e)
+        {
+            Inicio();
+        }
+        private void btnNovo_Click(object sender, EventArgs e)
+        {
+            Novo();
+        }
         private void btnCadastrar_Click(object sender, EventArgs e)
         {
             IncluirDivida();
-
         }
         private void FrmCadastroContasAReceber_FormClosing(object sender, FormClosingEventArgs e)
         {
             contasAReceber.CarregaGridContas();
         }
-
         private void btnPesquisarDivida_Click(object sender, EventArgs e)
         {
             PesquisarDivida();
@@ -177,7 +189,6 @@ namespace ProjetoContasAReceberRaro.view
         {
             EditarDivida();
         }
-
         private void cbxSituacao_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (cbxSituacao.SelectedIndex == 1)
