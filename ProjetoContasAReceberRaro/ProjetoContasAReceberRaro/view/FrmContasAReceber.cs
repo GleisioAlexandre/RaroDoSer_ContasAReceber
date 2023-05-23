@@ -34,16 +34,28 @@ namespace ProjetoContasAReceberRaro.view
         }
         private void InteracaoGrid()
         {
-            double emdia = 0;
-            foreach (DataGridViewRow coluna in dtgContasAReceber.Rows)
-            {
-                if (coluna.Cells["situacao"].Value.ToString() == "EM DIA")
+           
+                double emdia = 0;
+            double atrasado = 0;
+                foreach (DataGridViewRow coluna in dtgContasAReceber.Rows)
                 {
-                    double valor = Convert.ToDouble(coluna.Cells["Valor"].Value);
-                    emdia += valor;
+                    if (coluna.Cells["situacao"].Value.ToString() == "EM DIA")
+                    {
+                        double valorEmdia = Convert.ToDouble(coluna.Cells["Valor"].Value);
+                        emdia += valorEmdia;
+                    }else if (coluna.Cells["situacao"].Value.ToString() == "ATRASADO")
+                    {
+                        double ValorAtrasado = Convert.ToDouble(coluna.Cells["Valor"].Value);
+                        atrasado += ValorAtrasado;
                 }
-                lblEmdia.Text = emdia.ToString("C2");
-            }
+                else
+                {
+
+                }
+                    lblEmdia.Text = emdia.ToString();
+                lblAtrasado.Text = atrasado.ToString();
+                }
+            
         }
         //***********************************************************
         private void FrmContasAReceber_Load(object sender, EventArgs e)

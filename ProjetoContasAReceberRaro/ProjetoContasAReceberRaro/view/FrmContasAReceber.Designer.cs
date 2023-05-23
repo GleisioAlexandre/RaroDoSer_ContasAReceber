@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dtgContasAReceber = new System.Windows.Forms.DataGridView();
             this.codigo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cliente = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -43,6 +43,8 @@
             this.lblInserir = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
             this.lblEmdia = new System.Windows.Forms.ToolStripStatusLabel();
+            this.toolStripStatusLabel2 = new System.Windows.Forms.ToolStripStatusLabel();
+            this.lblAtrasado = new System.Windows.Forms.ToolStripStatusLabel();
             ((System.ComponentModel.ISupportInitialize)(this.dtgContasAReceber)).BeginInit();
             this.statusStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -96,10 +98,10 @@
             // valor
             // 
             this.valor.DataPropertyName = "valor";
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle1.Format = "C2";
-            dataGridViewCellStyle1.NullValue = null;
-            this.valor.DefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle3.Format = "C2";
+            dataGridViewCellStyle3.NullValue = null;
+            this.valor.DefaultCellStyle = dataGridViewCellStyle3;
             this.valor.HeaderText = "Valor";
             this.valor.Name = "valor";
             this.valor.ReadOnly = true;
@@ -144,7 +146,9 @@
             this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.lblInserir,
             this.toolStripStatusLabel1,
-            this.lblEmdia});
+            this.lblEmdia,
+            this.toolStripStatusLabel2,
+            this.lblAtrasado});
             this.statusStrip1.Location = new System.Drawing.Point(0, 426);
             this.statusStrip1.Name = "statusStrip1";
             this.statusStrip1.Size = new System.Drawing.Size(941, 24);
@@ -164,18 +168,34 @@
             // toolStripStatusLabel1
             // 
             this.toolStripStatusLabel1.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.toolStripStatusLabel1.ForeColor = System.Drawing.Color.Green;
+            this.toolStripStatusLabel1.ForeColor = System.Drawing.Color.Blue;
             this.toolStripStatusLabel1.Name = "toolStripStatusLabel1";
-            this.toolStripStatusLabel1.Size = new System.Drawing.Size(58, 19);
-            this.toolStripStatusLabel1.Text = "Em dia: ";
+            this.toolStripStatusLabel1.Size = new System.Drawing.Size(73, 19);
+            this.toolStripStatusLabel1.Text = "Em dia: R$";
             // 
             // lblEmdia
             // 
             this.lblEmdia.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblEmdia.ForeColor = System.Drawing.Color.Green;
+            this.lblEmdia.ForeColor = System.Drawing.Color.Blue;
             this.lblEmdia.Name = "lblEmdia";
-            this.lblEmdia.Size = new System.Drawing.Size(33, 19);
-            this.lblEmdia.Text = "0,00";
+            this.lblEmdia.Size = new System.Drawing.Size(149, 19);
+            this.lblEmdia.Text = "0,00                             ";
+            // 
+            // toolStripStatusLabel2
+            // 
+            this.toolStripStatusLabel2.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.toolStripStatusLabel2.ForeColor = System.Drawing.Color.Red;
+            this.toolStripStatusLabel2.Name = "toolStripStatusLabel2";
+            this.toolStripStatusLabel2.Size = new System.Drawing.Size(86, 19);
+            this.toolStripStatusLabel2.Text = "Atrasado: R$";
+            // 
+            // lblAtrasado
+            // 
+            this.lblAtrasado.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblAtrasado.ForeColor = System.Drawing.Color.Red;
+            this.lblAtrasado.Name = "lblAtrasado";
+            this.lblAtrasado.Size = new System.Drawing.Size(33, 19);
+            this.lblAtrasado.Text = "0,00";
             // 
             // FrmContasAReceber
             // 
@@ -212,5 +232,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn situacao;
         private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel1;
         private System.Windows.Forms.ToolStripStatusLabel lblEmdia;
+        private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel2;
+        private System.Windows.Forms.ToolStripStatusLabel lblAtrasado;
     }
 }
