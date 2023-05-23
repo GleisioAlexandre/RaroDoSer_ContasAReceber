@@ -46,9 +46,7 @@ namespace ProjetoContasAReceberRaro
         private void configuraçõesToolStripMenuItem1_Click(object sender, EventArgs e)
         {
             view.FrmConfiguracao configuracao = new view.FrmConfiguracao();
-            configuracao.MdiParent = this;
-            configuracao.WindowState = FormWindowState.Maximized;
-            configuracao.Show();
+            configuracao.ShowDialog();
         }
     }
 }

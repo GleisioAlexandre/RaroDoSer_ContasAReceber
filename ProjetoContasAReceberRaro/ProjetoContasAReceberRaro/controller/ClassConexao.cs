@@ -16,6 +16,7 @@ namespace ProjetoContasAReceberRaro.controller
         private int porta;
         public ClassConexao()
         {
+
         }
         public void Print()
         {
@@ -36,10 +37,13 @@ namespace ProjetoContasAReceberRaro.controller
         public int Porta { get => porta; set => porta = value; }
         public static string Conexao
         {
+           
             get
             {
                 return ConfigurationManager.ConnectionStrings["ConexaoFirebird"].ConnectionString;
             }
         }
+       
+
     }
 }

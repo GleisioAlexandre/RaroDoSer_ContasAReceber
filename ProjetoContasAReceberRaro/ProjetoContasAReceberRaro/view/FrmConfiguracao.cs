@@ -19,32 +19,75 @@ namespace ProjetoContasAReceberRaro.view
             InitializeComponent();
         }
         //************************Metodos*************************
-        private void ConfiguracaoBd()
+        private void EditarConfiguracaoBd()
         {
-            ClassConexao dados = new ClassConexao();
-            dados.Datasource = txtServidor.Text;
-            dados.Database = txtCaminhoBanco.Text;
-            dados.User = txtUsuario.Text;
-            dados.Password = txtSenha.Text;
-            dados.Porta = Convert.ToInt32(txtPorta.Text);
-            string stringConexao = ConfigurationManager.ConnectionStrings["ConexaoFirebird"].ConnectionString;
-            string novaStringConexao = stringConexao
-                .Replace("User= txtUsuario.text", $"User=txtUsuario.text")
-                .Replace("Password = txtSenha.Text ", $"Password =txtSenha.Text")
-                .Replace("Database = txtCaminhoBanco.Text", $"Database = txtCaminhoBanco.Text")
-                .Replace("DataSource = txtServidor.Text", $"DataSource = txtServidor.Text")
-                .Replace("Port = txtPorta.Text", $"Port = txtPorta.Text");
-            var config = ConfigurationManager.OpenExeConfiguration(ConfigurationUserLevel.None);
-            var secaoStringConexao = (ConnectionStringsSection)config.GetSection("stringConexao");
-            secaoStringConexao.ConnectionStrings["ConexaoFirebird"].ConnectionString = novaStringConexao;
-            config.Save(ConfigurationSaveMode.Modified);
-            ConfigurationManager.RefreshSection("stringConexao");
-            dados.Print();
+            try
+            {
+                StringBuilder stringDeConexao = new StringBuilder();
+                stringDeConexao.Append("DataSource=").Append(txtServidor.Text).Append(";");
+                stringDeConexao.Append("User=").Append(txtUsuario.Text).Append(";");
+                stringDeConexao.Append("Password=").Append(txtSenha.Text).Append(";");
+                stringDeConexao.Append("Database=").Append(txtCaminhoBanco.Text).Append(";");
+                stringDeConexao.Append("Port=").Append(txtPorta.Text);
+
+                Configuration configuracao = ConfigurationManager.OpenExeConfiguration(ConfigurationUserLevel.None);
+                configuracao.ConnectionStrings.ConnectionStrings["ConexaoFirebird"].ConnectionString = stringDeConexao.ToString();
+                configuracao.Save(ConfigurationSaveMode.Modified, true);
+                ConfigurationManager.RefreshSection("connectionStrings");
+                MessageBox.Show("Parametros editados com sucesso!","Sucesso",MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Erro ao editar os parametros do banco de dados!", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+        private string ParametrosBd(string connectionString, string parametro)
+        {
+            int indexInicial = connectionString.IndexOf(parametro + "=");
+            if (indexInicial >= 0)
+            {
+                indexInicial += parametro.Length + 1;
+                int indexFinal = connectionString.IndexOf(";", indexInicial);
+                if (indexFinal < 0)
+                {
+                    indexFinal = connectionString.Length;
+                }
+                return connectionString.Substring(indexInicial, indexFinal - indexInicial);
+            }
+            return string.Empty;
+        }
+        private void CarregaDadosBD()
+        {
+            string Conexao = ConfigurationManager.ConnectionStrings["ConexaoFirebird"].ConnectionString;
+            txtServidor.Text = ParametrosBd(Conexao, "DataSource");
+            txtUsuario.Text = ParametrosBd(Conexao, "User");
+            txtSenha.Text = ParametrosBd(Conexao, "Password");
+            txtPorta.Text = ParametrosBd(Conexao, "Port");
+            txtCaminhoBanco.Text = ParametrosBd(Conexao, "Database");
         }
         //********************************************************
-        private void BtnSalvar_Click(object sender, EventArgs e)
+        private void btnSalvar_Click(object sender, EventArgs e)
         {
-            ConfiguracaoBd();
+            EditarConfiguracaoBd();
+            gpbConfigBd.Enabled = false;
+            btnSalvar.Enabled = false;
+            btnEditar.Enabled = true;
+        }
+
+        private void FrmConfiguracao_Load(object sender, EventArgs e)
+        {
+            CarregaDadosBD();
+        }
+
+        private void btnEditar_Click(object sender, EventArgs e)
+        {
+            if (DialogResult.Yes == MessageBox.Show("A edição dos parametros do banco de dados pode afetar o funcionamento do sistema!", "Alerta!", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation))
+            {
+                gpbConfigBd.Enabled = true;
+                btnSalvar.Enabled = true;
+                btnEditar.Enabled = false;
+            }
+           
         }
     }
 }
