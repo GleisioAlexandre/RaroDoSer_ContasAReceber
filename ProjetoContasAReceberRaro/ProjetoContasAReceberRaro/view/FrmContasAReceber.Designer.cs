@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dtgContasAReceber = new System.Windows.Forms.DataGridView();
             this.codigo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cliente = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -45,6 +45,8 @@
             this.lblEmdia = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolStripStatusLabel2 = new System.Windows.Forms.ToolStripStatusLabel();
             this.lblAtrasado = new System.Windows.Forms.ToolStripStatusLabel();
+            this.toolStripStatusLabel3 = new System.Windows.Forms.ToolStripStatusLabel();
+            this.lblPago = new System.Windows.Forms.ToolStripStatusLabel();
             ((System.ComponentModel.ISupportInitialize)(this.dtgContasAReceber)).BeginInit();
             this.statusStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -73,6 +75,7 @@
             this.dtgContasAReceber.ReadOnly = true;
             this.dtgContasAReceber.Size = new System.Drawing.Size(943, 425);
             this.dtgContasAReceber.TabIndex = 0;
+            this.dtgContasAReceber.RowPrePaint += new System.Windows.Forms.DataGridViewRowPrePaintEventHandler(this.dtgContasAReceber_RowPrePaint);
             // 
             // codigo
             // 
@@ -98,10 +101,10 @@
             // valor
             // 
             this.valor.DataPropertyName = "valor";
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle3.Format = "C2";
-            dataGridViewCellStyle3.NullValue = null;
-            this.valor.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle4.Format = "C2";
+            dataGridViewCellStyle4.NullValue = null;
+            this.valor.DefaultCellStyle = dataGridViewCellStyle4;
             this.valor.HeaderText = "Valor";
             this.valor.Name = "valor";
             this.valor.ReadOnly = true;
@@ -148,7 +151,9 @@
             this.toolStripStatusLabel1,
             this.lblEmdia,
             this.toolStripStatusLabel2,
-            this.lblAtrasado});
+            this.lblAtrasado,
+            this.toolStripStatusLabel3,
+            this.lblPago});
             this.statusStrip1.Location = new System.Drawing.Point(0, 426);
             this.statusStrip1.Name = "statusStrip1";
             this.statusStrip1.Size = new System.Drawing.Size(941, 24);
@@ -170,8 +175,8 @@
             this.toolStripStatusLabel1.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.toolStripStatusLabel1.ForeColor = System.Drawing.Color.Blue;
             this.toolStripStatusLabel1.Name = "toolStripStatusLabel1";
-            this.toolStripStatusLabel1.Size = new System.Drawing.Size(73, 19);
-            this.toolStripStatusLabel1.Text = "Em dia: R$";
+            this.toolStripStatusLabel1.Size = new System.Drawing.Size(58, 19);
+            this.toolStripStatusLabel1.Text = "Em dia: ";
             // 
             // lblEmdia
             // 
@@ -186,16 +191,32 @@
             this.toolStripStatusLabel2.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.toolStripStatusLabel2.ForeColor = System.Drawing.Color.Red;
             this.toolStripStatusLabel2.Name = "toolStripStatusLabel2";
-            this.toolStripStatusLabel2.Size = new System.Drawing.Size(86, 19);
-            this.toolStripStatusLabel2.Text = "Atrasado: R$";
+            this.toolStripStatusLabel2.Size = new System.Drawing.Size(71, 19);
+            this.toolStripStatusLabel2.Text = "Atrasado: ";
             // 
             // lblAtrasado
             // 
             this.lblAtrasado.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblAtrasado.ForeColor = System.Drawing.Color.Red;
             this.lblAtrasado.Name = "lblAtrasado";
-            this.lblAtrasado.Size = new System.Drawing.Size(33, 19);
-            this.lblAtrasado.Text = "0,00";
+            this.lblAtrasado.Size = new System.Drawing.Size(209, 19);
+            this.lblAtrasado.Text = "0,00                                            ";
+            // 
+            // toolStripStatusLabel3
+            // 
+            this.toolStripStatusLabel3.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.toolStripStatusLabel3.ForeColor = System.Drawing.Color.Green;
+            this.toolStripStatusLabel3.Name = "toolStripStatusLabel3";
+            this.toolStripStatusLabel3.Size = new System.Drawing.Size(47, 19);
+            this.toolStripStatusLabel3.Text = "Pago: ";
+            // 
+            // lblPago
+            // 
+            this.lblPago.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPago.ForeColor = System.Drawing.Color.Green;
+            this.lblPago.Name = "lblPago";
+            this.lblPago.Size = new System.Drawing.Size(33, 19);
+            this.lblPago.Text = "0,00";
             // 
             // FrmContasAReceber
             // 
@@ -234,5 +255,7 @@
         private System.Windows.Forms.ToolStripStatusLabel lblEmdia;
         private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel2;
         private System.Windows.Forms.ToolStripStatusLabel lblAtrasado;
+        private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel3;
+        private System.Windows.Forms.ToolStripStatusLabel lblPago;
     }
 }
