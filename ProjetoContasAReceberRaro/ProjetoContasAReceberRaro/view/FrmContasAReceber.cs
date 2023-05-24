@@ -17,7 +17,7 @@ namespace ProjetoContasAReceberRaro.view
         public FrmContasAReceber()
         {
             InitializeComponent();
-            dtgContasAReceber.RowPrePaint += new DataGridViewRowPrePaintEventHandler(dtgContasAReceber_RowPrePaint);
+            dtgContasAReceber.RowPrePaint += dtgContasAReceber_RowPrePaint;
         }
         //**********************Metodos******************************
         public void CarregaGridContas()
@@ -64,15 +64,12 @@ namespace ProjetoContasAReceberRaro.view
         {
             CarregaGridContas();
             SomaGrid();
-           
         }
         private void lblInserir_Click(object sender, EventArgs e)
         {
             view.FrmIncluirContasAReceber CadContas = new FrmIncluirContasAReceber(this);
             CadContas.ShowDialog();
         }
-
-
         private void toolStripStatusLabel1_Click(object sender, EventArgs e)
         {
             CarregaGridContas();
@@ -80,10 +77,24 @@ namespace ProjetoContasAReceberRaro.view
 
         private void dtgContasAReceber_RowPrePaint(object sender, DataGridViewRowPrePaintEventArgs e)
         {
-            string status = dtgContasAReceber.Rows[e.RowIndex].Cells[8].Value.ToString();
-            if (status == "EM DIA")
+            if (e.RowIndex >= 0)
             {
-                dtgContasAReceber.Rows[e.RowIndex].DefaultCellStyle.BackColor = Color.Blue;
+                DataGridViewRow linha = dtgContasAReceber.Rows[e.RowIndex];
+                string situacao = linha.Cells["situacao"].Value.ToString();
+                if (situacao == "ATRASADO")
+                {
+                    linha.DefaultCellStyle.BackColor = Color.Red;
+                    linha.DefaultCellStyle.ForeColor = Color.White;
+                }else if (situacao == "EM DIA")
+                {
+                    linha.DefaultCellStyle.BackColor = Color.Blue;
+                    linha.DefaultCellStyle.ForeColor = Color.White;
+                }
+                else
+                {
+                    linha.DefaultCellStyle.BackColor = Color.Green;
+                    linha.DefaultCellStyle.ForeColor = Color.White;
+                }
             }
         }
     }
