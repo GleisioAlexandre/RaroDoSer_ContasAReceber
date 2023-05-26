@@ -12,12 +12,12 @@ namespace ProjetoContasAReceberRaro.controller
 {
     class ClassCrudContasAReceber
     {
+        DataTable dt = new DataTable();
         string stringConexao = ClassConexao.Conexao;
         public DataTable CarregaGridConatas()
         {
             FbConnection conexao = new FbConnection(stringConexao);
             conexao.Open();
-            DataTable dt = new DataTable();
             FbCommand comando = new FbCommand("select cr.id_contasareceber, cr.data_entrada, cr.valor, cr.documento, cr.data_vencimento, cr.data_pagamento, " +
                 "(select c.nome_cliente from tb_cliente c where c.id_cliente = cr.id_cliente), " +
                 "(select s.situacao from tb_situacao s where s.id_situacao = cr.id_situacao)," +
@@ -130,5 +130,12 @@ namespace ProjetoContasAReceberRaro.controller
             comando.ExecuteNonQuery();
             conexao.Close();
         }
+        public DataTable FiltrarDivida(string cliente)
+        {
+            dt.DefaultView.RowFilter = string.Format("column1", cliente);
+
+            return dt;
+        }
+       
     }
 }

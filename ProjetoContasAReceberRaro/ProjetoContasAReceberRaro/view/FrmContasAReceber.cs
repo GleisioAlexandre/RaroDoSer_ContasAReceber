@@ -13,7 +13,7 @@ namespace ProjetoContasAReceberRaro.view
 {
     public partial class FrmContasAReceber : Form
     {
-
+        
         public FrmContasAReceber()
         {
             InitializeComponent();
@@ -59,6 +59,7 @@ namespace ProjetoContasAReceberRaro.view
                 lblPago.Text = pago.ToString("C2");
             }
         }
+       
         //***********************************************************
         private void FrmContasAReceber_Load(object sender, EventArgs e)
         {
@@ -96,6 +97,80 @@ namespace ProjetoContasAReceberRaro.view
                     linha.DefaultCellStyle.ForeColor = Color.White;
                 }
             }
+        }
+
+        private void btnFiltrar_Click(object sender, EventArgs e)
+        {
+            string cliente = "column1";
+            ClassCrudContasAReceber crud = new ClassCrudContasAReceber();
+            DataTable dt = new DataTable();
+            dt = crud.CarregaGridConatas();
+            dt.DefaultView.RowFilter = string.Format("[{0}] like '%{1}%'",cliente, txtFiltro.Text);
+            dtgContasAReceber.DataSource = dt;
+            txtFiltro.Clear();
+        }
+
+        private void radioButton1_CheckedChanged(object sender, EventArgs e)
+        {
+            string emdia = null;
+            if (rbEmDia.Checked == true)
+            {
+                emdia = "EM DIA";
+            }
+            else
+            {
+                emdia = null;
+            }
+            ClassCrudContasAReceber crud = new ClassCrudContasAReceber();
+            DataTable dt = new DataTable();
+            dt = crud.CarregaGridConatas();
+            dt.DefaultView.RowFilter = string.Format("[{0}] like '%{1}%'", "column2", emdia);
+            dtgContasAReceber.DataSource = dt;
+        }
+
+        private void rbPago_CheckedChanged(object sender, EventArgs e)
+        {
+            string pago = null;
+            if (rbPago.Checked == true)
+            {
+                pago = "PAGO";
+            }
+            else
+            {
+                pago = null;
+            }
+            ClassCrudContasAReceber crud = new ClassCrudContasAReceber();
+            DataTable dt = new DataTable();
+            dt = crud.CarregaGridConatas();
+            dt.DefaultView.RowFilter = string.Format("[{0}] like '%{1}%'", "column2", pago);
+            dtgContasAReceber.DataSource = dt;
+        }
+
+        private void Atrasado_CheckedChanged(object sender, EventArgs e)
+        {
+            string atrasado = null;
+            if (rbAtrasado.Checked == true)
+            {
+                atrasado = "ATRASADO";
+            }
+            else
+            {
+                atrasado = null;
+            }
+            ClassCrudContasAReceber crud = new ClassCrudContasAReceber();
+            DataTable dt = new DataTable();
+            dt = crud.CarregaGridConatas();
+            dt.DefaultView.RowFilter = string.Format("[{0}] like '%{1}%'", "column2", atrasado);
+            dtgContasAReceber.DataSource = dt;
+        }
+
+        private void radioButton1_CheckedChanged_1(object sender, EventArgs e)
+        {
+            ClassCrudContasAReceber crud = new ClassCrudContasAReceber();
+            DataTable dt = new DataTable();
+            dt = crud.CarregaGridConatas();
+            dt.DefaultView.RowFilter = string.Format("[{0}] like '%{1}%'", "column2", "");
+            dtgContasAReceber.DataSource = dt;
         }
     }
 }

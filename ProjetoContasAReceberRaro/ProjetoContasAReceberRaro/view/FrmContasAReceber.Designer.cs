@@ -28,8 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dtgContasAReceber = new System.Windows.Forms.DataGridView();
             this.codigo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cliente = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -48,6 +48,12 @@
             this.lblAtrasado = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolStripStatusLabel3 = new System.Windows.Forms.ToolStripStatusLabel();
             this.lblPago = new System.Windows.Forms.ToolStripStatusLabel();
+            this.btnFiltrar = new System.Windows.Forms.Button();
+            this.txtFiltro = new System.Windows.Forms.TextBox();
+            this.rbEmDia = new System.Windows.Forms.RadioButton();
+            this.rbAtrasado = new System.Windows.Forms.RadioButton();
+            this.rbTodos = new System.Windows.Forms.RadioButton();
+            this.rbPago = new System.Windows.Forms.RadioButton();
             ((System.ComponentModel.ISupportInitialize)(this.dtgContasAReceber)).BeginInit();
             this.statusStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -71,14 +77,14 @@
             this.venciemnto,
             this.pagamento,
             this.situacao});
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dtgContasAReceber.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dtgContasAReceber.DefaultCellStyle = dataGridViewCellStyle6;
             this.dtgContasAReceber.Location = new System.Drawing.Point(-1, 0);
             this.dtgContasAReceber.Name = "dtgContasAReceber";
             this.dtgContasAReceber.ReadOnly = true;
@@ -110,10 +116,10 @@
             // valor
             // 
             this.valor.DataPropertyName = "valor";
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle1.Format = "C2";
-            dataGridViewCellStyle1.NullValue = null;
-            this.valor.DefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle5.Format = "C2";
+            dataGridViewCellStyle5.NullValue = null;
+            this.valor.DefaultCellStyle = dataGridViewCellStyle5;
             this.valor.HeaderText = "Valor";
             this.valor.Name = "valor";
             this.valor.ReadOnly = true;
@@ -157,12 +163,12 @@
             // 
             this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.lblInserir,
+            this.toolStripStatusLabel3,
+            this.lblPago,
             this.toolStripStatusLabel1,
             this.lblEmdia,
             this.toolStripStatusLabel2,
-            this.lblAtrasado,
-            this.toolStripStatusLabel3,
-            this.lblPago});
+            this.lblAtrasado});
             this.statusStrip1.Location = new System.Drawing.Point(0, 426);
             this.statusStrip1.Name = "statusStrip1";
             this.statusStrip1.Size = new System.Drawing.Size(941, 24);
@@ -192,8 +198,8 @@
             this.lblEmdia.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblEmdia.ForeColor = System.Drawing.Color.Blue;
             this.lblEmdia.Name = "lblEmdia";
-            this.lblEmdia.Size = new System.Drawing.Size(149, 19);
-            this.lblEmdia.Text = "0,00                             ";
+            this.lblEmdia.Size = new System.Drawing.Size(33, 19);
+            this.lblEmdia.Text = "0,00";
             // 
             // toolStripStatusLabel2
             // 
@@ -208,8 +214,8 @@
             this.lblAtrasado.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblAtrasado.ForeColor = System.Drawing.Color.Red;
             this.lblAtrasado.Name = "lblAtrasado";
-            this.lblAtrasado.Size = new System.Drawing.Size(209, 19);
-            this.lblAtrasado.Text = "0,00                                            ";
+            this.lblAtrasado.Size = new System.Drawing.Size(33, 19);
+            this.lblAtrasado.Text = "0,00";
             // 
             // toolStripStatusLabel3
             // 
@@ -227,11 +233,89 @@
             this.lblPago.Size = new System.Drawing.Size(33, 19);
             this.lblPago.Text = "0,00";
             // 
+            // btnFiltrar
+            // 
+            this.btnFiltrar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnFiltrar.Location = new System.Drawing.Point(838, 427);
+            this.btnFiltrar.Name = "btnFiltrar";
+            this.btnFiltrar.Size = new System.Drawing.Size(75, 23);
+            this.btnFiltrar.TabIndex = 2;
+            this.btnFiltrar.Text = "Filtrar";
+            this.btnFiltrar.UseVisualStyleBackColor = true;
+            this.btnFiltrar.Click += new System.EventHandler(this.btnFiltrar_Click);
+            // 
+            // txtFiltro
+            // 
+            this.txtFiltro.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtFiltro.Location = new System.Drawing.Point(607, 428);
+            this.txtFiltro.Name = "txtFiltro";
+            this.txtFiltro.Size = new System.Drawing.Size(225, 20);
+            this.txtFiltro.TabIndex = 3;
+            // 
+            // rbEmDia
+            // 
+            this.rbEmDia.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.rbEmDia.AutoSize = true;
+            this.rbEmDia.Location = new System.Drawing.Point(469, 430);
+            this.rbEmDia.Name = "rbEmDia";
+            this.rbEmDia.Size = new System.Drawing.Size(59, 17);
+            this.rbEmDia.TabIndex = 4;
+            this.rbEmDia.TabStop = true;
+            this.rbEmDia.Text = "Em Dia";
+            this.rbEmDia.UseVisualStyleBackColor = true;
+            this.rbEmDia.CheckedChanged += new System.EventHandler(this.radioButton1_CheckedChanged);
+            // 
+            // rbAtrasado
+            // 
+            this.rbAtrasado.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.rbAtrasado.AutoSize = true;
+            this.rbAtrasado.Location = new System.Drawing.Point(534, 430);
+            this.rbAtrasado.Name = "rbAtrasado";
+            this.rbAtrasado.Size = new System.Drawing.Size(67, 17);
+            this.rbAtrasado.TabIndex = 6;
+            this.rbAtrasado.TabStop = true;
+            this.rbAtrasado.Text = "Atrasado";
+            this.rbAtrasado.UseVisualStyleBackColor = true;
+            this.rbAtrasado.CheckedChanged += new System.EventHandler(this.Atrasado_CheckedChanged);
+            // 
+            // rbTodos
+            // 
+            this.rbTodos.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.rbTodos.AutoSize = true;
+            this.rbTodos.Checked = true;
+            this.rbTodos.Location = new System.Drawing.Point(352, 429);
+            this.rbTodos.Name = "rbTodos";
+            this.rbTodos.Size = new System.Drawing.Size(55, 17);
+            this.rbTodos.TabIndex = 7;
+            this.rbTodos.TabStop = true;
+            this.rbTodos.Text = "Todos";
+            this.rbTodos.UseVisualStyleBackColor = true;
+            this.rbTodos.CheckedChanged += new System.EventHandler(this.radioButton1_CheckedChanged_1);
+            // 
+            // rbPago
+            // 
+            this.rbPago.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.rbPago.AutoSize = true;
+            this.rbPago.Location = new System.Drawing.Point(413, 430);
+            this.rbPago.Name = "rbPago";
+            this.rbPago.Size = new System.Drawing.Size(50, 17);
+            this.rbPago.TabIndex = 5;
+            this.rbPago.TabStop = true;
+            this.rbPago.Text = "Pago";
+            this.rbPago.UseVisualStyleBackColor = true;
+            this.rbPago.CheckedChanged += new System.EventHandler(this.rbPago_CheckedChanged);
+            // 
             // FrmContasAReceber
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(941, 450);
+            this.Controls.Add(this.rbTodos);
+            this.Controls.Add(this.rbPago);
+            this.Controls.Add(this.rbAtrasado);
+            this.Controls.Add(this.rbEmDia);
+            this.Controls.Add(this.txtFiltro);
+            this.Controls.Add(this.btnFiltrar);
             this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.dtgContasAReceber);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
@@ -266,5 +350,11 @@
         private System.Windows.Forms.ToolStripStatusLabel lblAtrasado;
         private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel3;
         private System.Windows.Forms.ToolStripStatusLabel lblPago;
+        private System.Windows.Forms.Button btnFiltrar;
+        private System.Windows.Forms.TextBox txtFiltro;
+        private System.Windows.Forms.RadioButton rbEmDia;
+        private System.Windows.Forms.RadioButton rbAtrasado;
+        private System.Windows.Forms.RadioButton rbTodos;
+        private System.Windows.Forms.RadioButton rbPago;
     }
 }
