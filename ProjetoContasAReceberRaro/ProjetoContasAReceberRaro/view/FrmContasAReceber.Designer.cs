@@ -28,9 +28,23 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dtgContasAReceber = new System.Windows.Forms.DataGridView();
+            this.statusStrip1 = new System.Windows.Forms.StatusStrip();
+            this.lblInserir = new System.Windows.Forms.ToolStripStatusLabel();
+            this.toolStripStatusLabel3 = new System.Windows.Forms.ToolStripStatusLabel();
+            this.lblPago = new System.Windows.Forms.ToolStripStatusLabel();
+            this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
+            this.lblEmdia = new System.Windows.Forms.ToolStripStatusLabel();
+            this.toolStripStatusLabel2 = new System.Windows.Forms.ToolStripStatusLabel();
+            this.lblAtrasado = new System.Windows.Forms.ToolStripStatusLabel();
+            this.btnFiltrar = new System.Windows.Forms.Button();
+            this.txtFiltro = new System.Windows.Forms.TextBox();
+            this.rbEmDia = new System.Windows.Forms.RadioButton();
+            this.rbAtrasado = new System.Windows.Forms.RadioButton();
+            this.rbTodos = new System.Windows.Forms.RadioButton();
+            this.rbPago = new System.Windows.Forms.RadioButton();
             this.codigo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cliente = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.entrada = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -40,20 +54,6 @@
             this.venciemnto = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.pagamento = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.situacao = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.statusStrip1 = new System.Windows.Forms.StatusStrip();
-            this.lblInserir = new System.Windows.Forms.ToolStripStatusLabel();
-            this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
-            this.lblEmdia = new System.Windows.Forms.ToolStripStatusLabel();
-            this.toolStripStatusLabel2 = new System.Windows.Forms.ToolStripStatusLabel();
-            this.lblAtrasado = new System.Windows.Forms.ToolStripStatusLabel();
-            this.toolStripStatusLabel3 = new System.Windows.Forms.ToolStripStatusLabel();
-            this.lblPago = new System.Windows.Forms.ToolStripStatusLabel();
-            this.btnFiltrar = new System.Windows.Forms.Button();
-            this.txtFiltro = new System.Windows.Forms.TextBox();
-            this.rbEmDia = new System.Windows.Forms.RadioButton();
-            this.rbAtrasado = new System.Windows.Forms.RadioButton();
-            this.rbTodos = new System.Windows.Forms.RadioButton();
-            this.rbPago = new System.Windows.Forms.RadioButton();
             ((System.ComponentModel.ISupportInitialize)(this.dtgContasAReceber)).BeginInit();
             this.statusStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -77,87 +77,20 @@
             this.venciemnto,
             this.pagamento,
             this.situacao});
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dtgContasAReceber.DefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dtgContasAReceber.DefaultCellStyle = dataGridViewCellStyle2;
             this.dtgContasAReceber.Location = new System.Drawing.Point(-1, 0);
             this.dtgContasAReceber.Name = "dtgContasAReceber";
             this.dtgContasAReceber.ReadOnly = true;
             this.dtgContasAReceber.Size = new System.Drawing.Size(943, 425);
             this.dtgContasAReceber.TabIndex = 0;
             this.dtgContasAReceber.RowPrePaint += new System.Windows.Forms.DataGridViewRowPrePaintEventHandler(this.dtgContasAReceber_RowPrePaint);
-            // 
-            // codigo
-            // 
-            this.codigo.DataPropertyName = "id_contasareceber";
-            this.codigo.HeaderText = "Código";
-            this.codigo.Name = "codigo";
-            this.codigo.ReadOnly = true;
-            // 
-            // cliente
-            // 
-            this.cliente.DataPropertyName = "column1";
-            this.cliente.HeaderText = "Cliente";
-            this.cliente.Name = "cliente";
-            this.cliente.ReadOnly = true;
-            // 
-            // entrada
-            // 
-            this.entrada.DataPropertyName = "data_entrada";
-            this.entrada.HeaderText = "Entrada";
-            this.entrada.Name = "entrada";
-            this.entrada.ReadOnly = true;
-            // 
-            // valor
-            // 
-            this.valor.DataPropertyName = "valor";
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle5.Format = "C2";
-            dataGridViewCellStyle5.NullValue = null;
-            this.valor.DefaultCellStyle = dataGridViewCellStyle5;
-            this.valor.HeaderText = "Valor";
-            this.valor.Name = "valor";
-            this.valor.ReadOnly = true;
-            // 
-            // documento
-            // 
-            this.documento.DataPropertyName = "documento";
-            this.documento.HeaderText = "Documento";
-            this.documento.Name = "documento";
-            this.documento.ReadOnly = true;
-            // 
-            // classe
-            // 
-            this.classe.DataPropertyName = "column3";
-            this.classe.HeaderText = "Classe";
-            this.classe.Name = "classe";
-            this.classe.ReadOnly = true;
-            // 
-            // venciemnto
-            // 
-            this.venciemnto.DataPropertyName = "data_vencimento";
-            this.venciemnto.HeaderText = "Vencimento";
-            this.venciemnto.Name = "venciemnto";
-            this.venciemnto.ReadOnly = true;
-            // 
-            // pagamento
-            // 
-            this.pagamento.DataPropertyName = "data_pagamento";
-            this.pagamento.HeaderText = "Pagamento";
-            this.pagamento.Name = "pagamento";
-            this.pagamento.ReadOnly = true;
-            // 
-            // situacao
-            // 
-            this.situacao.DataPropertyName = "column2";
-            this.situacao.HeaderText = "Situação";
-            this.situacao.Name = "situacao";
-            this.situacao.ReadOnly = true;
             // 
             // statusStrip1
             // 
@@ -184,6 +117,22 @@
             this.lblInserir.Size = new System.Drawing.Size(43, 19);
             this.lblInserir.Text = "Inserir";
             this.lblInserir.Click += new System.EventHandler(this.lblInserir_Click);
+            // 
+            // toolStripStatusLabel3
+            // 
+            this.toolStripStatusLabel3.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.toolStripStatusLabel3.ForeColor = System.Drawing.Color.Green;
+            this.toolStripStatusLabel3.Name = "toolStripStatusLabel3";
+            this.toolStripStatusLabel3.Size = new System.Drawing.Size(47, 19);
+            this.toolStripStatusLabel3.Text = "Pago: ";
+            // 
+            // lblPago
+            // 
+            this.lblPago.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPago.ForeColor = System.Drawing.Color.Green;
+            this.lblPago.Name = "lblPago";
+            this.lblPago.Size = new System.Drawing.Size(33, 19);
+            this.lblPago.Text = "0,00";
             // 
             // toolStripStatusLabel1
             // 
@@ -216,22 +165,6 @@
             this.lblAtrasado.Name = "lblAtrasado";
             this.lblAtrasado.Size = new System.Drawing.Size(33, 19);
             this.lblAtrasado.Text = "0,00";
-            // 
-            // toolStripStatusLabel3
-            // 
-            this.toolStripStatusLabel3.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.toolStripStatusLabel3.ForeColor = System.Drawing.Color.Green;
-            this.toolStripStatusLabel3.Name = "toolStripStatusLabel3";
-            this.toolStripStatusLabel3.Size = new System.Drawing.Size(47, 19);
-            this.toolStripStatusLabel3.Text = "Pago: ";
-            // 
-            // lblPago
-            // 
-            this.lblPago.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPago.ForeColor = System.Drawing.Color.Green;
-            this.lblPago.Name = "lblPago";
-            this.lblPago.Size = new System.Drawing.Size(33, 19);
-            this.lblPago.Text = "0,00";
             // 
             // btnFiltrar
             // 
@@ -305,6 +238,74 @@
             this.rbPago.UseVisualStyleBackColor = true;
             this.rbPago.CheckedChanged += new System.EventHandler(this.rbPago_CheckedChanged);
             // 
+            // codigo
+            // 
+            this.codigo.DataPropertyName = "id_contasareceber";
+            this.codigo.HeaderText = "Código";
+            this.codigo.Name = "codigo";
+            this.codigo.ReadOnly = true;
+            // 
+            // cliente
+            // 
+            this.cliente.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.cliente.DataPropertyName = "column1";
+            this.cliente.HeaderText = "Cliente";
+            this.cliente.Name = "cliente";
+            this.cliente.ReadOnly = true;
+            // 
+            // entrada
+            // 
+            this.entrada.DataPropertyName = "data_entrada";
+            this.entrada.HeaderText = "Entrada";
+            this.entrada.Name = "entrada";
+            this.entrada.ReadOnly = true;
+            // 
+            // valor
+            // 
+            this.valor.DataPropertyName = "valor";
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle1.Format = "C2";
+            dataGridViewCellStyle1.NullValue = null;
+            this.valor.DefaultCellStyle = dataGridViewCellStyle1;
+            this.valor.HeaderText = "Valor";
+            this.valor.Name = "valor";
+            this.valor.ReadOnly = true;
+            // 
+            // documento
+            // 
+            this.documento.DataPropertyName = "documento";
+            this.documento.HeaderText = "Documento";
+            this.documento.Name = "documento";
+            this.documento.ReadOnly = true;
+            // 
+            // classe
+            // 
+            this.classe.DataPropertyName = "column3";
+            this.classe.HeaderText = "Classe";
+            this.classe.Name = "classe";
+            this.classe.ReadOnly = true;
+            // 
+            // venciemnto
+            // 
+            this.venciemnto.DataPropertyName = "data_vencimento";
+            this.venciemnto.HeaderText = "Vencimento";
+            this.venciemnto.Name = "venciemnto";
+            this.venciemnto.ReadOnly = true;
+            // 
+            // pagamento
+            // 
+            this.pagamento.DataPropertyName = "data_pagamento";
+            this.pagamento.HeaderText = "Pagamento";
+            this.pagamento.Name = "pagamento";
+            this.pagamento.ReadOnly = true;
+            // 
+            // situacao
+            // 
+            this.situacao.DataPropertyName = "column2";
+            this.situacao.HeaderText = "Situação";
+            this.situacao.Name = "situacao";
+            this.situacao.ReadOnly = true;
+            // 
             // FrmContasAReceber
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -335,15 +336,6 @@
         private System.Windows.Forms.DataGridView dtgContasAReceber;
         private System.Windows.Forms.StatusStrip statusStrip1;
         private System.Windows.Forms.ToolStripStatusLabel lblInserir;
-        private System.Windows.Forms.DataGridViewTextBoxColumn codigo;
-        private System.Windows.Forms.DataGridViewTextBoxColumn cliente;
-        private System.Windows.Forms.DataGridViewTextBoxColumn entrada;
-        private System.Windows.Forms.DataGridViewTextBoxColumn valor;
-        private System.Windows.Forms.DataGridViewTextBoxColumn documento;
-        private System.Windows.Forms.DataGridViewTextBoxColumn classe;
-        private System.Windows.Forms.DataGridViewTextBoxColumn venciemnto;
-        private System.Windows.Forms.DataGridViewTextBoxColumn pagamento;
-        private System.Windows.Forms.DataGridViewTextBoxColumn situacao;
         private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel1;
         private System.Windows.Forms.ToolStripStatusLabel lblEmdia;
         private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel2;
@@ -356,5 +348,14 @@
         private System.Windows.Forms.RadioButton rbAtrasado;
         private System.Windows.Forms.RadioButton rbTodos;
         private System.Windows.Forms.RadioButton rbPago;
+        private System.Windows.Forms.DataGridViewTextBoxColumn codigo;
+        private System.Windows.Forms.DataGridViewTextBoxColumn cliente;
+        private System.Windows.Forms.DataGridViewTextBoxColumn entrada;
+        private System.Windows.Forms.DataGridViewTextBoxColumn valor;
+        private System.Windows.Forms.DataGridViewTextBoxColumn documento;
+        private System.Windows.Forms.DataGridViewTextBoxColumn classe;
+        private System.Windows.Forms.DataGridViewTextBoxColumn venciemnto;
+        private System.Windows.Forms.DataGridViewTextBoxColumn pagamento;
+        private System.Windows.Forms.DataGridViewTextBoxColumn situacao;
     }
 }

@@ -101,6 +101,7 @@ namespace ProjetoContasAReceberRaro.view
 
         private void btnFiltrar_Click(object sender, EventArgs e)
         {
+            rbTodos.Checked = true;
             string cliente = "column1";
             ClassCrudContasAReceber crud = new ClassCrudContasAReceber();
             DataTable dt = new DataTable();
