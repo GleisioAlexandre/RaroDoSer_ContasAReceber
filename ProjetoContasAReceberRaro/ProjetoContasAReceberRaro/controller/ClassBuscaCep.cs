@@ -11,14 +11,14 @@ namespace ProjetoContasAReceberRaro.controller
 {
     class ClassBuscaCep
     {
-        public  Endereco BuscaCep(string cep)
+        public  ClassEndereco BuscaCep(string cep)
         {
             string url = $"https://viacep.com.br/ws/{cep}/json/";
             using (var cliente = new WebClient())
             {
                 cliente.Encoding = Encoding.UTF8;
                 var json = cliente.DownloadString(url);
-                var endereco = JsonConvert.DeserializeObject<Endereco>(json);
+                var endereco = JsonConvert.DeserializeObject<ClassEndereco>(json);
                     return endereco;
             }
         }

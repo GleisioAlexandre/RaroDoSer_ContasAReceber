@@ -150,12 +150,12 @@ namespace ProjetoContasAReceberRaro.controller
         public ClassCliente PesquisaClinetePJ(string dados)
         {
             FbConnection conexao = new FbConnection(stringConexao);
+            ClassCliente cliente = new ClassCliente();
             conexao.Open();
             FbCommand comando = new FbCommand("select id_cliente, nome_cliente, cnpj_cliente, cep_cliente, logradouro_cliente, numero_cliente, complemento_cliente, bairro_cliente, id_cidade_cliente, id_estado_cliente  from tb_cliente where nome_cliente like @nome or cnpj_cliente = @cnpj",conexao);
             comando.Parameters.AddWithValue("@nome", dados + "%");
             comando.Parameters.AddWithValue("@cnpj", dados);
             FbDataReader leitor = comando.ExecuteReader();
-            ClassCliente cliente = new ClassCliente();
             while (leitor.Read())
             {
                 cliente.Codigo = Convert.ToInt32(leitor[0]);

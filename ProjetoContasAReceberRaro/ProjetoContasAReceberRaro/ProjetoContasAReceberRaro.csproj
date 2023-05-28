@@ -61,7 +61,15 @@
     <Compile Include="controller\ClassCrudCliente.cs" />
     <Compile Include="controller\ClassCliente.cs" />
     <Compile Include="controller\ClassDividaClientes.cs" />
-    <Compile Include="model\Endereco.cs" />
+    <Compile Include="controller\ClassLogin.cs" />
+    <Compile Include="model\ClassUsuario.cs" />
+    <Compile Include="model\ClassEndereco.cs" />
+    <Compile Include="UserControlFrm.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControlFrm.Designer.cs">
+      <DependentUpon>UserControlFrm.cs</DependentUpon>
+    </Compile>
     <Compile Include="view\FrmConfiguracao.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -100,6 +108,15 @@
     <Compile Include="view\FrmIncluirCliente.Designer.cs">
       <DependentUpon>FrmIncluirCliente.cs</DependentUpon>
     </Compile>
+    <Compile Include="view\FrmLogin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="view\FrmLogin.Designer.cs">
+      <DependentUpon>FrmLogin.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="UserControlFrm.resx">
+      <DependentUpon>UserControlFrm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="view\FrmConfiguracao.resx">
       <DependentUpon>FrmConfiguracao.cs</DependentUpon>
     </EmbeddedResource>
@@ -126,6 +143,9 @@
     </Compile>
     <EmbeddedResource Include="view\FrmIncluirCliente.resx">
       <DependentUpon>FrmIncluirCliente.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="view\FrmLogin.resx">
+      <DependentUpon>FrmLogin.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="BD\RARO.FDB" />
     <None Include="packages.config" />

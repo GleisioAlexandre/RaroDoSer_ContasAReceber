@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ProjetoContasAReceberRaro.model
 {
-    class Endereco
+    class ClassEndereco
     {
         private string logradouro;
         private string bairro;
@@ -14,11 +14,11 @@ namespace ProjetoContasAReceberRaro.model
         private string uf;
         private string cep;
 
-        public Endereco()
+        public ClassEndereco()
         {
         }
 
-        public Endereco(string logradouro, string bairro, string localidade, string uf, string cep)
+        public ClassEndereco(string logradouro, string bairro, string localidade, string uf, string cep)
         {
             this.Logradouro = logradouro;
             this.Bairro = bairro;

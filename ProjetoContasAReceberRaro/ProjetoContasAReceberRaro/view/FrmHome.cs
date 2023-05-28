@@ -1,4 +1,6 @@
-﻿using System;
+﻿using ProjetoContasAReceberRaro.controller;
+using ProjetoContasAReceberRaro.model;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,21 +14,16 @@ namespace ProjetoContasAReceberRaro
 {
     public partial class FrmHome : Form
     {
+         
         public FrmHome()
         {
             InitializeComponent();
         }
-
-        private void Form1_Load(object sender, EventArgs e)
-        {
-
-        }
-
         private void FrmHome_Load(object sender, EventArgs e)
         {
+            ClassLogin login = new ClassLogin();
             lblData.Text = DateTime.Now.ToString("dd/MM/yyyy");
         }
-
         private void btnCliente_Click(object sender, EventArgs e)
         {
             view.FrmCliente cliente = new view.FrmCliente();
@@ -34,7 +31,6 @@ namespace ProjetoContasAReceberRaro
             cliente.WindowState = FormWindowState.Maximized;
             cliente.Show();
         }
-
         private void btnContasAReceber_Click(object sender, EventArgs e)
         {
             view.FrmContasAReceber contareceber = new view.FrmContasAReceber();
@@ -42,7 +38,6 @@ namespace ProjetoContasAReceberRaro
             contareceber.WindowState = FormWindowState.Maximized;
             contareceber.Show();
         }
-
         private void configuraçõesToolStripMenuItem1_Click(object sender, EventArgs e)
         {
             view.FrmConfiguracao configuracao = new view.FrmConfiguracao();
