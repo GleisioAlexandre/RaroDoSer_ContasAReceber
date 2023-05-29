@@ -21,5 +21,16 @@ namespace ProjetoContasAReceberRaro.controller
             conexao.Close();
             return dt;
         }
+        public void InserirUsuario(string nome, string cpf, string usuario, string senha)
+        {
+            conexao.Open();
+            FbCommand comando = new FbCommand("insert into tb_user (nome, cpf, usuario, senha) values (@nome, @cpf, @usuario, @senha) ", conexao);
+            comando.Parameters.AddWithValue("@nome", nome);
+            comando.Parameters.AddWithValue("@cpf", cpf);
+            comando.Parameters.AddWithValue("@usuario", usuario);
+            comando.Parameters.AddWithValue("@senha", senha);
+            comando.ExecuteNonQuery();
+            conexao.Close();
+        } 
     }
 }
