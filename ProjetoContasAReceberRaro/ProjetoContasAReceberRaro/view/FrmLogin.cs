@@ -15,6 +15,7 @@ namespace ProjetoContasAReceberRaro.view
 {
     public partial class FrmLogin : Form
     {
+        public static string usuarioConectado;
         Thread thread;
         ClassUsuario usuario = new ClassUsuario();
         public FrmLogin()
@@ -25,6 +26,7 @@ namespace ProjetoContasAReceberRaro.view
         {
             ClassLogin login = new ClassLogin();
             usuario = login.Login(txtUser.Text);
+            usuarioConectado = usuario.User;
         }
         private void AbrirJanela(object obj)
         {

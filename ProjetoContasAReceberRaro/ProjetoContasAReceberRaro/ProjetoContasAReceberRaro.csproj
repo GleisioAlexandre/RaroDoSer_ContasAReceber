@@ -60,6 +60,7 @@
     <Compile Include="controller\ClassCrudContasAReceber.cs" />
     <Compile Include="controller\ClassCrudCliente.cs" />
     <Compile Include="controller\ClassCliente.cs" />
+    <Compile Include="controller\ClassCrudUsuario.cs" />
     <Compile Include="controller\ClassDividaClientes.cs" />
     <Compile Include="controller\ClassLogin.cs" />
     <Compile Include="model\ClassUsuario.cs" />
@@ -114,6 +115,12 @@
     <Compile Include="view\FrmLogin.Designer.cs">
       <DependentUpon>FrmLogin.cs</DependentUpon>
     </Compile>
+    <Compile Include="view\FrmUsuario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="view\FrmUsuario.Designer.cs">
+      <DependentUpon>FrmUsuario.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="UserControlFrm.resx">
       <DependentUpon>UserControlFrm.cs</DependentUpon>
     </EmbeddedResource>
@@ -147,15 +154,11 @@
     <EmbeddedResource Include="view\FrmLogin.resx">
       <DependentUpon>FrmLogin.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="view\FrmUsuario.resx">
+      <DependentUpon>FrmUsuario.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="BD\RARO.FDB" />
     <None Include="packages.config" />
-    <None Include="Properties\DataSources\FirebirdSql.Data.Client.Native.Handle.BlobHandle.datasource" />
-    <None Include="Properties\DataSources\FirebirdSql.Data.Client.Native.Handle.DatabaseHandle.datasource" />
-    <None Include="Properties\DataSources\FirebirdSql.Data.Client.Native.Handle.FirebirdHandle.datasource" />
-    <None Include="Properties\DataSources\FirebirdSql.Data.Client.Native.Handle.IFirebirdHandle.datasource" />
-    <None Include="Properties\DataSources\FirebirdSql.Data.Client.Native.Handle.StatementHandle.datasource" />
-    <None Include="Properties\DataSources\FirebirdSql.Data.Client.Native.Handle.TransactionHandle.datasource" />
-    <None Include="Properties\DataSources\FirebirdSql.Data.Client.Native.IFbClient.datasource" />
     <None Include="Properties\DataSources\FirebirdSql.Data.FirebirdClient.FbCommand.datasource" />
     <None Include="Properties\DataSources\FirebirdSql.Data.FirebirdClient.FbCommandBuilder.datasource" />
     <None Include="Properties\DataSources\FirebirdSql.Data.FirebirdClient.FbConnection.datasource" />
@@ -169,11 +172,7 @@
     <None Include="Properties\DataSources\FirebirdSql.Data.FirebirdClient.FbInfoMessageEventArgs.datasource" />
     <None Include="Properties\DataSources\FirebirdSql.Data.FirebirdClient.FbParameter.datasource" />
     <None Include="Properties\DataSources\FirebirdSql.Data.FirebirdClient.FbParameterCollection.datasource" />
-    <None Include="Properties\DataSources\FirebirdSql.Data.FirebirdClient.FbProviderManifest.datasource" />
-    <None Include="Properties\DataSources\FirebirdSql.Data.FirebirdClient.FbProviderServices.datasource" />
     <None Include="Properties\DataSources\FirebirdSql.Data.FirebirdClient.FbRemoteEvent.datasource" />
-    <None Include="Properties\DataSources\FirebirdSql.Data.FirebirdClient.FbRemoteEventCountsEventArgs.datasource" />
-    <None Include="Properties\DataSources\FirebirdSql.Data.FirebirdClient.FbRemoteEventErrorEventArgs.datasource" />
     <None Include="Properties\DataSources\FirebirdSql.Data.FirebirdClient.FbRowUpdatedEventArgs.datasource" />
     <None Include="Properties\DataSources\FirebirdSql.Data.FirebirdClient.FbRowUpdatingEventArgs.datasource" />
     <None Include="Properties\DataSources\FirebirdSql.Data.FirebirdClient.FbTransaction.datasource" />
@@ -183,30 +182,18 @@
     <None Include="Properties\DataSources\FirebirdSql.Data.Isql.CommandExecutingEventArgs.datasource" />
     <None Include="Properties\DataSources\FirebirdSql.Data.Isql.FbBatchExecution.datasource" />
     <None Include="Properties\DataSources\FirebirdSql.Data.Isql.FbScript.datasource" />
-    <None Include="Properties\DataSources\FirebirdSql.Data.Isql.FbStatement.datasource" />
-    <None Include="Properties\DataSources\FirebirdSql.Data.Isql.FbStatementCollection.datasource" />
-    <None Include="Properties\DataSources\FirebirdSql.Data.Isql.UnknownStatementEventArgs.datasource" />
     <None Include="Properties\DataSources\FirebirdSql.Data.Services.FbBackup.datasource" />
     <None Include="Properties\DataSources\FirebirdSql.Data.Services.FbBackupFile.datasource" />
     <None Include="Properties\DataSources\FirebirdSql.Data.Services.FbBackupFileCollection.datasource" />
     <None Include="Properties\DataSources\FirebirdSql.Data.Services.FbConfiguration.datasource" />
     <None Include="Properties\DataSources\FirebirdSql.Data.Services.FbDatabasesInfo.datasource" />
-    <None Include="Properties\DataSources\FirebirdSql.Data.Services.FbDatabaseTraceConfiguration.datasource" />
-    <None Include="Properties\DataSources\FirebirdSql.Data.Services.FbDatabaseTraceConfigurationCollection.datasource" />
     <None Include="Properties\DataSources\FirebirdSql.Data.Services.FbLog.datasource" />
-    <None Include="Properties\DataSources\FirebirdSql.Data.Services.FbNBackup.datasource" />
-    <None Include="Properties\DataSources\FirebirdSql.Data.Services.FbNRestore.datasource" />
     <None Include="Properties\DataSources\FirebirdSql.Data.Services.FbRestore.datasource" />
     <None Include="Properties\DataSources\FirebirdSql.Data.Services.FbSecurity.datasource" />
     <None Include="Properties\DataSources\FirebirdSql.Data.Services.FbServerConfig.datasource" />
     <None Include="Properties\DataSources\FirebirdSql.Data.Services.FbServerProperties.datasource" />
     <None Include="Properties\DataSources\FirebirdSql.Data.Services.FbService.datasource" />
-    <None Include="Properties\DataSources\FirebirdSql.Data.Services.FbServiceTraceConfiguration.datasource" />
     <None Include="Properties\DataSources\FirebirdSql.Data.Services.FbStatistical.datasource" />
-    <None Include="Properties\DataSources\FirebirdSql.Data.Services.FbStreamingBackup.datasource" />
-    <None Include="Properties\DataSources\FirebirdSql.Data.Services.FbStreamingRestore.datasource" />
-    <None Include="Properties\DataSources\FirebirdSql.Data.Services.FbTrace.datasource" />
-    <None Include="Properties\DataSources\FirebirdSql.Data.Services.FbTraceConfiguration.datasource" />
     <None Include="Properties\DataSources\FirebirdSql.Data.Services.FbUserData.datasource" />
     <None Include="Properties\DataSources\FirebirdSql.Data.Services.FbValidation.datasource" />
     <None Include="Properties\DataSources\FirebirdSql.Data.Services.ServiceOutputEventArgs.datasource" />

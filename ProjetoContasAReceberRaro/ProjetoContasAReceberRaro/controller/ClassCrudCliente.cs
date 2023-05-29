@@ -11,14 +11,13 @@ using System.Threading.Tasks;
 
 namespace ProjetoContasAReceberRaro.controller
 {
-     
     class ClassCrudCliente
     {
-        string stringConexao = ClassConexao.Conexao;
+        FbConnection conexao = new FbConnection(ClassConexao.Conexao);
 
         public DataTable CarregaGridCliente()
         {
-            FbConnection conexao = new FbConnection(stringConexao);
+            
             conexao.Open();
             DataTable dt = new DataTable();
             FbCommand comando = new FbCommand("select id_cliente, nome_cliente, cpf_cliente, cnpj_cliente, cep_cliente, logradouro_cliente, numero_cliente,complemento_cliente, bairro_cliente," +
@@ -33,7 +32,6 @@ namespace ProjetoContasAReceberRaro.controller
         }
         public List<string> CarregaEstado()
         {
-            FbConnection conexao = new FbConnection(stringConexao);
             conexao.Open();
             List<string> estado = new List<string>();
             FbCommand comando = new FbCommand("select cidade from tb_uf", conexao);
@@ -47,7 +45,6 @@ namespace ProjetoContasAReceberRaro.controller
         }
         public List<string> CarregaCidade()
         {
-            FbConnection conexao = new FbConnection(stringConexao);
             conexao.Open();
             List<string> cidade = new List<string>();
             FbCommand comando = new FbCommand("select estado from tb_estado",conexao);
@@ -61,7 +58,6 @@ namespace ProjetoContasAReceberRaro.controller
         }
         public void inserirCliente(string nome, string cpf, string cnpj, string cep, string logradouro, int numero, string complemento, string bairro, int id_cidade, int id_estado)
         {
-            FbConnection conexao = new FbConnection(stringConexao);
             conexao.Open();
             FbCommand comando = new FbCommand("insert into tb_cliente  (nome_cliente, cpf_cliente, cnpj_cliente, cep_cliente, logradouro_cliente, numero_cliente, complemento_cliente, bairro_cliente, id_cidade_cliente, id_estado_cliente) " +
                     "values" +
@@ -81,8 +77,6 @@ namespace ProjetoContasAReceberRaro.controller
         }
         public void DeletarCliente(int id)
         {
-            FbConnection conexao = new FbConnection(stringConexao);
-
             try
             {
                 conexao.Open();
@@ -102,7 +96,6 @@ namespace ProjetoContasAReceberRaro.controller
         }
         public void EditarCadCliente(int id, string nome, string cnpj, string cpf, string cep, string logradouro, int numero, string complemento, string bairro, int id_cidade, int id_estado)
         {
-            FbConnection conexao = new FbConnection(stringConexao);
                 conexao.Close();
                 FbCommand comando = new FbCommand("update tb_cliente set nome_cliente = @nome, cnpj_cliente = @cnpj, cpf_cliente = @cpf, cep_cliente = @cep, logradouro_cliente = @logradouro, numero_cliente = @numero, complemento_cliente = @complemento, bairro_cliente = @bairro, id_cidade_cliente = @id_cidade, id_estado_cliente = @id_estado where id_cliente = @id",conexao);
                 comando.Parameters.AddWithValue("@id", id);
@@ -118,12 +111,9 @@ namespace ProjetoContasAReceberRaro.controller
                 comando.Parameters.AddWithValue("@id_estado", id_estado);
                 comando.ExecuteNonQuery();
                 conexao.Close();
-            
-           
         }
         public ClassCliente PesquisaClientePF(string dados)
         {
-            FbConnection conexao = new FbConnection(stringConexao);
             conexao.Open();
             FbCommand comando = new FbCommand("select id_cliente, nome_cliente, cpf_cliente, cep_cliente, logradouro_cliente, numero_cliente, complemento_cliente, bairro_cliente, id_cidade_cliente, id_estado_cliente  from tb_cliente where nome_cliente like @nome or cpf_cliente = @cpf",conexao);
             comando.Parameters.AddWithValue("@nome", dados + "%");
@@ -149,7 +139,6 @@ namespace ProjetoContasAReceberRaro.controller
         }
         public ClassCliente PesquisaClinetePJ(string dados)
         {
-            FbConnection conexao = new FbConnection(stringConexao);
             ClassCliente cliente = new ClassCliente();
             conexao.Open();
             FbCommand comando = new FbCommand("select id_cliente, nome_cliente, cnpj_cliente, cep_cliente, logradouro_cliente, numero_cliente, complemento_cliente, bairro_cliente, id_cidade_cliente, id_estado_cliente  from tb_cliente where nome_cliente like @nome or cnpj_cliente = @cnpj",conexao);
@@ -174,7 +163,6 @@ namespace ProjetoContasAReceberRaro.controller
         }
         public ClassCliente PesquisaCliente(string dados)
         {
-            FbConnection conexao = new FbConnection(stringConexao);
             conexao.Open();
             FbCommand comando = new FbCommand("select id_cliente, nome_cliente from tb_cliente where nome_cliente like (@nome)",conexao);
             comando.Parameters.AddWithValue("@nome", dados + "%");

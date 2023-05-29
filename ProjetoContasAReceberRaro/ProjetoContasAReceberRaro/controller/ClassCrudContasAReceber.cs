@@ -13,10 +13,10 @@ namespace ProjetoContasAReceberRaro.controller
     class ClassCrudContasAReceber
     {
         DataTable dt = new DataTable();
-        string stringConexao = ClassConexao.Conexao;
+        FbConnection conexao = new FbConnection(ClassConexao.Conexao);
         public DataTable CarregaGridConatas()
         {
-            FbConnection conexao = new FbConnection(stringConexao);
+            
             conexao.Open();
             FbCommand comando = new FbCommand("select cr.id_contasareceber, cr.data_entrada, cr.valor, cr.documento, cr.data_vencimento, cr.data_pagamento, " +
                 "(select c.nome_cliente from tb_cliente c where c.id_cliente = cr.id_cliente), " +
@@ -30,7 +30,6 @@ namespace ProjetoContasAReceberRaro.controller
         } 
         public List<string> CarregaClasse()
         {
-            FbConnection conexao = new FbConnection(stringConexao);
             conexao.Open();
             List<string> classe = new List<string>();
             FbCommand comando = new FbCommand("select Class from tb_calsse", conexao);
@@ -45,7 +44,6 @@ namespace ProjetoContasAReceberRaro.controller
         }
         public List<string> CarregaSituacao()
         {
-            FbConnection conexao = new FbConnection(stringConexao);
             conexao.Open();
             List<string> situacao = new List<string>();
             FbCommand comando = new FbCommand("select situacao from tb_situacao", conexao);
@@ -61,7 +59,6 @@ namespace ProjetoContasAReceberRaro.controller
         //Classe usada para inserir dividas dos clientes no banco de dados
         public void InserirDivida(int id_cliente, string entrada, double valor, int id_situacao, string documento, int id_classe, string vencimento, string pagamento)
         {
-            FbConnection conexao = new FbConnection(stringConexao);
             conexao.Open();
             FbCommand comando = new FbCommand("insert into tb_contas_a_receber (id_cliente , data_entrada, valor, id_situacao, documento, id_classe, data_vencimento, data_pagamento) " +
                                                  "values " +
@@ -79,7 +76,6 @@ namespace ProjetoContasAReceberRaro.controller
         }
         public ClassDividaClientes PesquisaDivida(string dados)
         {
-            FbConnection conexao = new FbConnection(stringConexao);
             conexao.Open();
             FbCommand comando = new FbCommand("select cr.id_contasareceber, cr.id_cliente, cr.data_entrada, cr.valor, cr.documento, cr.data_vencimento, cr.data_pagamento," +
                 "(select c.nome_cliente from tb_cliente c where cr.id_cliente = c.id_cliente)," +
@@ -106,7 +102,6 @@ namespace ProjetoContasAReceberRaro.controller
         }
         public void EditarDivida(int id_contas, int cliente, string entrada, double valor, int situacao, string documento, int classe, string vencimento, string pagamento)
         {
-            FbConnection conexao = new FbConnection(stringConexao);
             conexao.Open();
             FbCommand comando = new FbCommand("update tb_contas_a_receber  set id_cliente = @cliente, data_entrada = @entrada, valor = @valor, id_situacao = @situacao, documento = @documento, id_classe = @classe, data_vencimento = @vencimento, data_pagamento = @pagamento where id_contasareceber = @id_contasareceber", conexao);
             comando.Parameters.AddWithValue("@cliente", cliente);
@@ -123,7 +118,6 @@ namespace ProjetoContasAReceberRaro.controller
         }
         public void DeletarDivida(int id_conta)
         {
-            FbConnection conexao = new FbConnection(stringConexao);
             conexao.Open();
             FbCommand comando = new FbCommand("delete from tb_contas_a_receber where id_contasareceber = @id_conta", conexao);
             comando.Parameters.AddWithValue("@id_conta", id_conta);
