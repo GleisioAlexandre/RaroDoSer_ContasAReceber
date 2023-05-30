@@ -43,7 +43,7 @@ namespace ProjetoContasAReceberRaro
         {
             view.FrmUsuario usuario = new view.FrmUsuario();
             usuario.MdiParent = this;
-            usuario.WindowState = FormWindowState.Normal;
+            usuario.WindowState = FormWindowState.Maximized;
             usuario.Show();
         }
         private void configuraçõesToolStripMenuItem1_Click(object sender, EventArgs e)

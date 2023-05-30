@@ -30,5 +30,10 @@ namespace ProjetoContasAReceberRaro.view
             CarregaGridUsuario();
         }
 
+        private void lblInseriri_Click(object sender, EventArgs e)
+        {
+            FrmCadUser cadUser = new FrmCadUser();
+            cadUser.ShowDialog();
+        }
     }
 }

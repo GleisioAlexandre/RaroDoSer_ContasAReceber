@@ -43,7 +43,6 @@ namespace ProjetoContasAReceberRaro.view
             {
                 thread.SetApartmentState(ApartmentState.STA);
                 thread.Start();
-                MessageBox.Show("Usuário logado com sucesso!", "Login Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 this.Close();
                 home.Show();
             }

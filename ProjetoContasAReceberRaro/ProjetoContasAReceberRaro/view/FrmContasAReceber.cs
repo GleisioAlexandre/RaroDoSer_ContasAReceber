@@ -19,7 +19,6 @@ namespace ProjetoContasAReceberRaro.view
             InitializeComponent();
             dtgContasAReceber.RowPrePaint += dtgContasAReceber_RowPrePaint;
         }
-        //**********************Metodos******************************
         public void CarregaGridContas()
         {
             try
@@ -59,8 +58,6 @@ namespace ProjetoContasAReceberRaro.view
                 lblPago.Text = pago.ToString("C2");
             }
         }
-       
-        //***********************************************************
         private void FrmContasAReceber_Load(object sender, EventArgs e)
         {
             CarregaGridContas();

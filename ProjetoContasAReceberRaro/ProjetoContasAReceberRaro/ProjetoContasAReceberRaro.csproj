@@ -71,6 +71,12 @@
     <Compile Include="UserControlFrm.Designer.cs">
       <DependentUpon>UserControlFrm.cs</DependentUpon>
     </Compile>
+    <Compile Include="view\FrmCadUser.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="view\FrmCadUser.Designer.cs">
+      <DependentUpon>FrmCadUser.cs</DependentUpon>
+    </Compile>
     <Compile Include="view\FrmConfiguracao.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -123,6 +129,9 @@
     </Compile>
     <EmbeddedResource Include="UserControlFrm.resx">
       <DependentUpon>UserControlFrm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="view\FrmCadUser.resx">
+      <DependentUpon>FrmCadUser.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="view\FrmConfiguracao.resx">
       <DependentUpon>FrmConfiguracao.cs</DependentUpon>
