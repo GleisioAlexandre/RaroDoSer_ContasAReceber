@@ -37,8 +37,8 @@ namespace ProjetoContasAReceberRaro.controller
         {
             ClassUsuario usuario = new ClassUsuario();
             conexao.Open();
-            FbCommand comando = new FbCommand("select id_usuario, nome, cpf, usuario, senha from tb_usuario where nome = @nome ", conexao);
-            comando.Parameters.AddWithValue("@nome", dados);
+            FbCommand comando = new FbCommand("select id_usuario, nome, cpf, usuario, senha from tb_usuario where nome like (@nome) ", conexao);
+            comando.Parameters.AddWithValue("@nome", dados + "%");
             FbDataReader leitor = comando.ExecuteReader();
             while (leitor.Read())
             {
@@ -51,6 +51,26 @@ namespace ProjetoContasAReceberRaro.controller
             leitor.Close();
             conexao.Close();
             return usuario;
+        }
+        public void EditarUsuario(int id_usuario, string nome, string cpf, string usuario, string senha)
+        {
+            conexao.Open();
+            FbCommand comando = new FbCommand("update tb_usuario set nome=@nome, CPF=@CPF, usuario=@usuario, senha=@senha where id_usuario = @id_usuario", conexao);
+            comando.Parameters.AddWithValue("@id_usuario", id_usuario);
+            comando.Parameters.AddWithValue("@nome", nome);
+            comando.Parameters.AddWithValue("@cpf", cpf);
+            comando.Parameters.AddWithValue("@usuario", usuario);
+            comando.Parameters.AddWithValue("@senha", senha);
+            comando.ExecuteNonQuery();
+            conexao.Close();
+        }
+        public void DeletarUsuario(int id_usuario)
+        {
+            conexao.Open();
+            FbCommand comaondo = new FbCommand("delete from tb_usuario where id_usuario = @id_usuario", conexao);
+            comaondo.Parameters.AddWithValue("@id_usuario", id_usuario);
+            comaondo.ExecuteNonQuery();
+            conexao.Close();
         }
     }
 }
