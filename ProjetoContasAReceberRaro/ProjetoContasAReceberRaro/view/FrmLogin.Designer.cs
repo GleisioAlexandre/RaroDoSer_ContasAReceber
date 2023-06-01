@@ -55,6 +55,7 @@
             this.txtUser.Name = "txtUser";
             this.txtUser.Size = new System.Drawing.Size(340, 26);
             this.txtUser.TabIndex = 8;
+            this.txtUser.TextChanged += new System.EventHandler(this.txtUser_TextChanged);
             // 
             // label2
             // 

@@ -19,16 +19,13 @@ namespace ProjetoContasAReceberRaro.view
         }
         public void CarregaGridUsuario()
         {
-           
             ClassCrudUsuario crud = new ClassCrudUsuario();
             dtgUsuario.DataSource = crud.CarregaUsuario();
-
         }
         private void FrmUsuario_Load(object sender, EventArgs e)
         {
             CarregaGridUsuario();
         }
-
         private void lblInseriri_Click(object sender, EventArgs e)
         {
             FrmCadUser cadUser = new FrmCadUser();

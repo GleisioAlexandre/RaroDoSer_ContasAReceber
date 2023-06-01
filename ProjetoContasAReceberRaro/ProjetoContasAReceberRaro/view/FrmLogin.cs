@@ -58,5 +58,10 @@ namespace ProjetoContasAReceberRaro.view
             txtUser.Clear();
             txtPassword.Clear();
         }
+
+        private void txtUser_TextChanged(object sender, EventArgs e)
+        {
+            txtUser.CharacterCasing = CharacterCasing.Upper;
+        }
     }
 }
