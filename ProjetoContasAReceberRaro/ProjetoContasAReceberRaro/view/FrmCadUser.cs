@@ -99,5 +99,15 @@ namespace ProjetoContasAReceberRaro.view
         {
             DeletarUsuario();
         }
+
+        private void txtNome_TextChanged(object sender, EventArgs e)
+        {
+            txtNome.CharacterCasing = CharacterCasing.Upper;
+        }
+
+        private void txtUsuario_TextChanged(object sender, EventArgs e)
+        {
+            txtUsuario.CharacterCasing = CharacterCasing.Upper;
+        }
     }
 }

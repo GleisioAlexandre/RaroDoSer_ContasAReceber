@@ -16,7 +16,7 @@ namespace ProjetoContasAReceberRaro
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new view.FrmLogin());
+            Application.Run(new FrmHome());
         }
     }
 }

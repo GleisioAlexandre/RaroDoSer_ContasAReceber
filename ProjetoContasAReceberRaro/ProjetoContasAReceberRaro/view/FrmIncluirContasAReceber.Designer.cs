@@ -90,6 +90,7 @@
             this.txtCliente.Name = "txtCliente";
             this.txtCliente.Size = new System.Drawing.Size(375, 26);
             this.txtCliente.TabIndex = 1;
+            this.txtCliente.TextChanged += new System.EventHandler(this.txtCliente_TextChanged);
             // 
             // btnPesquisar
             // 
@@ -214,6 +215,7 @@
             this.txtDocumento.Size = new System.Drawing.Size(109, 22);
             this.txtDocumento.TabIndex = 9;
             this.txtDocumento.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.txtDocumento.TextChanged += new System.EventHandler(this.txtDocumento_TextChanged);
             // 
             // label6
             // 

@@ -271,7 +271,29 @@ namespace ProjetoContasAReceberRaro.view
 
         private void txtNome_TextChanged(object sender, EventArgs e)
         {
-            
+            txtNome.CharacterCasing = CharacterCasing.Upper;
+        }
+
+        private void txtLogradouro_TextChanged(object sender, EventArgs e)
+        {
+            txtLogradouro.CharacterCasing = CharacterCasing.Upper;
+        }
+
+        private void txtNumero_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!Char.IsDigit(e.KeyChar) && e.KeyChar != (char)8)
+            {
+                e.Handled = true;
+            }
+        }
+        private void txtComplemento_TextChanged(object sender, EventArgs e)
+        {
+            txtComplemento.CharacterCasing = CharacterCasing.Upper;
+        }
+
+        private void txtBairro_TextChanged(object sender, EventArgs e)
+        {
+            txtBairro.CharacterCasing = CharacterCasing.Upper;
         }
     }
 }

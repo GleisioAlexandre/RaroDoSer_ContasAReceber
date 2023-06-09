@@ -83,6 +83,7 @@
             this.txtCaminhoBanco.Name = "txtCaminhoBanco";
             this.txtCaminhoBanco.Size = new System.Drawing.Size(999, 26);
             this.txtCaminhoBanco.TabIndex = 4;
+            this.txtCaminhoBanco.TextChanged += new System.EventHandler(this.txtCaminhoBanco_TextChanged);
             // 
             // label5
             // 
@@ -99,6 +100,7 @@
             this.txtPorta.Name = "txtPorta";
             this.txtPorta.Size = new System.Drawing.Size(149, 26);
             this.txtPorta.TabIndex = 5;
+            this.txtPorta.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtPorta_KeyPress);
             // 
             // label4
             // 
@@ -132,6 +134,7 @@
             this.txtUsuario.Name = "txtUsuario";
             this.txtUsuario.Size = new System.Drawing.Size(205, 26);
             this.txtUsuario.TabIndex = 2;
+            this.txtUsuario.TextChanged += new System.EventHandler(this.txtUsuario_TextChanged);
             // 
             // label2
             // 
@@ -148,6 +151,7 @@
             this.txtServidor.Name = "txtServidor";
             this.txtServidor.Size = new System.Drawing.Size(335, 26);
             this.txtServidor.TabIndex = 1;
+            this.txtServidor.TextChanged += new System.EventHandler(this.txtServidor_TextChanged);
             // 
             // label1
             // 

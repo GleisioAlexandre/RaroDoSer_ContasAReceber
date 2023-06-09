@@ -213,6 +213,14 @@ namespace ProjetoContasAReceberRaro.view
             ValidacaoValor(sender, e);
         }
 
-        
+        private void txtCliente_TextChanged(object sender, EventArgs e)
+        {
+            txtCliente.CharacterCasing = CharacterCasing.Upper;
+        }
+
+        private void txtDocumento_TextChanged(object sender, EventArgs e)
+        {
+            txtDocumento.CharacterCasing = CharacterCasing.Upper;
+        }
     }
 }

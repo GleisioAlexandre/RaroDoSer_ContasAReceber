@@ -209,6 +209,7 @@
             this.txtBairro.Name = "txtBairro";
             this.txtBairro.Size = new System.Drawing.Size(120, 26);
             this.txtBairro.TabIndex = 7;
+            this.txtBairro.TextChanged += new System.EventHandler(this.txtBairro_TextChanged);
             // 
             // label5
             // 
@@ -227,6 +228,7 @@
             this.txtComplemento.Name = "txtComplemento";
             this.txtComplemento.Size = new System.Drawing.Size(397, 26);
             this.txtComplemento.TabIndex = 6;
+            this.txtComplemento.TextChanged += new System.EventHandler(this.txtComplemento_TextChanged);
             // 
             // label4
             // 
@@ -245,6 +247,7 @@
             this.txtNumero.Name = "txtNumero";
             this.txtNumero.Size = new System.Drawing.Size(95, 26);
             this.txtNumero.TabIndex = 5;
+            this.txtNumero.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNumero_KeyPress);
             // 
             // label3
             // 
@@ -263,6 +266,7 @@
             this.txtLogradouro.Name = "txtLogradouro";
             this.txtLogradouro.Size = new System.Drawing.Size(397, 26);
             this.txtLogradouro.TabIndex = 4;
+            this.txtLogradouro.TextChanged += new System.EventHandler(this.txtLogradouro_TextChanged);
             // 
             // label2
             // 

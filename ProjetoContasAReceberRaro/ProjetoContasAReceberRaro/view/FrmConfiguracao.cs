@@ -89,5 +89,27 @@ namespace ProjetoContasAReceberRaro.view
             }
            
         }
+
+        private void txtPorta_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!Char.IsDigit(e.KeyChar)&& e.KeyChar != (char)8)
+            {
+                e.Handled = true;
+            }
+        }
+        private void txtServidor_TextChanged(object sender, EventArgs e)
+        {
+            txtServidor.CharacterCasing = CharacterCasing.Upper;
+        }
+
+        private void txtUsuario_TextChanged(object sender, EventArgs e)
+        {
+            txtUsuario.CharacterCasing = CharacterCasing.Upper;
+        }
+
+        private void txtCaminhoBanco_TextChanged(object sender, EventArgs e)
+        {
+            txtCaminhoBanco.CharacterCasing = CharacterCasing.Upper;
+        }
     }
 }
