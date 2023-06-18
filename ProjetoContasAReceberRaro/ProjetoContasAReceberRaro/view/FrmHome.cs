@@ -46,12 +46,17 @@ namespace ProjetoContasAReceberRaro
             usuario.WindowState = FormWindowState.Maximized;
             usuario.Show();
         }
+        private void produtoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            view.FrmProduto produto = new view.FrmProduto();
+            produto.MdiParent = this;
+            produto.WindowState = FormWindowState.Maximized;
+            produto.Show();
+        }
         private void configuraçõesToolStripMenuItem1_Click(object sender, EventArgs e)
         {
             view.FrmConfiguracao configuracao = new view.FrmConfiguracao();
             configuracao.ShowDialog();
         }
-
-       
     }
 }
