@@ -60,8 +60,9 @@
     <Compile Include="controller\ClassCrudContasAReceber.cs" />
     <Compile Include="controller\ClassCrudCliente.cs" />
     <Compile Include="controller\ClassCliente.cs" />
+    <Compile Include="controller\ClassCrudProduto.cs" />
     <Compile Include="controller\ClassCrudUsuario.cs" />
-    <Compile Include="controller\ClassDividaClientes.cs" />
+    <Compile Include="controller\ClassDividaCliente.cs" />
     <Compile Include="controller\ClassLogin.cs" />
     <Compile Include="model\ClassUsuario.cs" />
     <Compile Include="model\ClassEndereco.cs" />

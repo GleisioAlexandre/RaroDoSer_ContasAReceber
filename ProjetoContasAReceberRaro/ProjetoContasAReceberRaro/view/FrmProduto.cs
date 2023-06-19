@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ProjetoContasAReceberRaro.controller;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -15,6 +16,13 @@ namespace ProjetoContasAReceberRaro.view
         public FrmProduto()
         {
             InitializeComponent();
+        }
+
+        private void FrmProduto_Load(object sender, EventArgs e)
+        {
+            
+            ClassCrudProduto crud = new ClassCrudProduto();
+            dtgProduto.DataSource = crud.CarregaProduto();
         }
     }
 }

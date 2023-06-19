@@ -74,7 +74,7 @@ namespace ProjetoContasAReceberRaro.controller
             comando.ExecuteNonQuery();
             conexao.Close();
         }
-        public ClassDividaClientes PesquisaDivida(string dados)
+        public ClassDividaCliente PesquisaDivida(string dados)
         {
             conexao.Open();
             FbCommand comando = new FbCommand("select cr.id_contasareceber, cr.id_cliente, cr.data_entrada, cr.valor, cr.documento, cr.data_vencimento, cr.data_pagamento," +
@@ -84,7 +84,7 @@ namespace ProjetoContasAReceberRaro.controller
                 "from tb_contas_a_receber cr where cr.documento = @documento", conexao);
             comando.Parameters.AddWithValue("@documento", dados);
             FbDataReader leitor = comando.ExecuteReader();
-            ClassDividaClientes divida = new ClassDividaClientes();
+            ClassDividaCliente divida = new ClassDividaCliente();
             while (leitor.Read())
             {
                 divida.Id_conta = Convert.ToInt32(leitor[0].ToString());

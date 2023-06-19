@@ -69,7 +69,7 @@ namespace ProjetoContasAReceberRaro.view
              try
               {
                   ClassCrudContasAReceber pesquisaDivida = new ClassCrudContasAReceber();
-                  ClassDividaClientes dividaCliente = new ClassDividaClientes();
+                  ClassDividaCliente dividaCliente = new ClassDividaCliente();
                   dividaCliente = pesquisaDivida.PesquisaDivida(txtDocumento.Text);
                   lblCodigo.Text = dividaCliente.Id_cliente.ToString();
                   lbl_id_Conta.Text = dividaCliente.Id_conta.ToString();

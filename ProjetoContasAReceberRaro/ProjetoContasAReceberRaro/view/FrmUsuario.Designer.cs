@@ -55,10 +55,10 @@
             this.cpf,
             this.usuario,
             this.senha});
-            this.dtgUsuario.Location = new System.Drawing.Point(-4, 0);
+            this.dtgUsuario.Location = new System.Drawing.Point(0, 0);
             this.dtgUsuario.Name = "dtgUsuario";
             this.dtgUsuario.ReadOnly = true;
-            this.dtgUsuario.Size = new System.Drawing.Size(896, 606);
+            this.dtgUsuario.Size = new System.Drawing.Size(888, 606);
             this.dtgUsuario.TabIndex = 0;
             // 
             // codigo

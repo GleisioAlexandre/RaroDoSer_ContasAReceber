@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ProjetoContasAReceberRaro.controller
 {
-    class ClassDividaClientes
+    class ClassDividaCliente
     {
         private int id_conta;
         private int id_cliente;
@@ -19,11 +19,11 @@ namespace ProjetoContasAReceberRaro.controller
         private string vencimento;
         private string pagamento;
 
-        public ClassDividaClientes()
+        public ClassDividaCliente()
         {
         }
 
-        public ClassDividaClientes(int id_conta, int id_cliente, string cliente, string entrada, double valor, string situacao, string documento, string classe, string vencimento, string pagamento)
+        public ClassDividaCliente(int id_conta, int id_cliente, string cliente, string entrada, double valor, string situacao, string documento, string classe, string vencimento, string pagamento)
         {
             this.id_conta = id_conta;
             this.id_cliente = id_cliente;

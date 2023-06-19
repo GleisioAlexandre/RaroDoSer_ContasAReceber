@@ -72,6 +72,7 @@
             // 
             // codigo
             // 
+            this.codigo.DataPropertyName = "ID_PRODUTO";
             this.codigo.HeaderText = "Código";
             this.codigo.Name = "codigo";
             this.codigo.ReadOnly = true;
@@ -79,6 +80,7 @@
             // nome
             // 
             this.nome.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.nome.DataPropertyName = "nome_produto";
             this.nome.HeaderText = "Nome";
             this.nome.Name = "nome";
             this.nome.ReadOnly = true;
@@ -105,6 +107,7 @@
             // 
             // precocusto
             // 
+            this.precocusto.DataPropertyName = "preco_custo";
             this.precocusto.HeaderText = "Preço de Custo";
             this.precocusto.Name = "precocusto";
             this.precocusto.ReadOnly = true;
@@ -127,6 +130,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "FrmProduto";
             this.Text = "Produto";
+            this.Load += new System.EventHandler(this.FrmProduto_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dtgProduto)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
