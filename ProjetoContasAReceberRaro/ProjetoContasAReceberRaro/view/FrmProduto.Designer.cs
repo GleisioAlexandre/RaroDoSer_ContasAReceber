@@ -28,6 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dtgProduto = new System.Windows.Forms.DataGridView();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.codigo = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -80,7 +82,7 @@
             // nome
             // 
             this.nome.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.nome.DataPropertyName = "nome_produto";
+            this.nome.DataPropertyName = "NOME_PRODUTO";
             this.nome.HeaderText = "Nome";
             this.nome.Name = "nome";
             this.nome.ReadOnly = true;
@@ -88,6 +90,7 @@
             // Descricao
             // 
             this.Descricao.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Descricao.DataPropertyName = "DESCRICAO";
             this.Descricao.HeaderText = "Descrição";
             this.Descricao.Name = "Descricao";
             this.Descricao.ReadOnly = true;
@@ -95,19 +98,25 @@
             // codigoDeBarras
             // 
             this.codigoDeBarras.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.codigoDeBarras.DataPropertyName = "CODIGO_DE_BARRAS";
             this.codigoDeBarras.HeaderText = "Código de Barras";
             this.codigoDeBarras.Name = "codigoDeBarras";
             this.codigoDeBarras.ReadOnly = true;
             // 
             // grupo
             // 
+            this.grupo.DataPropertyName = "GRUPO_PRODUTO";
             this.grupo.HeaderText = "Grupo";
             this.grupo.Name = "grupo";
             this.grupo.ReadOnly = true;
             // 
             // precocusto
             // 
-            this.precocusto.DataPropertyName = "preco_custo";
+            this.precocusto.DataPropertyName = "PRECO_CUSTO";
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopRight;
+            dataGridViewCellStyle1.Format = "C2";
+            dataGridViewCellStyle1.NullValue = null;
+            this.precocusto.DefaultCellStyle = dataGridViewCellStyle1;
             this.precocusto.HeaderText = "Preço de Custo";
             this.precocusto.Name = "precocusto";
             this.precocusto.ReadOnly = true;
@@ -115,6 +124,11 @@
             // 
             // precovenda
             // 
+            this.precovenda.DataPropertyName = "PRECO_VENDA";
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle2.Format = "C2";
+            dataGridViewCellStyle2.NullValue = null;
+            this.precovenda.DefaultCellStyle = dataGridViewCellStyle2;
             this.precovenda.HeaderText = "Preço de Venda";
             this.precovenda.Name = "precovenda";
             this.precovenda.ReadOnly = true;
